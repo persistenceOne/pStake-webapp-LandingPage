@@ -74,6 +74,7 @@
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 .section-2 .network-section h5.coming-soon {
   font-size: 14px;
