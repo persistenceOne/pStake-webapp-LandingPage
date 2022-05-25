@@ -15,6 +15,9 @@ export const CHAIN = {
     ethURL: "https://testnet.eth.pstake.finance/",
     atomURL: "https://testnet.app.pstake.finance/atom/",
     xprtURL: "https://testnet.app.pstake.finance/xprt/",
+    DEFILAMA_API: "https://api.llama.fi/protocol/pstake",
+    getETHPrice:
+      "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD",
     SmartContracts: {
       StkETH: "StkEth",
       STokens: "STokensV2",
@@ -32,6 +35,9 @@ export const CHAIN = {
     ethURL: "https://staging.eth.pstake.finance/",
     atomURL: "https://staging.app.pstake.finance/atom/",
     xprtURL: "https://staging.app.pstake.finance/xprt/",
+    DEFILAMA_API: "https://api.llama.fi/protocol/pstake",
+    getETHPrice:
+      "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD",
     SmartContracts: {
       StkETH: "StkEth",
       STokens: "STokensV2",
@@ -49,6 +55,9 @@ export const CHAIN = {
     ethURL: "https://eth.pstake.finance/",
     atomURL: "https://app.pstake.finance/atom/",
     xprtURL: "https://app.pstake.finance/xprt/",
+    DEFILAMA_API: "https://api.llama.fi/protocol/pstake",
+    getETHPrice:
+      "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD",
     SmartContracts: {
       StkETH: "StkEth",
       STokens: "STokensV2",
