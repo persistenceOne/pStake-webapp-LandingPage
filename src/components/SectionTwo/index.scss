@@ -1,0 +1,196 @@
+.section-2 {
+  font-family: 'Poppins', sans-serif;
+
+  .launchplat {
+    width: 100%;
+    text-align: center;
+
+  }
+  .heading{
+    text-align: center;
+    color: #FCFCFC;
+    font-size: 24px;
+    font-weight: 600;
+    h6{
+      color: #A6A6A6;
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+  .dropdown-menu.show {
+    background: #2E2E2E;
+    padding: 15px 0;
+    border-radius: 8px;
+    .dropdown-item {
+      color: #FCFCFC;
+      padding: 10px 30px;
+      &:hover {
+        background-color:#54555E;
+      }
+      &:hover {
+        background-color:#54555E;
+
+      }
+
+    }
+  }
+  .upcoming-stakers {
+    .stakers-icons {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    width: 100%;
+    text-align: center;
+    margin-bottom: 6rem;
+    .icon-stake_icon_imgg {
+      width: 80px;
+      height: 80px;
+      margin: 20px 35px!important;
+    }
+  }
+
+  .title-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .sort_sec {
+      display: flex;
+    }
+    h6 {
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 18px;
+      font-weight: normal;
+      margin: 0;
+      svg {
+        width: 20px;
+        cursor: pointer;
+      }
+      span {
+        color: rgba(255, 255, 255, 0.89);
+        font-weight: 600;
+      }
+    }
+  }
+  .network-section {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    h5.coming-soon{
+      font-size: 14px;
+      font-weight: 600;
+      padding:15px 35px;
+    }
+    a {
+      text-decoration: none;
+
+      &:hover{
+        text-decoration: none;
+      }
+      h5{
+        font-size: 14px;
+        border-radius: 6px;
+        padding: 15px 35px;
+        cursor: pointer;
+        color: #fff;
+        background: #C73238;
+        font-weight: 600;
+        text-decoration: none;
+        margin: 16px 0 0px;
+        transition: all .5s ease-in-out;
+      }
+    }
+    .info-text {
+      position: absolute;
+      top: 15px;
+      width: 25px;
+      right: 13px;
+
+      .btn-success:not(:disabled):not(.disabled).active, .btn-success:not(:disabled):not(.disabled):active, .show>.btn-success.dropdown-toggle {
+        color: #fff;
+        background-color: transparent;
+        border-color: transparent;
+      }
+      .btn-success:not(:disabled):not(.disabled).active:focus, .btn-success:not(:disabled):not(.disabled):active:focus, .show>.btn-success.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem #48b46100;
+      }
+      button {
+        background: transparent;
+        border: 0;
+        padding: 0;
+        svg {
+          width: 20px;
+          height: 20px;
+          stroke: #fff;
+          transition: all 0.5s ease-in-out;
+          &:hover {
+            stroke: #E50913;
+          }
+        }
+      }
+
+    }
+    .icon-social_icon_imgg {
+      width: 88px;
+      height: 88px;
+    }
+    .networklist-tiles {
+      background: rgba(40, 40, 40, 0.5);
+      border-radius: 12px;
+      width: 232px;
+      text-align: center;
+      color: #fff;
+      padding: 24px;
+      border: 1px solid transparent;
+      transition: all 0.5s ease-in-out;
+      margin: 24px 10px;
+      position: relative;
+      h4{
+        color: #47C28B;
+        font-weight: 600;
+      }
+      //&:hover {
+      //  border: 1px solid #E50913;
+      //}
+    }
+    h5 {
+      color: rgba(255, 255, 255, 0.89);
+      margin-top: 10px;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    h6 {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.66);
+      font-weight: 400;
+    }
+    h4 {
+      font-size: 22px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.89);
+      letter-spacing: 0.1px;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .section-5 .title-section {
+    flex-direction: column;
+  }
+  .section-5 .upcoming-stakers .stakers-icons {
+    display: inline-block;
+  }
+  .section-5 .list-inline.social {
+    display: inline-block!important;
+  }
+
+}
+@media (max-width: 480px) {
+  .section-5 .upcoming-stakers .icon-stake_icon_imgg
+  {
+    margin:10px 20px;
+  }
+}
