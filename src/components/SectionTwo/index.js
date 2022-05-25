@@ -5,8 +5,26 @@ import asset2 from "../../assets/stkETH.svg";
 import asset3 from "../../assets/xprt.svg";
 import asset4 from "../../assets/sol.svg";
 import "../SectionTwo/index.css";
+import {CHAIN} from "../../constants/config";
+import {useEffect, useState} from "react";
+import {getWeb3} from "../../actions/utils";
+
 const SectionTwo = () => {
   const { t } = useTranslation();
+
+  const [ethAPR, setEthAPR] = useState("0.00");
+  const [atomAPR, setAtomAPR] = useState("0.00");
+  const [xprtAPR, setXprtAPR] = useState("0.00");
+
+  const handleEthAPR = async () => {
+    let web3Local = await getWeb3();
+    console.log("web3: ", web3Local)
+  };
+
+  useEffect(() => {
+    handleEthAPR();
+  }, []);
+
   return (
     <React.Fragment>
       <section className="section-2 stake-section" id="sectiontwo">
@@ -27,7 +45,7 @@ const SectionTwo = () => {
                   <h6>{t("ETH")}</h6>
                   <h4>{t("ETH_APR")}</h4>
                   <a
-                    href="www.google.com"
+                    href={CHAIN[process.env.REACT_APP_ENV].ethURL}
                     rel="noopener noreferrer"
                     target="_blank"
                   >
@@ -41,7 +59,7 @@ const SectionTwo = () => {
                   <h6>{t("ATOM")}</h6>
                   <h4>{t("ATOM_APR")}</h4>
                   <a
-                    href="www.google.com"
+                    href={CHAIN[process.env.REACT_APP_ENV].atomURL}
                     rel="noopener noreferrer"
                     target="_blank"
                   >
@@ -54,7 +72,7 @@ const SectionTwo = () => {
                   <h6>{t("XPRT")}</h6>
                   <h4>{t("XPRT_APR")}</h4>
                   <a
-                    href="www.google.com"
+                    href={CHAIN[process.env.REACT_APP_ENV].xprtURL}
                     rel="noopener noreferrer"
                     target="_blank"
                   >
