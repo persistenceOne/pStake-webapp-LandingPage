@@ -9,11 +9,11 @@ const SectionOne = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 stats">
-              <div className="stats-section">
+              {/*<div className="stats-section">
                 <h2>$28.12M+</h2>
                 <h6>{t("LIQUIDITYSTKASSETS")}</h6>
                 <span className="vline"></span>
-              </div>
+              </div>*/}
               <div className="stats-section">
                 <h2>5,107</h2>
                 <h6>{t("NUMBEROFSTAKERS")}</h6>
