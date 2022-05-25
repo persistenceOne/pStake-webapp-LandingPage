@@ -1,5 +1,6 @@
 import BigNumber from "bignumber.js";
 import Web3 from 'web3';
+import { CHAIN } from "../constants/config";
 
 
 var web3 = null;
@@ -70,7 +71,7 @@ export const getContractInstance = async (abiJSONName) => {
         artifactJSON = require(`../abi_mainnet/${abiJSONName}.json`);
     }
     const web3Local = getWeb3();
-    const network = await web3Local.eth.net.getId();
+    const network = CHAIN[process.env.REACT_APP_ENV].networkID
     const deployedAddress = artifactJSON.networks[network].address;
     console.log("abi: ", artifactJSON.abi, " deployedAddress: ", deployedAddress);
 
@@ -88,7 +89,7 @@ export const getContractAddressFrom = async (abiJSONName) => {
         artifactJSON = require(`../abi_mainnet/${abiJSONName}.json`);
     }
     const web3Local = getWeb3();
-    const network = await web3Local.eth.net.getId();
+    const network = CHAIN[process.env.REACT_APP_ENV].networkID
     const deployedAddress = artifactJSON.networks[network].address;
     console.log("deployedAddress: ", deployedAddress);
 
@@ -98,14 +99,18 @@ export const getContractAddressFrom = async (abiJSONName) => {
 export const getContractInstanceFrom = async (abiJSONName, deployedAddress) => {
     let instance;
     let artifactJSON;
+    console.log("abiJSONName: ", abiJSONName)
+    console.log("deployedAddress: ", deployedAddress)
+    console.log("process.env.REACT_APP_ENV: ", process.env.REACT_APP_ENV)
     if(process.env.REACT_APP_ENV === "Testnet"){
         artifactJSON = require(`../abi_testnet/${abiJSONName}.json`);
     }else if(process.env.REACT_APP_ENV === "Staging" || process.env.REACT_APP_ENV === "Mainnet"){
         artifactJSON = require(`../abi_mainnet/${abiJSONName}.json`);
     }
+    console.log("artifactJSON: ", artifactJSON)
     const web3Local = getWeb3();
     console.log("abi: ", artifactJSON, " deployedAddress: ", deployedAddress);
-    instance = new web3Local.eth.Contract(artifactJSON, deployedAddress);
+    instance = new web3Local.eth.Contract(artifactJSON.abi, deployedAddress);
     instance.setProvider(web3Local);
     console.log("instance address: ", instance);
 
@@ -236,7 +241,7 @@ export const getDeployedBlockNumber = async (contractName) => {
         artifactJSON = require(`../abi_mainnet/${contractName}.json`);
     }
 
-    const network = await web3.eth.net.getId();
+    const network = CHAIN[process.env.REACT_APP_ENV].networkID
     const deployedTransactionHash =
         artifactJSON.networks[network].transactionHash;
     const deployedBlockNumber = await web3.eth.getTransaction(

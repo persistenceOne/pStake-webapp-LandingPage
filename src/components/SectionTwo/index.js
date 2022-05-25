@@ -7,7 +7,9 @@ import asset4 from "../../assets/sol.svg";
 import "../SectionTwo/index.css";
 import {CHAIN} from "../../constants/config";
 import {useEffect, useState} from "react";
-import {getWeb3} from "../../actions/utils";
+import { decimalize, getContractInstance, getContractInstanceFrom, getWeb3 } from "../../actions/utils";
+import Web3 from "web3";
+import BigNumber from "bignumber.js";
 
 const SectionTwo = () => {
   const { t } = useTranslation();
@@ -17,12 +19,101 @@ const SectionTwo = () => {
   const [xprtAPR, setXprtAPR] = useState("0.00");
 
   const handleEthAPR = async () => {
-    let web3Local = await getWeb3();
-    console.log("web3: ", web3Local)
+
+    let web3Local;
+
+    if(process.env.REACT_APP_ENV === "Testnet"){
+      web3Local = new Web3(new Web3.providers.HttpProvider("https://goerli.infura.io/v3/c1a795f858814218840034fe273cb040"));
+    }else if(process.env.REACT_APP_ENV === "Staging" || process.env.REACT_APP_ENV === "Mainnet"){
+      web3Local = new Web3(new Web3.providers.HttpProvider(process.env.REACT_APP_INFURA));
+    }
+    console.log("web3: ", web3Local);
+
+    let stkETH_SC = CHAIN[process.env.REACT_APP_ENV].SmartContracts.StkETH;
+    let stkETH_SC_Address = CHAIN[process.env.REACT_APP_ENV].CONTRACT_ADDRESSES.StkEth;
+
+    let instance = await getContractInstanceFrom(stkETH_SC, stkETH_SC_Address);
+    let txHash = CHAIN[process.env.REACT_APP_ENV].stkETHDeployTxHash;
+
+    let getBlockNumber = await web3Local.eth.getTransactionReceipt(txHash);
+    console.log("getBlockNumber: ", getBlockNumber)
+
+    let getTimestamp = await web3Local.eth.getBlock(getBlockNumber.blockNumber);
+    console.log("getTimestamp: ", getTimestamp.timestamp)
+
+    let getCurrentTs = Date.now() / 1000 | 0
+    console.log("getCurrentTs: ", getCurrentTs)
+
+    let getTsDiff = getCurrentTs - getTimestamp.timestamp
+    console.log("getTsDiff: ", getTsDiff)
+
+    let days = getTsDiff / (60*60*24)
+    let daysDiff = days.toFixed(2)
+
+    let time = daysDiff/365;
+
+    const getExchangeRate = await instance.methods.pricePerShare().call();
+    let exchangeRate = decimalize(getExchangeRate, 18)
+
+    let apr = ((exchangeRate-1)/time) *100;
+
+    console.log("apr: ", apr.toFixed(2))
+    setEthAPR(apr.toFixed(2));
   };
+
+  const handleAtomAPR = async () => {
+    let stkATOM_SC = CHAIN[process.env.REACT_APP_ENV].SmartContracts.STokens;
+    let instance = await getContractInstance(stkATOM_SC);
+    if (instance) {
+      const props = await instance.methods.getRewardRate().call();
+      console.log("atom props: ", props)
+      if (props) {
+        const len = props["rewardRate"].length;
+        const rewardRate = new BigNumber(props["rewardRate"][len - 1]);
+        const valueDivisor = new BigNumber(props["valueDivisor"]);
+        const mulData = (
+          3600 *
+          24 *
+          CHAIN[process.env.REACT_APP_ENV].inflationPeriod
+        ).toString();
+        const mulData1 = new BigNumber(mulData);
+
+        let rewards = rewardRate.multipliedBy(mulData1).dividedBy(valueDivisor);
+        console.log("atom rewards: ", rewards.toString())
+        setAtomAPR(rewards.toFixed(2));
+        // setLoading(false);
+      }
+    }
+  }
+
+  const handleXprtAPR = async () => {
+    let stkXprt_SC = CHAIN[process.env.REACT_APP_ENV].SmartContracts.STokensXPRT;
+    let instance = await getContractInstance(stkXprt_SC);
+    if (instance) {
+      const props = await instance.methods.getRewardRate().call();
+      console.log("xprt props: ", props)
+      if (props) {
+        const len = props["rewardRate"].length;
+        const rewardRate = new BigNumber(props["rewardRate"][len - 1]);
+        const valueDivisor = new BigNumber(props["valueDivisor"]);
+        const mulData = (
+          3600 *
+          24 *
+          CHAIN[process.env.REACT_APP_ENV].inflationPeriod
+        ).toString();
+        const mulData1 = new BigNumber(mulData);
+
+        let rewards = rewardRate.multipliedBy(mulData1).dividedBy(valueDivisor);
+        setXprtAPR(rewards.toFixed(2));
+        // setLoading(false);
+      }
+    }
+  }
 
   useEffect(() => {
     handleEthAPR();
+    handleAtomAPR();
+    handleXprtAPR();
   }, []);
 
   return (
@@ -43,7 +134,7 @@ const SectionTwo = () => {
                   <img src={asset2} alt={"ETH"} />
                   <h5>{t("Ethereum")}</h5>
                   <h6>{t("ETH")}</h6>
-                  <h4>{t("ETH_APR")}</h4>
+                  <h4>{ethAPR}%</h4>
                   <a
                     href={CHAIN[process.env.REACT_APP_ENV].ethURL}
                     rel="noopener noreferrer"
@@ -57,7 +148,7 @@ const SectionTwo = () => {
                   <img src={asset1} alt={"cosmos"} />
                   <h5>{t("COSMOS")}</h5>
                   <h6>{t("ATOM")}</h6>
-                  <h4>{t("ATOM_APR")}</h4>
+                  <h4>{atomAPR}%</h4>
                   <a
                     href={CHAIN[process.env.REACT_APP_ENV].atomURL}
                     rel="noopener noreferrer"
@@ -70,7 +161,7 @@ const SectionTwo = () => {
                   <img src={asset3} alt={"persistence"} />
                   <h5>{t("Persistence")}</h5>
                   <h6>{t("XPRT")}</h6>
-                  <h4>{t("XPRT_APR")}</h4>
+                  <h4>{xprtAPR}%</h4>
                   <a
                     href={CHAIN[process.env.REACT_APP_ENV].xprtURL}
                     rel="noopener noreferrer"
