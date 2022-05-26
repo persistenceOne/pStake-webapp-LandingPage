@@ -9,6 +9,12 @@ import { getAssetFromKV, mapRequestToAsset, serveSinglePageApp } from '@cloudfla
  */
 const DEBUG = false
 
+const tokenEthplorer = {
+  "eth": "https://api.ethplorer.io/getTokenInfo/0x2C5Bcad9Ade17428874855913Def0A02D8bE2324",
+  "atom": "https://api.ethplorer.io/getTokenInfo/0x44017598f2AF1bD733F9D87b5017b4E7c1B28DDE",
+  "xprt": "https://api.ethplorer.io/getTokenInfo/0x45e007750Cc74B1D2b4DD7072230278d9602C499",
+};
+
 addEventListener('fetch', event => {
   try {
     event.respondWith(handleEvent(event))
@@ -29,7 +35,10 @@ async function handleEvent(event) {
   let options = {}
 
   if (url.pathname.includes('/getTokenInfo')) {
-    return await getTokenInfo(event.request)
+    let token = url.pathname.split('/getTokenInfo/')[0]
+    if (tokenEthplorer.has(token)) {
+      return await getTokenInfo(event.request, token)
+    }
   }
 
   try {
@@ -69,42 +78,29 @@ async function handleEvent(event) {
   }
 }
 
-async function getTokenInfo(request) {
+async function getTokenInfo(request, token) {
   const cacheUrl = new URL(request.url);
 
   // Construct the cache key from the cache URL
   const cacheKey = new Request(cacheUrl.toString(), request);
   const cache = caches.default;
-  const ethUrl = `https://api.ethplorer.io/getTokenInfo/0x2C5Bcad9Ade17428874855913Def0A02D8bE2324?apiKey=${ETHPLORER_API_KEY}`;
-  const atomUrl = `https://api.ethplorer.io/getTokenInfo/0x44017598f2AF1bD733F9D87b5017b4E7c1B28DDE?apiKey=${ETHPLORER_API_KEY}`;
-  const xprtUrl = `https://api.ethplorer.io/getTokenInfo/0x45e007750Cc74B1D2b4DD7072230278d9602C499?apiKey=${ETHPLORER_API_KEY}`;
+
+  let tokenUrl = `${tokenEthplorer[token]}?apiKey=${ETHPLORER_API_KEY}`
 
   // Check whether the value is already available in the cache
   // if not, you will need to fetch it from origin, and store it in the cache
   // for future access
   let response = await cache.match(cacheKey);
-  let data = {
-    ethData:{},
-    atomData:{},
-    xprtData:{},
-  }
 
   if (response === undefined) {
     console.log(
       `Response for request url: ${request.url} not present in cache. Fetching and caching request.`
     );
     // If not in cache, get it from origin
-    response = await fetch(ethUrl);
-    data.ethData = new Response(response.body, response);
-
-    response = await fetch(atomUrl);
-    data.atomData = new Response(response.body, response);
-
-    response = await fetch(xprtUrl);
-    data.xprtData = new Response(response.body, response);
+    response = await fetch(tokenUrl);
 
     // Must use Response constructor to inherit all of response's fields
-    //response = new Response(response.body, response);
+    response = new Response(response.body, response);
 
     // Cache API respects Cache-Control headers. Setting s-max-age to 10
     // will limit the response to be in cache for 10 seconds max
@@ -118,5 +114,5 @@ async function getTokenInfo(request) {
   } else {
     console.log(`Cache hit for: ${request.url}.`);
   }
-  return data;
+  return response;
 }
