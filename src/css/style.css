@@ -5,5 +5,8 @@ body {
   padding-bottom: 30px;
   position: relative;
 }
+body iframe {
+  position: relative !important;
+}
 
 /*# sourceMappingURL=style.css.map */

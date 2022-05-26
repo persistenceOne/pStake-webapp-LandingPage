@@ -20,7 +20,7 @@ const SectionTwo = () => {
 
   const handleEthAPR = async () => {
 
-    let web3Local;
+    /*let web3Local;
 
     if(process.env.REACT_APP_ENV === "Testnet"){
       web3Local = new Web3(new Web3.providers.HttpProvider("https://goerli.infura.io/v3/c1a795f858814218840034fe273cb040"));
@@ -57,8 +57,9 @@ const SectionTwo = () => {
 
     let apr = ((exchangeRate-1)/time) *100;
 
-    console.log("apr: ", apr.toFixed(2))
-    setEthAPR(apr.toFixed(2));
+    console.log("apr: ", apr.toFixed(2));*/
+    //setEthAPR(apr.toFixed(2));
+    setEthAPR(CHAIN[process.env.REACT_APP_ENV].ethAPR);
   };
 
   const handleAtomAPR = async () => {
