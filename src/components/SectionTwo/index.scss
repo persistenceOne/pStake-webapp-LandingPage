@@ -276,4 +276,17 @@ padding:35px 0;
   {
     margin:10px 20px;
   }
+
+}
+@media (max-width: 450px) {
+  .section-2 .network-section.cosmos-sub-section .combine-section{
+    display: flex;
+    padding: 35px 0;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .section-2 .network-section.cosmos-sub-section .combine-section .cosmos-section{
+    margin:10px 0;
+  }
 }
