@@ -73,16 +73,98 @@
       }
     }
   }
+  .network-section.cosmos-sub-section{
+    .cosmos-button{
+      width:170px;
+      margin:auto;
+      h5{
+        margin: 0;
+      }
+    }
+    .networklist-tiles{
+      max-width: 500px;
+      width: 484px;
+      margin: 0;
+      padding:24px;
+      border-radius: 0;
+      .cosmos-title{
+        font-size: 18px;
+        font-weight: 500;
+        color: #ECECEC;
+        margin: 0;
+      }
+    }
+    .combine-section{
+      display: flex;
+      justify-content: space-between;
+padding:35px 0;
+      .cosmos-section{
+        display: flex;
+        align-items: center;
+        .sub-section{
+          text-align: left;
+          margin-left: 10px;
+          h5{
+            font-size: 16px;
+          }
+          h5,h4{
+            margin:0;
+          }
+          h4{
+            font-size: 18px;
+            font-weight: 600;
+          }
+          h5{
+            span{
+              font-size: 11px;
+              color: rgba(255, 255, 255, 0.66);
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
   .network-section {
     display: flex;
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
+    .cosmos-section{
+      display: flex;
+      align-items: center;
+      .sub-section{
+        text-align: left;
+        margin-left: 10px;
+        h5{
+          font-size: 16px;
+        }
+        h5,h4{
+          margin:0;
+        }
+        h4{
+          font-size: 18px;
+          font-weight: 600;
+        }
+        h5{
+          span{
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.66);
+            font-weight: 400;
+          }
+        }
+      }
+    }
+
     h5.coming-soon{
       font-size: 14px;
       font-weight: 600;
-      padding:15px 35px;
+      padding: 10px 35px;
+      cursor: not-allowed;
+      background: #4A2A2A;
+      border-radius: 6px;
+      margin: 16px 0 0px;
     }
     a {
       text-decoration: none;
@@ -93,7 +175,7 @@
       h5{
         font-size: 14px;
         border-radius: 6px;
-        padding: 15px 35px;
+        padding: 10px 35px;
         cursor: pointer;
         color: #fff;
         background: #C73238;
@@ -139,11 +221,11 @@
     }
     .networklist-tiles {
       background: rgba(40, 40, 40, 0.5);
-      border-radius: 12px;
+      border-radius: 0px;
       width: 232px;
       text-align: center;
       color: #fff;
-      padding: 24px;
+      padding: 35px 24px;
       border: 1px solid transparent;
       transition: all 0.5s ease-in-out;
       margin: 24px 10px;

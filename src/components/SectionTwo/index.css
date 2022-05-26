@@ -69,6 +69,54 @@
   color: rgba(255, 255, 255, 0.89);
   font-weight: 600;
 }
+.section-2 .network-section.cosmos-sub-section .cosmos-button {
+  width: 170px;
+  margin: auto;
+}
+.section-2 .network-section.cosmos-sub-section .cosmos-button h5 {
+  margin: 0;
+}
+.section-2 .network-section.cosmos-sub-section .networklist-tiles {
+  max-width: 500px;
+  width: 484px;
+  margin: 0;
+  padding: 24px;
+  border-radius: 0;
+}
+.section-2 .network-section.cosmos-sub-section .networklist-tiles .cosmos-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ECECEC;
+  margin: 0;
+}
+.section-2 .network-section.cosmos-sub-section .combine-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 35px 0;
+}
+.section-2 .network-section.cosmos-sub-section .combine-section .cosmos-section {
+  display: flex;
+  align-items: center;
+}
+.section-2 .network-section.cosmos-sub-section .combine-section .cosmos-section .sub-section {
+  text-align: left;
+  margin-left: 10px;
+}
+.section-2 .network-section.cosmos-sub-section .combine-section .cosmos-section .sub-section h5 {
+  font-size: 16px;
+}
+.section-2 .network-section.cosmos-sub-section .combine-section .cosmos-section .sub-section h5, .section-2 .network-section.cosmos-sub-section .combine-section .cosmos-section .sub-section h4 {
+  margin: 0;
+}
+.section-2 .network-section.cosmos-sub-section .combine-section .cosmos-section .sub-section h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.section-2 .network-section.cosmos-sub-section .combine-section .cosmos-section .sub-section h5 span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.66);
+  font-weight: 400;
+}
 .section-2 .network-section {
   display: flex;
   align-content: center;
@@ -76,10 +124,37 @@
   flex-wrap: wrap;
   margin-top: 10px;
 }
+.section-2 .network-section .cosmos-section {
+  display: flex;
+  align-items: center;
+}
+.section-2 .network-section .cosmos-section .sub-section {
+  text-align: left;
+  margin-left: 10px;
+}
+.section-2 .network-section .cosmos-section .sub-section h5 {
+  font-size: 16px;
+}
+.section-2 .network-section .cosmos-section .sub-section h5, .section-2 .network-section .cosmos-section .sub-section h4 {
+  margin: 0;
+}
+.section-2 .network-section .cosmos-section .sub-section h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.section-2 .network-section .cosmos-section .sub-section h5 span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.66);
+  font-weight: 400;
+}
 .section-2 .network-section h5.coming-soon {
   font-size: 14px;
   font-weight: 600;
-  padding: 15px 35px;
+  padding: 10px 35px;
+  cursor: not-allowed;
+  background: #4A2A2A;
+  border-radius: 6px;
+  margin: 16px 0 0px;
 }
 .section-2 .network-section a {
   text-decoration: none;
@@ -90,7 +165,7 @@
 .section-2 .network-section a h5 {
   font-size: 14px;
   border-radius: 6px;
-  padding: 15px 35px;
+  padding: 10px 35px;
   cursor: pointer;
   color: #fff;
   background: #C73238;
@@ -133,11 +208,11 @@
 }
 .section-2 .network-section .networklist-tiles {
   background: rgba(40, 40, 40, 0.5);
-  border-radius: 12px;
+  border-radius: 0px;
   width: 232px;
   text-align: center;
   color: #fff;
-  padding: 24px;
+  padding: 35px 24px;
   border: 1px solid transparent;
   transition: all 0.5s ease-in-out;
   margin: 24px 10px;
