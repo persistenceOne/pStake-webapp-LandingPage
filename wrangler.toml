@@ -1,0 +1,17 @@
+name = "pstake-landing"
+type = "webpack"
+zone_id = '6304918b0989e59de2f10ab7af92840a'
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+site = {bucket = "./build",entry-point = "workers-site"}
+compatibility_date = "2022-05-26"
+
+[env.testnet]
+routes = ["https://testnet.app.pstake.finance/*"]
+
+[env.staging]
+routes = ["https://staging.app.pstake.finance/*"]
+
+[env.release]
+routes = ["https://app.pstake.finance/*"]

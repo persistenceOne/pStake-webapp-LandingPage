@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  push:
+    branches: [release]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: git config --global url."https://github.com/".insteadOf ssh://git@github.com/
+      - name: Install dependencies
+        run: npm ci
+      - name: Build react project
+        run: npm run build --if-present
+        env:
+          REACT_APP_ANALYTICS: 'UA-201133739-2'
+          REACT_APP_ENV: 'Mainnet'
+          REACT_APP_NETWORK: 'Network_Mainnet'
+          REACT_APP_INFURA: https://eth.api.audit.one
+      - name: Publish
+        uses: cloudflare/wrangler-action@1.3.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          environment: 'release'
