@@ -27,7 +27,9 @@ addEventListener('fetch', event => {
 async function handleEvent(event) {
   const url = new URL(event.request.url)
   let options = {}
-
+  if (url.pathname.endsWith('/gasEstimate')) {
+    return await getGasEstimate(event.request)
+  }
   /**
    * You can add custom logic to how we fetch your assets
    * by configuring the function `mapRequestToAsset`
