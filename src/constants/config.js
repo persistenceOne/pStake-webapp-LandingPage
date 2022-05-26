@@ -9,15 +9,15 @@ export const PSTAKE_GITHUB_URL = "";
 export const CHAIN = {
   Testnet: {
     networkID: 3,
-    inflationPeriod: 21,
-    stkETHDeployTxHash:
-      "0xa532ae226472c1d38bc643046c5e6816e04c5b50e4785ad1ddf8db9efcd421be",
+    inflationPeriod: 365,
+    stkETHDeployTxHash: "0xa532ae226472c1d38bc643046c5e6816e04c5b50e4785ad1ddf8db9efcd421be",
+    ethAPR: "~4.05",
     ethURL: "https://testnet.eth.pstake.finance/",
     atomURL: "https://testnet.app.pstake.finance/atom/",
     xprtURL: "https://testnet.app.pstake.finance/xprt/",
     DEFILAMA_API: "https://api.llama.fi/protocol/pstake",
-    getETHPrice:
-      "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD",
+    getETHPrice: "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD",
+    ethplorerAPI: "https://api.ethplorer.io/getTokenInfo/",
     SmartContracts: {
       StkETH: "StkEth",
       STokens: "STokensV2",
@@ -25,17 +25,20 @@ export const CHAIN = {
     },
     CONTRACT_ADDRESSES: {
       StkEth: "0x20cD69d52164e2707A90C1C5fA7f95e8943ae72F",
+      StkATOM: "0xA0e5c263cDC9EE2BFd06910D436dB5B51831135E",
+      StkXPRT: "0x048546d9Df54b5cD1d7631484453b0ce8D13f17B",
     },
   },
   Staging: {
     networkID: 1,
     inflationPeriod: 365,
-    stkETHDeployTxHash:
-      "0x5cfe093883b26ca810ab4a2cf074244c2493a14371c0a24a068efe864ef97c67",
+    stkETHDeployTxHash: "0x5cfe093883b26ca810ab4a2cf074244c2493a14371c0a24a068efe864ef97c67",
+    ethAPR: "~4.05",
     ethURL: "https://staging.eth.pstake.finance/",
     atomURL: "https://staging.app.pstake.finance/atom/",
     xprtURL: "https://staging.app.pstake.finance/xprt/",
     DEFILAMA_API: "https://api.llama.fi/protocol/pstake",
+    ethplorerAPI: "https://api.ethplorer.io/getTokenInfo/",
     getETHPrice:
       "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD",
     SmartContracts: {
@@ -45,17 +48,20 @@ export const CHAIN = {
     },
     CONTRACT_ADDRESSES: {
       StkEth: "0x2C5Bcad9Ade17428874855913Def0A02D8bE2324",
+      StkATOM: "0x44017598f2AF1bD733F9D87b5017b4E7c1B28DDE",
+      StkXPRT: "0x45e007750Cc74B1D2b4DD7072230278d9602C499",
     },
   },
   Mainnet: {
     networkID: 1,
     inflationPeriod: 365,
-    stkETHDeployTxHash:
-      "0x5cfe093883b26ca810ab4a2cf074244c2493a14371c0a24a068efe864ef97c67",
+    stkETHDeployTxHash: "0x5cfe093883b26ca810ab4a2cf074244c2493a14371c0a24a068efe864ef97c67",
+    ethAPR: "~4.05",
     ethURL: "https://eth.pstake.finance/",
     atomURL: "https://app.pstake.finance/atom/",
     xprtURL: "https://app.pstake.finance/xprt/",
     DEFILAMA_API: "https://api.llama.fi/protocol/pstake",
+    ethplorerAPI: "https://api.ethplorer.io/getTokenInfo/",
     getETHPrice:
       "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD",
     SmartContracts: {
@@ -65,6 +71,8 @@ export const CHAIN = {
     },
     CONTRACT_ADDRESSES: {
       StkEth: "0x2C5Bcad9Ade17428874855913Def0A02D8bE2324",
+      StkATOM: "0x44017598f2AF1bD733F9D87b5017b4E7c1B28DDE",
+      StkXPRT: "0x45e007750Cc74B1D2b4DD7072230278d9602C499",
     },
   },
 };
