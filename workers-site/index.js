@@ -120,6 +120,7 @@ async function getTokenInfo(request, token) {
     console.log(`Cache hit for: ${request.url}.`);
   }
   return response;
+}
 /**
  * Here's one example of how to modify a request to
  * remove a specific prefix, in this case `/docs` from
