@@ -28,9 +28,12 @@ jobs:
           REACT_APP_ENV: 'Testnet'
           REACT_APP_NETWORK: 'Network_Test'
           REACT_APP_INFURA: https://ropsten.eth.audit.one/rpc
-          REACT_APP_ETHPLORER_API_KEY: ${{ secrets.ETHPLORER_API_KEY }}
       - name: Publish
         uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           environment: 'testnet'
+          secrets: |
+            ETHPLORER_API_KEY
+        env:
+          ETHPLORER_API_KEY: ${{ secrets.ETHPLORER_API_KEY }}
