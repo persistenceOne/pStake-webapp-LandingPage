@@ -34,5 +34,3 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           environment: 'release'
-        env:
-          REACT_APP_ETHPLORER_API_KEY: ${{ secrets.ETHPLORER_API_KEY }}
