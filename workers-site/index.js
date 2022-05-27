@@ -36,7 +36,7 @@ async function handleEvent(event) {
 
   if (url.pathname.includes('/getTokenInfo')) {
     let token = url.pathname.split('/getTokenInfo/')[1]
-    if (tokenEthplorer.has(token)) {
+    if (tokenEthplorer.hasOwnProperty(token)) {
       return await getTokenInfo(event.request, token)
     }
   }
