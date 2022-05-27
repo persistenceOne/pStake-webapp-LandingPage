@@ -12,11 +12,10 @@ const SectionOne = () => {
   const [count, setCount] = useState("0");
 
   const handleUserCount = async () => {
-    let env = "Mainnet";
 
-    let ethURL = CHAIN[process.env.REACT_APP_ENV].ethplorerAPI + CHAIN[env].CONTRACT_ADDRESSES.StkEth + "?apiKey=" + process.env.REACT_APP_ETHPLORER_API_KEY
-    let atomURL = CHAIN[process.env.REACT_APP_ENV].ethplorerAPI + CHAIN[env].CONTRACT_ADDRESSES.StkATOM + "?apiKey=" + process.env.REACT_APP_ETHPLORER_API_KEY
-    let xprtURL = CHAIN[process.env.REACT_APP_ENV].ethplorerAPI + CHAIN[env].CONTRACT_ADDRESSES.StkXPRT + "?apiKey=" + process.env.REACT_APP_ETHPLORER_API_KEY
+    let ethURL = CHAIN[process.env.REACT_APP_ENV].holderCountAPI.eth
+    let atomURL = CHAIN[process.env.REACT_APP_ENV].holderCountAPI.atom
+    let xprtURL = CHAIN[process.env.REACT_APP_ENV].holderCountAPI.xprt
 
     console.log("ethURL: ", ethURL);
     console.log("atomURL: ", atomURL);

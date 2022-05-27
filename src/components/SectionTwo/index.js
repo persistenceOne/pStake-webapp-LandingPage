@@ -130,12 +130,59 @@ const SectionTwo = () => {
               </h6>
             </div>
             <div className="col-lg-12">
+              <div className={"network-section cosmos-sub-section"}>
+                <div className="networklist-tiles">
+                  <h5 className={'text-center cosmos-title'}>Cosmos Based Assets</h5>
+                  <div className={'combine-section'}>
+                    <div className={'cosmos-section'}>
+                      <div className={"icon-section"}>
+                      <img src={asset1} alt={"Cosmos"} />
+                    </div>
+                    <div className={'sub-section'}>
+                      <h5>{t("COSMOS")}<span>&nbsp;{t("ATOM")}</span></h5>
+                      <h4>{atomAPR}%</h4>
+
+                    </div>
+                    </div>
+                    <div className={'cosmos-section'}>
+                      <div className={"icon-section"}>
+                      <img src={asset3} alt={"ETH"} />
+                    </div>
+                    <div className={'sub-section'}>
+                      <h5>{t("Persistence")}<span>&nbsp;{t("XPRT")}</span></h5>
+                      <h4>{xprtAPR}%</h4>
+                    </div>
+                    </div>
+                  </div>
+                  <div className={'cosmos-button'}>
+
+                  <a
+                      href={CHAIN[process.env.REACT_APP_ENV].atomURL}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                  >
+                    <h5>{t("START_STAKING")}</h5>
+
+                  </a>
+                  </div>
+                </div>
+                </div>
+                </div>
+            <div className="col-lg-12">
               <div className={"network-section"}>
                 <div className="networklist-tiles">
+                  <div className={'combine-section'}>
+                  <div className={'cosmos-section'}>
+                    <div className={"icon-section"}>
                   <img src={asset2} alt={"ETH"} />
-                  <h5>{t("Ethereum")}</h5>
-                  <h6>{t("ETH")}</h6>
+                    </div>
+                    <div className={'sub-section'}>
+
+                      <h5>{t("Ethereum")}<span>&nbsp;{t("ETH")}</span></h5>
                   <h4>{ethAPR}%</h4>
+                    </div>
+                  </div>
+                  </div>
                   <a
                     href={CHAIN[process.env.REACT_APP_ENV].ethURL}
                     rel="noopener noreferrer"
@@ -146,38 +193,21 @@ const SectionTwo = () => {
                 </div>
 
                 <div className="networklist-tiles">
-                  <img src={asset1} alt={"cosmos"} />
-                  <h5>{t("COSMOS")}</h5>
-                  <h6>{t("ATOM")}</h6>
-                  <h4>{atomAPR}%</h4>
-                  <a
-                    href={CHAIN[process.env.REACT_APP_ENV].atomURL}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <h5>{t("START_STAKING")}</h5>
-                  </a>
+                <div className="combine-section">
+                  <div className={'cosmos-section'}>
+                    <div className={"icon-section"}>
+
+                  <img src={asset4} alt={"cosmos"} />
+                    </div>
+                    <div className={'sub-section'}>
+                      <h5>{t("Solana")}<span>&nbsp;{t("SOL")}</span></h5>
+
+                    </div>
                 </div>
-                <div className="networklist-tiles">
-                  <img src={asset3} alt={"persistence"} />
-                  <h5>{t("Persistence")}</h5>
-                  <h6>{t("XPRT")}</h6>
-                  <h4>{xprtAPR}%</h4>
-                  <a
-                    href={CHAIN[process.env.REACT_APP_ENV].xprtURL}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <h5>{t("START_STAKING")}</h5>
-                  </a>
                 </div>
-                <div className="networklist-tiles">
-                  <img src={asset4} alt={"solana"} />
-                  <h5>{t("Solana")}</h5>
-                  <h6>{t("SOL")}</h6>
-                  <h4>&nbsp;</h4>
 
                   <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
+
                 </div>
               </div>
             </div>
