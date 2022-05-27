@@ -1,0 +1,59 @@
+.footer-section {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(150.28% 150.28% at 50% -50.28%, #372627 0%, #030303 55.21%);
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  .icon-list {
+    display: flex;
+    justify-content: center;
+    .icon-box {
+      span{
+        color: #676767;
+      }
+      padding: 0 10px;
+      svg {
+        width: 18px;
+        fill: #515257;
+        &:hover {
+          fill: #e50913;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .terms {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 131.4%;
+    text-align: center;
+    color: #70747c;
+    a {
+      color: #70747c;
+      transition: all 0.5s ease-in-out;
+      &:hover {
+        color: #e50913;
+        text-decoration: none;
+      }
+    }
+  }
+  .privacy-terms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      color: #70747c;
+      font-size: 14px;
+      &:first-child {
+        border-right: 1px solid #70747c;
+      }
+      padding: 0 20px;
+      &:hover {
+        color: #ffffff;
+        cursor: pointer;
+      }
+    }
+  }
+}
