@@ -91,7 +91,7 @@ const SectionOne = () => {
                 <span className="vline"></span>
               </div>*/}
               <div className="stats-section">
-                <h2>5019</h2>
+                <h2>{count}</h2>
                 <h6>{t("NUMBEROFSTAKERS")}</h6>
                 <span className="vline"></span>
               </div>
