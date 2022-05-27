@@ -90,7 +90,7 @@ async function getTokenInfo(request, token) {
   const cacheKey = new Request(cacheUrl.toString(), request);
   const cache = caches.default;
 
-  let tokenUrl = `${tokenEthplorer[token]}?apiKey=${ETHPLORER_API_KEY}`
+  let tokenUrl = `${tokenEthplorer[token]}?apiKey=${REACT_APP_ETHPLORER_API_KEY}`
 
   // Check whether the value is already available in the cache
   // if not, you will need to fetch it from origin, and store it in the cache
