@@ -14,7 +14,7 @@ export const CHAIN = {
     ethAPR: "~4.05",
     ethURL: "https://testnet.eth.pstake.finance/",
     atomURL: "https://testnet.cosmos.pstake.finance/",
-    xprtURL: "https://testnet.app.pstake.finance/xprt/",
+    xprtURL: "https://testnet.cosmos.pstake.finance/",
     DEFILAMA_API: "https://api.llama.fi/protocol/pstake",
     getETHPrice: "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD",
     ethplorerAPI: "https://api.ethplorer.io/getTokenInfo/",
@@ -41,7 +41,7 @@ export const CHAIN = {
     ethAPR: "~4.05",
     ethURL: "https://staging.eth.pstake.finance/",
     atomURL: "https://staging.cosmos.pstake.finance/",
-    xprtURL: "https://staging.app.pstake.finance/xprt/",
+    xprtURL: "https://staging.cosmos.pstake.finance/",
     DEFILAMA_API: "https://api.llama.fi/protocol/pstake",
     ethplorerAPI: "https://api.ethplorer.io/getTokenInfo/",
     getETHPrice:
@@ -69,7 +69,7 @@ export const CHAIN = {
     ethAPR: "~4.05",
     ethURL: "https://eth.pstake.finance/",
     atomURL: "https://cosmos.pstake.finance/",
-    xprtURL: "https://app.pstake.finance/xprt/",
+    xprtURL: "https://cosmos.pstake.finance/",
     DEFILAMA_API: "https://api.llama.fi/protocol/pstake",
     ethplorerAPI: "https://api.ethplorer.io/getTokenInfo/",
     getETHPrice:

@@ -25,6 +25,10 @@ const SectionOne = () => {
     const getAtomUser = await axios.get(atomURL);
     const getXprtUser = await axios.get(xprtURL);
 
+    console.log("getEthUser: ", getEthUser);
+    console.log("getAtomUser: ", getAtomUser);
+    console.log("getXprtUser: ", getXprtUser);
+
     if(getEthUser && getAtomUser && getXprtUser){
       let userCount = getEthUser.data.holdersCount +  getAtomUser.data.holdersCount + getXprtUser.data.holdersCount;
       setCount(userCount)
