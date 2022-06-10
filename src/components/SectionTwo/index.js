@@ -4,6 +4,7 @@ import asset1 from "../../assets/atom.svg";
 import asset2 from "../../assets/stkETH.svg";
 import asset3 from "../../assets/xprt.svg";
 import asset4 from "../../assets/sol.svg";
+import asset5 from "../../assets/avax.svg";
 import "../SectionTwo/index.css";
 import {CHAIN} from "../../constants/config";
 import {useEffect, useState} from "react";
@@ -183,6 +184,7 @@ const SectionTwo = () => {
                     </div>
                   </div>
                   </div>
+
                   <a
                     href={CHAIN[process.env.REACT_APP_ENV].ethURL}
                     rel="noopener noreferrer"
@@ -197,7 +199,7 @@ const SectionTwo = () => {
                   <div className={'cosmos-section'}>
                     <div className={"icon-section"}>
 
-                  <img src={asset4} alt={"cosmos"} />
+                  <img src={asset4} alt={"Solana"} />
                     </div>
                     <div className={'sub-section'}>
                       <h5>{t("Solana")}<span>&nbsp;{t("SOL")}</span></h5>
@@ -206,9 +208,39 @@ const SectionTwo = () => {
                 </div>
                 </div>
 
-                  <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
-
+                  {/*<h5 className={"coming-soon"}>{t("Coming Soon")}</h5>*/}
+                  <a
+                      href={CHAIN[process.env.REACT_APP_ENV].solURL}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                  >
+                    <h5>{t("START_STAKING")}</h5>
+                  </a>
                 </div>
+                <div className="networklist-tiles">
+                  <div className="combine-section">
+                    <div className={'cosmos-section'}>
+                      <div className={"icon-section"}>
+
+                        <img src={asset5} alt={"Avax"} />
+                      </div>
+                      <div className={'sub-section'}>
+                        <h5>{t("Avalanche")}<span>&nbsp;{t("AVAX")}</span></h5>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  {/*<h5 className={"coming-soon"}>{t("Coming Soon")}</h5>*/}
+                  <a
+                      href={CHAIN[process.env.REACT_APP_ENV].avaxURL}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                  >
+                    <h5>{t("START_STAKING")}</h5>
+                  </a>
+                </div>
+
               </div>
             </div>
           </div>

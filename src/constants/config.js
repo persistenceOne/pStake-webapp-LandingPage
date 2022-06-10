@@ -4,7 +4,7 @@ export const PSTAKE_YOUTUBE_URL =
   "https://www.youtube.com/channel/UC5wqI1ZRdkCjWWVOCQdhxLQ/featured";
 export const PSTAKE_REDDIT_URL = "https://www.reddit.com/r/PersistenceOne/";
 export const PSTAKE_DISCORD_URL = "https://discord.gg/vyvp3scWnH";
-export const PSTAKE_GITHUB_URL = "";
+export const PSTAKE_GITHUB_URL = "https://github.com/persistenceOne";
 
 export const CHAIN = {
   Testnet: {
@@ -12,6 +12,8 @@ export const CHAIN = {
     inflationPeriod: 365,
     stkETHDeployTxHash: "0xa532ae226472c1d38bc643046c5e6816e04c5b50e4785ad1ddf8db9efcd421be",
     ethAPR: "~4.05",
+    solURL:"https://stksol-ui.auditdev.workers.dev/",
+    avaxURL:"https://stk-avax-ui.auditdev.workers.dev/",
     ethURL: "https://testnet.eth.pstake.finance/",
     atomURL: "https://testnet.cosmos.pstake.finance/",
     xprtURL: "https://testnet.cosmos.pstake.finance/",
