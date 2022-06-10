@@ -12,6 +12,8 @@ export const CHAIN = {
     inflationPeriod: 365,
     stkETHDeployTxHash: "0xa532ae226472c1d38bc643046c5e6816e04c5b50e4785ad1ddf8db9efcd421be",
     ethAPR: "~4.05",
+    solURL:"https://stksol-ui.auditdev.workers.dev/",
+    avaxURL:"https://stk-avax-ui.auditdev.workers.dev/",
     ethURL: "https://testnet.eth.pstake.finance/",
     atomURL: "https://testnet.cosmos.pstake.finance/",
     xprtURL: "https://testnet.cosmos.pstake.finance/",
