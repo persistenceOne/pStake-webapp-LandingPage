@@ -31,9 +31,9 @@ export const CHAIN = {
       StkXPRT: "0x048546d9Df54b5cD1d7631484453b0ce8D13f17B",
     },
     holderCountAPI:{
-      eth: "https://testnet.app.pstake.finance/getTokenInfo/eth",
-      atom: "https://testnet.app.pstake.finance/getTokenInfo/atom",
-      xprt: "https://testnet.app.pstake.finance/getTokenInfo/xprt",
+      eth: "https://api.persistence.one/ethplorer/getTokenInfo/eth",
+      atom: "https://api.persistence.one/ethplorer/getTokenInfo/atom",
+      xprt: "https://api.persistence.one/ethplorer/getTokenInfo/xprt",
     }
   },
   Staging: {
@@ -59,9 +59,9 @@ export const CHAIN = {
       StkXPRT: "0x45e007750Cc74B1D2b4DD7072230278d9602C499",
     },
     holderCountAPI:{
-      eth: "https://staging.app.pstake.finance/getTokenInfo/eth",
-      atom: "https://staging.app.pstake.finance/getTokenInfo/atom",
-      xprt: "https://staging.app.pstake.finance/getTokenInfo/xprt",
+      eth: "https://api.persistence.one/ethplorer/getTokenInfo/eth",
+      atom: "https://api.persistence.one/ethplorer/getTokenInfo/atom",
+      xprt: "https://api.persistence.one/ethplorer/getTokenInfo/xprt",
     }
   },
   Mainnet: {
@@ -87,9 +87,9 @@ export const CHAIN = {
       StkXPRT: "0x45e007750Cc74B1D2b4DD7072230278d9602C499",
     },
     holderCountAPI:{
-      eth: "https://app.pstake.finance/getTokenInfo/eth",
-      atom: "https://app.pstake.finance/getTokenInfo/atom",
-      xprt: "https://app.pstake.finance/getTokenInfo/xprt",
+      eth: "https://api.persistence.one/ethplorer/getTokenInfo/eth",
+      atom: "https://api.persistence.one/ethplorer/getTokenInfo/atom",
+      xprt: "https://api.persistence.one/ethplorer/getTokenInfo/xprt",
     }
   },
 };
