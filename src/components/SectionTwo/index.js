@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import asset1 from "../../assets/atom.svg";
 import asset2 from "../../assets/stkETH.svg";
 import asset3 from "../../assets/xprt.svg";
-import asset4 from "../../assets/sol.svg";
+import asset4 from "../../assets/bnb.svg";
 import "../SectionTwo/index.css";
 import {CHAIN} from "../../constants/config";
 import {useEffect, useState} from "react";
@@ -196,18 +196,14 @@ const SectionTwo = () => {
                 <div className="combine-section">
                   <div className={'cosmos-section'}>
                     <div className={"icon-section"}>
-
-                  <img src={asset4} alt={"cosmos"} />
+                      <img src={asset4} alt={"cosmos"} />
                     </div>
                     <div className={'sub-section'}>
-                      <h5>{t("Solana")}<span>&nbsp;{t("SOL")}</span></h5>
-
+                      <h5>{t("Binance")}<span>&nbsp;{t("BNB")}</span></h5>
                     </div>
+                  </div>
                 </div>
-                </div>
-
                   <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
-
                 </div>
               </div>
             </div>
