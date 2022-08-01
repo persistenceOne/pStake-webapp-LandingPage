@@ -16,6 +16,7 @@ const SectionTwo = () => {
   const { t } = useTranslation();
 
   const [ethAPR, setEthAPR] = useState("0.00");
+  const [bnbAPR, setBNBAPR] = useState("0.00");
   const [atomAPR, setAtomAPR] = useState("0.00");
   const [xprtAPR, setXprtAPR] = useState("0.00");
 
@@ -61,6 +62,7 @@ const SectionTwo = () => {
     console.log("apr: ", apr.toFixed(2));*/
     //setEthAPR(apr.toFixed(2));
     setEthAPR(CHAIN[process.env.REACT_APP_ENV].ethAPR);
+    setBNBAPR(CHAIN[process.env.REACT_APP_ENV].bnbAPR)
   };
 
   const handleAtomAPR = async () => {
@@ -203,6 +205,7 @@ const SectionTwo = () => {
                     </div>
                     <div className={'sub-section'}>
                       <h5>{t("Binance")}<span>&nbsp;{t("BNB")}</span></h5>
+                      <h4>{bnbAPR}%</h4>
                     </div>
                 </div>
                 </div>
