@@ -186,7 +186,6 @@ const SectionTwo = () => {
                     </div>
                   </div>
                   </div>
-
                   <a
                     href={CHAIN[process.env.REACT_APP_ENV].ethURL}
                     rel="noopener noreferrer"
@@ -200,16 +199,14 @@ const SectionTwo = () => {
                 <div className="combine-section">
                   <div className={'cosmos-section'}>
                     <div className={"icon-section"}>
-
-                  <img src={asset4} alt={"Binance"} />
+                      <img src={asset4} alt={"Binance"} />
                     </div>
                     <div className={'sub-section'}>
                       <h5>{t("Binance")}<span>&nbsp;{t("BNB")}</span></h5>
                       <h4>{bnbAPR}%</h4>
                     </div>
+                  </div>
                 </div>
-                </div>
-
                   <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
                   {/*<a href={CHAIN[process.env.REACT_APP_ENV].bnbURL}*/}
                   {/*    rel="noopener noreferrer"*/}
