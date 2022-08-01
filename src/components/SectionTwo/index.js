@@ -210,13 +210,13 @@ const SectionTwo = () => {
                 </div>
                 </div>
 
-                  {/*<h5 className={"coming-soon"}>{t("Coming Soon")}</h5>*/}
-                  <a href={CHAIN[process.env.REACT_APP_ENV].bnbURL}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                  >
-                    <h5>{t("START_STAKING")}</h5>
-                  </a>
+                  <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
+                  {/*<a href={CHAIN[process.env.REACT_APP_ENV].bnbURL}*/}
+                  {/*    rel="noopener noreferrer"*/}
+                  {/*    target="_blank"*/}
+                  {/*>*/}
+                  {/*  <h5>{t("START_STAKING")}</h5>*/}
+                  {/*</a>*/}
                 </div>
               </div>
             </div>
