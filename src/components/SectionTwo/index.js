@@ -4,6 +4,7 @@ import asset1 from "../../assets/atom.svg";
 import asset2 from "../../assets/stkETH.svg";
 import asset3 from "../../assets/xprt.svg";
 import asset4 from "../../assets/bnb.svg";
+import asset5 from "../../assets/avax.svg";
 import "../SectionTwo/index.css";
 import {CHAIN} from "../../constants/config";
 import {useEffect, useState} from "react";
@@ -15,6 +16,7 @@ const SectionTwo = () => {
   const { t } = useTranslation();
 
   const [ethAPR, setEthAPR] = useState("0.00");
+  const [bnbAPR, setBNBAPR] = useState("0.00");
   const [atomAPR, setAtomAPR] = useState("0.00");
   const [xprtAPR, setXprtAPR] = useState("0.00");
 
@@ -60,6 +62,7 @@ const SectionTwo = () => {
     console.log("apr: ", apr.toFixed(2));*/
     //setEthAPR(apr.toFixed(2));
     setEthAPR(CHAIN[process.env.REACT_APP_ENV].ethAPR);
+    setBNBAPR(CHAIN[process.env.REACT_APP_ENV].bnbAPR)
   };
 
   const handleAtomAPR = async () => {
@@ -196,14 +199,21 @@ const SectionTwo = () => {
                 <div className="combine-section">
                   <div className={'cosmos-section'}>
                     <div className={"icon-section"}>
-                      <img src={asset4} alt={"cosmos"} />
+                      <img src={asset4} alt={"Binance"} />
                     </div>
                     <div className={'sub-section'}>
                       <h5>{t("Binance")}<span>&nbsp;{t("BNB")}</span></h5>
+                      <h4>{bnbAPR}%</h4>
                     </div>
                   </div>
                 </div>
                   <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
+                  {/*<a href={CHAIN[process.env.REACT_APP_ENV].bnbURL}*/}
+                  {/*    rel="noopener noreferrer"*/}
+                  {/*    target="_blank"*/}
+                  {/*>*/}
+                  {/*  <h5>{t("START_STAKING")}</h5>*/}
+                  {/*</a>*/}
                 </div>
               </div>
             </div>

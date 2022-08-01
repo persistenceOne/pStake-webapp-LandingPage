@@ -12,7 +12,11 @@ export const CHAIN = {
     inflationPeriod: 365,
     stkETHDeployTxHash: "0xa532ae226472c1d38bc643046c5e6816e04c5b50e4785ad1ddf8db9efcd421be",
     ethAPR: "~4.05",
+    bnbAPR: "~5.3",
+    solURL:"https://stksol-ui.auditdev.workers.dev/",
+    avaxURL:"https://stk-avax-ui.auditdev.workers.dev/",
     ethURL: "https://testnet.eth.pstake.finance/",
+    bnbURL: "https://staging.bnb.pstake.finance/",
     atomURL: "https://testnet.cosmos.pstake.finance/",
     xprtURL: "https://testnet.cosmos.pstake.finance/",
     DEFILAMA_API: "https://api.llama.fi/protocol/pstake",
@@ -29,9 +33,9 @@ export const CHAIN = {
       StkXPRT: "0x048546d9Df54b5cD1d7631484453b0ce8D13f17B",
     },
     holderCountAPI:{
-      eth: "https://testnet.app.pstake.finance/getTokenInfo/eth",
-      atom: "https://testnet.app.pstake.finance/getTokenInfo/atom",
-      xprt: "https://testnet.app.pstake.finance/getTokenInfo/xprt",
+      eth: "https://api.persistence.one/ethplorer/getTokenInfo/eth",
+      atom: "https://api.persistence.one/ethplorer/getTokenInfo/atom",
+      xprt: "https://api.persistence.one/ethplorer/getTokenInfo/xprt",
     }
   },
   Staging: {
@@ -39,9 +43,11 @@ export const CHAIN = {
     inflationPeriod: 365,
     stkETHDeployTxHash: "0x5cfe093883b26ca810ab4a2cf074244c2493a14371c0a24a068efe864ef97c67",
     ethAPR: "~4.05",
+    bnbAPR: "~5.3",
     ethURL: "https://staging.eth.pstake.finance/",
     atomURL: "https://staging.cosmos.pstake.finance/",
     xprtURL: "https://staging.cosmos.pstake.finance/",
+    bnbURL: "https://staging.bnb.pstake.finance/",
     DEFILAMA_API: "https://api.llama.fi/protocol/pstake",
     ethplorerAPI: "https://api.ethplorer.io/getTokenInfo/",
     getETHPrice:
@@ -57,9 +63,9 @@ export const CHAIN = {
       StkXPRT: "0x45e007750Cc74B1D2b4DD7072230278d9602C499",
     },
     holderCountAPI:{
-      eth: "https://staging.app.pstake.finance/getTokenInfo/eth",
-      atom: "https://staging.app.pstake.finance/getTokenInfo/atom",
-      xprt: "https://staging.app.pstake.finance/getTokenInfo/xprt",
+      eth: "https://api.persistence.one/ethplorer/getTokenInfo/eth",
+      atom: "https://api.persistence.one/ethplorer/getTokenInfo/atom",
+      xprt: "https://api.persistence.one/ethplorer/getTokenInfo/xprt",
     }
   },
   Mainnet: {
@@ -67,6 +73,7 @@ export const CHAIN = {
     inflationPeriod: 365,
     stkETHDeployTxHash: "0x5cfe093883b26ca810ab4a2cf074244c2493a14371c0a24a068efe864ef97c67",
     ethAPR: "~4.05",
+    bnbAPR: "~5.3",
     ethURL: "https://eth.pstake.finance/",
     atomURL: "https://cosmos.pstake.finance/",
     xprtURL: "https://cosmos.pstake.finance/",
@@ -85,9 +92,9 @@ export const CHAIN = {
       StkXPRT: "0x45e007750Cc74B1D2b4DD7072230278d9602C499",
     },
     holderCountAPI:{
-      eth: "https://app.pstake.finance/getTokenInfo/eth",
-      atom: "https://app.pstake.finance/getTokenInfo/atom",
-      xprt: "https://app.pstake.finance/getTokenInfo/xprt",
+      eth: "https://api.persistence.one/ethplorer/getTokenInfo/eth",
+      atom: "https://api.persistence.one/ethplorer/getTokenInfo/atom",
+      xprt: "https://api.persistence.one/ethplorer/getTokenInfo/xprt",
     }
   },
 };
