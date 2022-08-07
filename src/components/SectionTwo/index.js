@@ -4,7 +4,8 @@ import asset1 from "../../assets/atom.svg";
 import asset2 from "../../assets/stkETH.svg";
 import asset3 from "../../assets/xprt.svg";
 import asset4 from "../../assets/bnb.svg";
-import asset5 from "../../assets/avax.svg";
+import avax from "../../assets/avax.svg";
+import sol from "../../assets/sol.svg";
 import "../SectionTwo/index.css";
 import {CHAIN} from "../../constants/config";
 import {useEffect, useState} from "react";
@@ -132,91 +133,108 @@ const SectionTwo = () => {
                 network below to get started
               </h6>
             </div>
-            <div className="col-lg-12">
-              <div className={"network-section cosmos-sub-section"}>
-                <div className="networklist-tiles">
-                  <h5 className={'text-center cosmos-title'}>Cosmos Based Assets</h5>
-                  <div className={'combine-section'}>
-                    <div className={'cosmos-section'}>
-                      <div className={"icon-section"}>
-                      <img src={asset1} alt={"Cosmos"} />
-                    </div>
-                    <div className={'sub-section'}>
-                      <h5>{t("COSMOS")}<span>&nbsp;{t("ATOM")}</span></h5>
-                      <h4>{atomAPR}%</h4>
-
-                    </div>
-                    </div>
-                    <div className={'cosmos-section'}>
-                      <div className={"icon-section"}>
-                      <img src={asset3} alt={"ETH"} />
-                    </div>
-                    <div className={'sub-section'}>
-                      <h5>{t("Persistence")}<span>&nbsp;{t("XPRT")}</span></h5>
-                      <h4>{xprtAPR}%</h4>
-                    </div>
-                    </div>
-                  </div>
-                  <div className={'cosmos-button'}>
-
-                  <a
-                      href={CHAIN[process.env.REACT_APP_ENV].atomURL}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                  >
-                    <h5>{t("START_STAKING")}</h5>
-
-                  </a>
-                  </div>
-                </div>
-                </div>
-                </div>
-            <div className="col-lg-12">
-              <div className={"network-section"}>
-                <div className="networklist-tiles">
-                  <div className={'combine-section'}>
-                  <div className={'cosmos-section'}>
-                    <div className={"icon-section"}>
-                  <img src={asset2} alt={"ETH"} />
-                    </div>
-                    <div className={'sub-section'}>
-
-                      <h5>{t("Ethereum")}<span>&nbsp;{t("ETH")}</span></h5>
-                  <h4>{ethAPR}%</h4>
-                    </div>
-                  </div>
-                  </div>
-                  <a
-                    href={CHAIN[process.env.REACT_APP_ENV].ethURL}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <h5>{t("START_STAKING")}</h5>
-                  </a>
-                </div>
-
-                <div className="networklist-tiles">
-                <div className="combine-section">
-                  <div className={'cosmos-section'}>
-                    <div className={"icon-section"}>
+            <div className="row">
+              <div className="network-list">
+                <div className='network-section'>
+                  <div className="network-body">
+                    <div className="icon-section">
                       <img src={asset4} alt={"Binance"} />
                     </div>
                     <div className={'sub-section'}>
                       <h5>{t("Binance")}<span>&nbsp;{t("BNB")}</span></h5>
-                      <h4>{bnbAPR}%</h4>
+                      <h4  className="value">{bnbAPR}%</h4>
+                    </div>
+                  </div>
+                  <a href={CHAIN[process.env.REACT_APP_ENV].bnbURL}
+                      rel="noopener noreferrer"
+                      target="_blank">
+                    <h5>{t("START_STAKING")}</h5>
+                  </a>
+                  {/*<h5 className={"coming-soon"}>{t("Coming Soon")}</h5>*/}
+                </div>
+
+                <div className='network-section'>
+                  <div className="network-body">
+                    <div className={"icon-section"}>
+                      <img src={asset2} alt={"ETH"} />
+                    </div>
+                    <div className={'sub-section'}>
+                      <h5>{t("Ethereum")}<span>&nbsp;{t("ETH")}</span></h5>
+                      <h4 className="value">{ethAPR}%</h4>
+                    </div>
+                  </div>
+                  <a
+                      href={CHAIN[process.env.REACT_APP_ENV].ethURL}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                  >
+                    <h5>{t("START_STAKING")}</h5>
+                  </a>
+                </div>
+            </div>
+            </div>
+            <div className="row">
+              <div className="network-list">
+                <div className='network-section multi'>
+                <p className="cosmos-title">Cosmos Based Assets</p>
+                <div className="list">
+                  <div className="network-body">
+                    <div className={"icon-section"}>
+                      <img src={asset1} alt={"Cosmos"} />
+                    </div>
+                    <div className={'sub-section'}>
+                      <h5>{t("COSMOS")}<span>&nbsp;{t("ATOM")}</span></h5>
+                      <h4  className="value">{atomAPR}%</h4>
+                    </div>
+                  </div>
+
+                  <div className="network-body">
+                    <div className={"icon-section"}>
+                      <img src={asset3} alt={"ETH"} />
+                    </div>
+                    <div className={'sub-section'}>
+                      <h5>{t("Persistence")}<span>&nbsp;{t("XPRT")}</span></h5>
+                      <h4  className="value">{xprtAPR}%</h4>
                     </div>
                   </div>
                 </div>
-                  <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
-                  {/*<a href={CHAIN[process.env.REACT_APP_ENV].bnbURL}*/}
-                  {/*    rel="noopener noreferrer"*/}
-                  {/*    target="_blank"*/}
-                  {/*>*/}
-                  {/*  <h5>{t("START_STAKING")}</h5>*/}
-                  {/*</a>*/}
-                </div>
+                <a
+                    href={CHAIN[process.env.REACT_APP_ENV].atomURL}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                  <h5>{t("START_STAKING")}</h5>
+                </a>
+              </div>
               </div>
             </div>
+              <div className="row">
+                <div className="network-list">
+                  <div className='network-section'>
+                    <div className="network-body">
+                      <div className="icon-section">
+                        <img src={avax} alt={"avax"} />
+                      </div>
+                      <div className={'sub-section'}>
+                        <h5>Avalanche<span>&nbsp;{t("AVAX")}</span></h5>
+                      </div>
+                    </div>
+                    <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
+                  </div>
+
+                  <div className='network-section'>
+                    <div className="network-body">
+                      <div className={"icon-section"}>
+                        <img src={sol} alt={"sol"} />
+                      </div>
+                      <div className={'sub-section'}>
+                        <h5>{t("SOLANA")}<span>&nbsp;{t("SOL")}</span></h5>
+                      </div>
+                    </div>
+                    <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </section>
