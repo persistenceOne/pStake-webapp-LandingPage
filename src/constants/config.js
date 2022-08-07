@@ -77,6 +77,7 @@ export const CHAIN = {
     ethURL: "https://eth.pstake.finance/",
     atomURL: "https://cosmos.pstake.finance/",
     xprtURL: "https://cosmos.pstake.finance/",
+    bnbURL: "https://bnb.pstake.finance/",
     DEFILAMA_API: "https://api.llama.fi/protocol/pstake",
     ethplorerAPI: "https://api.ethplorer.io/getTokenInfo/",
     getETHPrice:
