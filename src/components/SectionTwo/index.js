@@ -4,7 +4,8 @@ import asset1 from "../../assets/atom.svg";
 import asset2 from "../../assets/stkETH.svg";
 import asset3 from "../../assets/xprt.svg";
 import asset4 from "../../assets/bnb.svg";
-import asset5 from "../../assets/avax.svg";
+import avax from "../../assets/avax.svg";
+import sol from "../../assets/sol.svg";
 import "../SectionTwo/index.css";
 import {CHAIN} from "../../constants/config";
 import {useEffect, useState} from "react";
@@ -132,7 +133,7 @@ const SectionTwo = () => {
                 network below to get started
               </h6>
             </div>
-            <div className="col-lg-12">
+            <div className="row">
               <div className="network-list">
                 <div className='network-section'>
                   <div className="network-body">
@@ -171,6 +172,7 @@ const SectionTwo = () => {
                   </a>
                 </div>
             </div>
+            </div>
             <div className="row">
               <div className="network-list">
                 <div className='network-section multi'>
@@ -206,7 +208,33 @@ const SectionTwo = () => {
               </div>
               </div>
             </div>
-            </div>
+              <div className="row">
+                <div className="network-list">
+                  <div className='network-section'>
+                    <div className="network-body">
+                      <div className="icon-section">
+                        <img src={avax} alt={"avax"} />
+                      </div>
+                      <div className={'sub-section'}>
+                        <h5>Avalanche<span>&nbsp;{t("AVAX")}</span></h5>
+                      </div>
+                    </div>
+                    <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
+                  </div>
+
+                  <div className='network-section'>
+                    <div className="network-body">
+                      <div className={"icon-section"}>
+                        <img src={sol} alt={"sol"} />
+                      </div>
+                      <div className={'sub-section'}>
+                        <h5>{t("SOLANA")}<span>&nbsp;{t("SOL")}</span></h5>
+                      </div>
+                    </div>
+                    <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </section>
