@@ -28,7 +28,7 @@
     .network-section{
       background: rgba(40, 40, 40, 0.5);
       border-radius: 0px;
-      width: 232px;
+      width: 250px;
       text-align: center;
       color: #fff;
       padding: 35px 24px;
@@ -55,7 +55,8 @@
         .list{
           display: flex;
           .network-body{
-            margin: 15px;
+            width: 232px;
+            //margin: 15px;
           }
         }
       }

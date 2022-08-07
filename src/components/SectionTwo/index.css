@@ -21,7 +21,7 @@
     .section-2 .network-list .network-section {
       background: rgba(40, 40, 40, 0.5);
       border-radius: 0px;
-      width: 232px;
+      width: 250px;
       text-align: center;
       color: #fff;
       padding: 35px 24px;
@@ -42,7 +42,7 @@
         .section-2 .network-list .network-section.multi .list {
           display: flex; }
           .section-2 .network-list .network-section.multi .list .network-body {
-            margin: 15px; }
+            width: 232px; }
   .section-2 .dropdown-menu.show {
     background: #2E2E2E;
     padding: 15px 0;

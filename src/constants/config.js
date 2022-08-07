@@ -16,7 +16,7 @@ export const CHAIN = {
     solURL:"https://stksol-ui.auditdev.workers.dev/",
     avaxURL:"https://stk-avax-ui.auditdev.workers.dev/",
     ethURL: "https://testnet.eth.pstake.finance/",
-    bnbURL: "https://staging.bnb.pstake.finance/",
+    bnbURL: "https://testnet.bnb.pstake.finance/",
     atomURL: "https://testnet.cosmos.pstake.finance/",
     xprtURL: "https://testnet.cosmos.pstake.finance/",
     DEFILAMA_API: "https://api.llama.fi/protocol/pstake",
