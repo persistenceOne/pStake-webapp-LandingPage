@@ -142,7 +142,7 @@ const SectionTwo = () => {
                     </div>
                     <div className={'sub-section'}>
                       <h5>{t("Binance")}<span>&nbsp;{t("BNB")}</span></h5>
-                      <h4  className="value">{bnbAPR}%</h4>
+                      <h4  className="value">{bnbAPR}% {t("APY")}</h4>
                     </div>
                   </div>
                   <a href={CHAIN[process.env.REACT_APP_ENV].bnbURL}
@@ -160,7 +160,7 @@ const SectionTwo = () => {
                     </div>
                     <div className={'sub-section'}>
                       <h5>{t("Ethereum")}<span>&nbsp;{t("ETH")}</span></h5>
-                      <h4 className="value">{ethAPR}%</h4>
+                      <h4 className="value">{ethAPR}% {t("APY")}</h4>
                     </div>
                   </div>
                   <a
@@ -184,7 +184,7 @@ const SectionTwo = () => {
                     </div>
                     <div className={'sub-section'}>
                       <h5>{t("COSMOS")}<span>&nbsp;{t("ATOM")}</span></h5>
-                      <h4  className="value">{atomAPR}%</h4>
+                      <h4  className="value">{atomAPR}% {t("APY")}</h4>
                     </div>
                   </div>
 
@@ -194,7 +194,7 @@ const SectionTwo = () => {
                     </div>
                     <div className={'sub-section'}>
                       <h5>{t("Persistence")}<span>&nbsp;{t("XPRT")}</span></h5>
-                      <h4  className="value">{xprtAPR}%</h4>
+                      <h4  className="value">{xprtAPR}% {t("APY")}</h4>
                     </div>
                   </div>
                 </div>
