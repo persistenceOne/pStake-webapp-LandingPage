@@ -126,7 +126,7 @@ const SectionTwo = () => {
       <section className="section-2 stake-section" id="sectiontwo">
         <div className="container">
           <div className="row">
-            <div className="heading">
+            <div className="heading mt-4 mb-4">
               <h4>Supported Networks</h4>
               <h6>
                 Stake your PoS assets while earning DeFi yields. Select a
