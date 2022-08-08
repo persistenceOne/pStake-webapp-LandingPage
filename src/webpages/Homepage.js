@@ -1,6 +1,5 @@
 import React from "react";
 import pstakelogo from "../assets/pstakelogo.svg";
-import SectionOne from "../components/SectionOne";
 import SectionTwo from "../components/SectionTwo";
 import Footer from "../components/Footer";
 
@@ -12,7 +11,6 @@ const homePage = () => {
       </div>
       <div className="container">
         <div className="row">
-          <SectionOne />
           <SectionTwo />
           <Footer />
         </div>
