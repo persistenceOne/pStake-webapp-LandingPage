@@ -1,26 +1,26 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import asset1 from '../../assets/atom.svg';
-import asset2 from '../../assets/stkETH.svg';
-import asset3 from '../../assets/xprt.svg';
-import asset4 from '../../assets/bnb.svg';
-import migrate1 from '../../assets/migrate_logo_1.svg';
-import migrate2 from '../../assets/migrate_logo_2.svg';
-import right_arrow from '../../assets/right_arrow.svg';
-import learn_more_arrow from '../../assets/learn_more_arrow.svg';
-import '../SectionTwo/index.css';
-import { CHAIN } from '../../constants/config';
-import { useEffect, useState } from 'react';
-import { getContractInstance } from '../../actions/utils';
-import BigNumber from 'bignumber.js';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import asset1 from "../../assets/atom.svg";
+import asset2 from "../../assets/stkETH.svg";
+import asset3 from "../../assets/xprt.svg";
+import asset4 from "../../assets/bnb.svg";
+import migrate1 from "../../assets/migrate_logo_1.svg";
+import migrate2 from "../../assets/migrate_logo_2.svg";
+import right_arrow from "../../assets/right_arrow.svg";
+import learn_more_arrow from "../../assets/learn_more_arrow.svg";
+import "../SectionTwo/index.css";
+import { CHAIN } from "../../constants/config";
+import { useEffect, useState } from "react";
+import { getContractInstance } from "../../actions/utils";
+import BigNumber from "bignumber.js";
 
 const SectionTwo = () => {
   const { t } = useTranslation();
 
-  const [ethAPR, setEthAPR] = useState('0.00');
-  const [bnbAPR, setBNBAPR] = useState('0.00');
-  const [atomAPR, setAtomAPR] = useState('0.00');
-  const [xprtAPR, setXprtAPR] = useState('0.00');
+  const [ethAPR, setEthAPR] = useState("0.00");
+  const [bnbAPR, setBNBAPR] = useState("0.00");
+  const [atomAPR, setAtomAPR] = useState("0.00");
+  const [xprtAPR, setXprtAPR] = useState("0.00");
 
   const handleEthAPR = async () => {
     /*let web3Local;
@@ -71,11 +71,11 @@ const SectionTwo = () => {
     let instance = await getContractInstance(stkATOM_SC);
     if (instance) {
       const props = await instance.methods.getRewardRate().call();
-      console.log('atom props: ', props);
+      console.log("atom props: ", props);
       if (props) {
-        const len = props['rewardRate'].length;
-        const rewardRate = new BigNumber(props['rewardRate'][len - 1]);
-        const valueDivisor = new BigNumber(props['valueDivisor']);
+        const len = props["rewardRate"].length;
+        const rewardRate = new BigNumber(props["rewardRate"][len - 1]);
+        const valueDivisor = new BigNumber(props["valueDivisor"]);
         const mulData = (
           3600 *
           24 *
@@ -84,7 +84,7 @@ const SectionTwo = () => {
         const mulData1 = new BigNumber(mulData);
 
         let rewards = rewardRate.multipliedBy(mulData1).dividedBy(valueDivisor);
-        console.log('atom rewards: ', rewards.toString());
+        console.log("atom rewards: ", rewards.toString());
         setAtomAPR(rewards.toFixed(2));
         // setLoading(false);
       }
@@ -97,11 +97,11 @@ const SectionTwo = () => {
     let instance = await getContractInstance(stkXprt_SC);
     if (instance) {
       const props = await instance.methods.getRewardRate().call();
-      console.log('xprt props: ', props);
+      console.log("xprt props: ", props);
       if (props) {
-        const len = props['rewardRate'].length;
-        const rewardRate = new BigNumber(props['rewardRate'][len - 1]);
-        const valueDivisor = new BigNumber(props['valueDivisor']);
+        const len = props["rewardRate"].length;
+        const rewardRate = new BigNumber(props["rewardRate"][len - 1]);
+        const valueDivisor = new BigNumber(props["valueDivisor"]);
         const mulData = (
           3600 *
           24 *
@@ -135,61 +135,61 @@ const SectionTwo = () => {
               </h6>
             </div>
             <div className="col-lg-12">
-              <div className={'network-section cosmos-sub-section'}>
+              <div className={"network-section cosmos-sub-section"}>
                 <div className="networklist-tiles">
-                  <h5 className={'text-center cosmos-title'}>
+                  <h5 className={"text-center cosmos-title"}>
                     Cosmos Based Assets
                   </h5>
-                  <div className={'combine-section'}>
-                    <div className={'cosmos-section'}>
-                      <div className={'icon-section'}>
-                        <img src={asset1} alt={'Cosmos'} />
+                  <div className={"combine-section"}>
+                    <div className={"cosmos-section"}>
+                      <div className={"icon-section"}>
+                        <img src={asset1} alt={"Cosmos"} />
                       </div>
-                      <div className={'sub-section'}>
+                      <div className={"sub-section"}>
                         <h5>
-                          {t('COSMOS')}
-                          <span>&nbsp;{t('ATOM')}</span>
+                          {t("COSMOS")}
+                          <span>&nbsp;{t("ATOM")}</span>
                         </h5>
                         <h4>{atomAPR}%</h4>
                       </div>
                     </div>
-                    <div className={'cosmos-section'}>
-                      <div className={'icon-section'}>
-                        <img src={asset3} alt={'ETH'} />
+                    <div className={"cosmos-section"}>
+                      <div className={"icon-section"}>
+                        <img src={asset3} alt={"ETH"} />
                       </div>
-                      <div className={'sub-section'}>
+                      <div className={"sub-section"}>
                         <h5>
-                          {t('Persistence')}
-                          <span>&nbsp;{t('XPRT')}</span>
+                          {t("Persistence")}
+                          <span>&nbsp;{t("XPRT")}</span>
                         </h5>
                         <h4>{xprtAPR}%</h4>
                       </div>
                     </div>
                   </div>
-                  <div className={'cosmos-button'}>
+                  <div className={"cosmos-button"}>
                     <a
                       href={CHAIN[process.env.REACT_APP_ENV].atomURL}
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      <h5>{t('START_STAKING')}</h5>
+                      <h5>{t("START_STAKING")}</h5>
                     </a>
                   </div>
                 </div>
               </div>
             </div>
             <div className="col-lg-12">
-              <div className={'network-section'}>
+              <div className={"network-section"}>
                 <div className="networklist-tiles">
-                  <div className={'combine-section'}>
-                    <div className={'cosmos-section'}>
-                      <div className={'icon-section'}>
-                        <img src={asset2} alt={'ETH'} />
+                  <div className={"combine-section"}>
+                    <div className={"cosmos-section"}>
+                      <div className={"icon-section"}>
+                        <img src={asset2} alt={"ETH"} />
                       </div>
-                      <div className={'sub-section'}>
+                      <div className={"sub-section"}>
                         <h5>
-                          {t('Ethereum')}
-                          <span>&nbsp;{t('ETH')}</span>
+                          {t("Ethereum")}
+                          <span>&nbsp;{t("ETH")}</span>
                         </h5>
                         <h4>{ethAPR}%</h4>
                       </div>
@@ -201,20 +201,20 @@ const SectionTwo = () => {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <h5>{t('START_STAKING')}</h5>
+                    <h5>{t("START_STAKING")}</h5>
                   </a>
                 </div>
 
                 <div className="networklist-tiles">
                   <div className="combine-section">
-                    <div className={'cosmos-section'}>
-                      <div className={'icon-section'}>
-                        <img src={asset4} alt={'Binance'} />
+                    <div className={"cosmos-section"}>
+                      <div className={"icon-section"}>
+                        <img src={asset4} alt={"Binance"} />
                       </div>
-                      <div className={'sub-section'}>
+                      <div className={"sub-section"}>
                         <h5>
-                          {t('Binance')}
-                          <span>&nbsp;{t('BNB')}</span>
+                          {t("Binance")}
+                          <span>&nbsp;{t("BNB")}</span>
                         </h5>
                         <h4>{bnbAPR}%</h4>
                       </div>
@@ -227,32 +227,32 @@ const SectionTwo = () => {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <h5>{t('START_STAKING')}</h5>
+                    <h5>{t("START_STAKING")}</h5>
                   </a>
                 </div>
               </div>
             </div>
 
             <div className="col-lg-12">
-              <div className={'network-section'}>
+              <div className={"network-section"}>
                 <div className="networklist-tiles-mod">
-                  <div className={'combine-section'}>
-                    <div className={'cosmos-section'}>
+                  <div className={"combine-section"}>
+                    <div className={"cosmos-section"}>
                       <div className="col-lg-3 d-flex justify-content-between align-items-center">
                         <img
                           // className="pr-2"
                           src={migrate1}
                           width={40}
                           height={40}
-                          alt={'Migrate-1'}
+                          alt={"Migrate-1"}
                         />
-                        <img src={right_arrow} alt={'Right Arrow'} />
+                        <img src={right_arrow} alt={"Right Arrow"} />
                         <img
                           src={migrate2}
                           // className="pb-2"
                           // width={46}
                           // height={46}
-                          alt={'Migrate-2'}
+                          alt={"Migrate-2"}
                         />
                       </div>
                       <div className="col-lg-6 migrate-box">
@@ -265,7 +265,7 @@ const SectionTwo = () => {
                             src={learn_more_arrow}
                             width={23}
                             className="mb-3"
-                            alt={'Right Arrow'}
+                            alt={"Right Arrow"}
                           />
                         </div>
                       </div>
@@ -275,7 +275,7 @@ const SectionTwo = () => {
                           rel="noopener noreferrer"
                           target="_blank"
                         >
-                          <h5 className="px-5">{'Migrate'}</h5>
+                          <h5 className="px-5">{"Migrate"}</h5>
                         </a>
                       </div>
                     </div>

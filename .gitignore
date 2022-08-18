@@ -44,6 +44,7 @@ build/
 !.vscode/launch.json
 !.vscode/extensions.json
 .idea
+.prettierrc
 
 ### Vim ###
 *.sw[a-p]
