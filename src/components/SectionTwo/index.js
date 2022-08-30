@@ -141,7 +141,7 @@ const SectionTwo = () => {
                       <img src={asset4} alt={"Binance"} />
                     </div>
                     <div className={'sub-section'}>
-                      <h5>{t("Binance")}<span>&nbsp;{t("BNB")}</span></h5>
+                      <h5>{t("BNB")}</h5>
                       <h4  className="value">{bnbAPR}% {t("APY")}</h4>
                     </div>
                   </div>
@@ -159,7 +159,7 @@ const SectionTwo = () => {
                       <img src={asset2} alt={"ETH"} />
                     </div>
                     <div className={'sub-section'}>
-                      <h5>{t("Ethereum")}<span>&nbsp;{t("ETH")}</span></h5>
+                      <h5>{t("Ethereum")}</h5>
                       <h4 className="value">{ethAPR}% {t("APY")}</h4>
                     </div>
                   </div>
@@ -183,7 +183,7 @@ const SectionTwo = () => {
                       <img src={asset1} alt={"Cosmos"} />
                     </div>
                     <div className={'sub-section'}>
-                      <h5>{t("COSMOS")}<span>&nbsp;{t("ATOM")}</span></h5>
+                      <h5>{t("COSMOS")}</h5>
                       <h4  className="value">{atomAPR}% {t("APY")}</h4>
                     </div>
                   </div>
@@ -193,7 +193,7 @@ const SectionTwo = () => {
                       <img src={asset3} alt={"ETH"} />
                     </div>
                     <div className={'sub-section'}>
-                      <h5>{t("Persistence")}<span>&nbsp;{t("XPRT")}</span></h5>
+                      <h5>{t("Persistence")}</h5>
                       <h4  className="value">{xprtAPR}% {t("APY")}</h4>
                     </div>
                   </div>
@@ -216,7 +216,7 @@ const SectionTwo = () => {
                         <img src={avax} alt={"avax"} />
                       </div>
                       <div className={'sub-section'}>
-                        <h5>Avalanche<span>&nbsp;{t("AVAX")}</span></h5>
+                        <h5>Avalanche</h5>
                       </div>
                     </div>
                     <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
@@ -228,7 +228,7 @@ const SectionTwo = () => {
                         <img src={sol} alt={"sol"} />
                       </div>
                       <div className={'sub-section'}>
-                        <h5>{t("SOLANA")}<span>&nbsp;{t("SOL")}</span></h5>
+                        <h5>{t("Solana")}</h5>
                       </div>
                     </div>
                     <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
