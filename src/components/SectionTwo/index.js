@@ -7,7 +7,7 @@ import asset4 from "../../assets/bnb.svg";
 import avax from "../../assets/avax.svg";
 import sol from "../../assets/sol.svg";
 import "../SectionTwo/index.css";
-import {CHAIN} from "../../constants/config";
+import {ATOM_WEB_URL, CHAIN} from "../../constants/config";
 import {useEffect, useState} from "react";
 import { decimalize, getContractInstance, getContractInstanceFrom, getWeb3 } from "../../actions/utils";
 import Web3 from "web3";
@@ -152,14 +152,36 @@ const SectionTwo = () => {
                   </a>
                   {/*<h5 className={"coming-soon"}>{t("Coming Soon")}</h5>*/}
                 </div>
+                <div className='network-section'>
+                  <div className="network-body">
+                    <div className={"icon-section"}>
+                      <img src={asset1} alt={"Cosmos"} />
+                    </div>
+                    <div className={'sub-section'}>
+                      <h5>{t("COSMOS")} </h5>
+                      <p className="coming-soon mb-1 mt-4">{t("Coming Soon")}</p>
+                    </div>
+                  </div>
+                  <a
+                      href={ATOM_WEB_URL}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                  >
+                    <h5>{t("Learn More")}</h5>
+                  </a>
+                </div>
+              </div>
+            </div>
 
+            <div className="row">
+              <div className="network-list">
                 <div className='network-section'>
                   <div className="network-body">
                     <div className={"icon-section"}>
                       <img src={asset2} alt={"ETH"} />
                     </div>
                     <div className={'sub-section'}>
-                      <h5>{t("Ethereum")}</h5>
+                      <h5>{t("Ethereum")}<span> (ERC20)</span></h5>
                       <h4 className="value">{ethAPR}% {t("APY")}</h4>
                     </div>
                   </div>
@@ -171,43 +193,45 @@ const SectionTwo = () => {
                     <h5>{t("START_STAKING")}</h5>
                   </a>
                 </div>
-            </div>
-            </div>
-            <div className="row">
-              <div className="network-list">
-                <div className='network-section multi'>
-                <p className="cosmos-title">Cosmos Based Assets</p>
-                <div className="list">
+                <div className='network-section'>
                   <div className="network-body">
                     <div className={"icon-section"}>
                       <img src={asset1} alt={"Cosmos"} />
                     </div>
                     <div className={'sub-section'}>
-                      <h5>{t("COSMOS")}</h5>
+                      <h5>{t("COSMOS")} <span>(ERC20)</span></h5>
                       <h4  className="value">{atomAPR}% {t("APY")}</h4>
                     </div>
                   </div>
+                  <a
+                      href={CHAIN[process.env.REACT_APP_ENV].atomURL}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                  >
+                    <h5>{t("START_STAKING")}</h5>
+                  </a>
+                </div>
 
+                <div className='network-section'>
                   <div className="network-body">
                     <div className={"icon-section"}>
                       <img src={asset3} alt={"ETH"} />
                     </div>
                     <div className={'sub-section'}>
-                      <h5>{t("Persistence")}</h5>
+                      <h5>{t("Persistence")} <span>(ERC20)</span></h5>
                       <h4  className="value">{xprtAPR}% {t("APY")}</h4>
                     </div>
                   </div>
+                  <a
+                      href={CHAIN[process.env.REACT_APP_ENV].atomURL}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                  >
+                    <h5>{t("START_STAKING")}</h5>
+                  </a>
                 </div>
-                <a
-                    href={CHAIN[process.env.REACT_APP_ENV].atomURL}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                >
-                  <h5>{t("START_STAKING")}</h5>
-                </a>
               </div>
               </div>
-            </div>
               <div className="row">
                 <div className="network-list">
                   <div className='network-section'>
