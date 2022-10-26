@@ -15,7 +15,8 @@
       font-weight: 500; }
   .section-2 .network-list {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    flex-wrap: wrap; }
     .section-2 .network-list .cosmos-title {
       font-size: 14px; }
     .section-2 .network-list .network-section {
