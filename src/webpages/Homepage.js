@@ -12,7 +12,6 @@ const homePage = () => {
       <div className="container">
         <div className="row">
           <SectionTwo />
-          <Footer />
         </div>
       </div>
     </React.Fragment>

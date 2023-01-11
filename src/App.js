@@ -7,6 +7,7 @@ import ReactGA from 'react-ga4';
 import RouteNotFound from './components/RouteNotFound';
 import HomePage from './webpages/Homepage';
 import {ANALYTICS_MEASURE_ID} from "./constants/config";
+import Footer from "./components/Footer";
 
 ReactGA.initialize(ANALYTICS_MEASURE_ID)
 
@@ -38,6 +39,7 @@ const App = () => {
                   }
               />
           </Routes>
+          <Footer />
 
       </>
 
