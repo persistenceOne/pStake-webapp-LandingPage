@@ -3,7 +3,7 @@ export const PSTAKE_TELEGRAM_URL = "https://t.me/pstakefinance";
 export const PSTAKE_YOUTUBE_URL =
   "https://www.youtube.com/channel/UC5wqI1ZRdkCjWWVOCQdhxLQ/featured";
 export const PSTAKE_REDDIT_URL = "https://www.reddit.com/r/PersistenceOne/";
-export const PSTAKE_DISCORD_URL = "https://discord.gg/vyvp3scWnH";
+export const PSTAKE_DISCORD_URL = "https://discord.com/invite/2ek5rUyT8x";
 export const PSTAKE_GITHUB_URL = "https://github.com/persistenceOne";
 export const ANALYTICS_MEASURE_ID = "G-MC3HWEVV3H";
 export const ATOM_WEB_URL = "https://pstake.finance/atom"
