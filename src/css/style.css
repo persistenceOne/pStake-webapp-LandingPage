@@ -7,4 +7,7 @@ body {
   body iframe {
     position: relative !important; }
 
+.pointer-events-none {
+  pointer-events: none; }
+
 /*# sourceMappingURL=style.css.map */
