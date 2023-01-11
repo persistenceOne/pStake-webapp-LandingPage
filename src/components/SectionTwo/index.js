@@ -129,29 +129,11 @@ const SectionTwo = () => {
             <div className="heading mt-4 mb-4">
               <h4>Supported Networks</h4>
               <h6>
-                Stake your PoS assets while earning DeFi yields. Select a
-                network below to get started
+                Earn staking rewards on your Assets for securing PoS networks and participate in DeFi with stkAssets for additional yields. <br/> Select a network below to get started now.
               </h6>
             </div>
             <div className="row">
               <div className="network-list">
-                <div className='network-section'>
-                  <div className="network-body">
-                    <div className="icon-section">
-                      <img src={asset4} alt={"Binance"} />
-                    </div>
-                    <div className={'sub-section'}>
-                      <h5>{t("BNB")}</h5>
-                      <h4  className="value">{bnbAPR}% {t("APY")}</h4>
-                    </div>
-                  </div>
-                  <a href={CHAIN[process.env.REACT_APP_ENV].bnbURL}
-                      rel="noopener noreferrer"
-                      target="_blank">
-                    <h5>{t("START_STAKING")}</h5>
-                  </a>
-                  {/*<h5 className={"coming-soon"}>{t("Coming Soon")}</h5>*/}
-                </div>
                 <div className='network-section'>
                   <div className="network-body">
                     <div className={"icon-section"}>
@@ -169,6 +151,23 @@ const SectionTwo = () => {
                   >
                     <h5>{t("Learn More")}</h5>
                   </a>
+                </div>
+                <div className='network-section'>
+                  <div className="network-body">
+                    <div className="icon-section">
+                      <img src={asset4} alt={"Binance"} />
+                    </div>
+                    <div className={'sub-section'}>
+                      <h5>{t("BNB")}</h5>
+                      <h4  className="value">{bnbAPR}% {t("APY")}</h4>
+                    </div>
+                  </div>
+                  <a href={CHAIN[process.env.REACT_APP_ENV].bnbURL}
+                      rel="noopener noreferrer"
+                      target="_blank">
+                    <h5>{t("START_STAKING")}</h5>
+                  </a>
+                  {/*<h5 className={"coming-soon"}>{t("Coming Soon")}</h5>*/}
                 </div>
               </div>
             </div>
@@ -196,30 +195,12 @@ const SectionTwo = () => {
                 <div className='network-section'>
                   <div className="network-body">
                     <div className={"icon-section"}>
-                      <img src={asset1} alt={"Cosmos"} />
-                    </div>
-                    <div className={'sub-section'}>
-                      <h5>{t("COSMOS")} <span>(ERC20)</span></h5>
-                      <h4  className="value">{atomAPR}% {t("APY")}</h4>
-                    </div>
-                  </div>
-                  <a
-                      href={CHAIN[process.env.REACT_APP_ENV].atomURL}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                  >
-                    <h5>{t("START_STAKING")}</h5>
-                  </a>
-                </div>
-
-                <div className='network-section'>
-                  <div className="network-body">
-                    <div className={"icon-section"}>
                       <img src={asset3} alt={"ETH"} />
                     </div>
                     <div className={'sub-section'}>
-                      <h5>{t("Persistence")} <span>(ERC20)</span></h5>
-                      <h4  className="value">{xprtAPR}% {t("APY")}</h4>
+                      <h5 className="mb-0">{t("Persistence")} <span>(ERC20)</span></h5>
+                      <span>(Deprecated)</span>
+                      <h4 className="value mt-2">{xprtAPR}% {t("APY")}</h4>
                     </div>
                   </div>
                   <a
@@ -227,37 +208,45 @@ const SectionTwo = () => {
                       rel="noopener noreferrer"
                       target="_blank"
                   >
-                    <h5>{t("START_STAKING")}</h5>
+                    <h5>Withdraw Assets</h5>
+                  </a>
+                  <a
+                      href={CHAIN[process.env.REACT_APP_ENV].atomURL}
+                      rel="noopener noreferrer"
+                      className="pointer-events-none"
+                      target="_blank"
+                  >
+                    <h5>Migrate to Persistence (coming soon)</h5>
+                  </a>
+                </div>
+                <div className='network-section'>
+                  <div className="network-body">
+                    <div className={"icon-section"}>
+                      <img src={asset1} alt={"Cosmos"} />
+                    </div>
+                    <div className={'sub-section'}>
+                      <h5 className="mb-0">{t("COSMOS")} <span>(ERC20)</span></h5>
+                      <span>(Deprecated)</span>
+                      <h4  className="value mt-2">{atomAPR}% {t("APY")}</h4>
+                    </div>
+                  </div>
+                  <a
+                      href={CHAIN[process.env.REACT_APP_ENV].atomURL}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                  >
+                    <h5>Withdraw Assets</h5>
+                  </a>
+                  <a
+                      href={CHAIN[process.env.REACT_APP_ENV].atomURL}
+                      rel="noopener noreferrer"
+                      className="pointer-events-none"
+                      target="_blank"
+                  >
+                    <h5>Migrate to Persistence (coming soon)</h5>
                   </a>
                 </div>
               </div>
-              </div>
-              <div className="row">
-                <div className="network-list">
-                  <div className='network-section'>
-                    <div className="network-body">
-                      <div className="icon-section">
-                        <img src={avax} alt={"avax"} />
-                      </div>
-                      <div className={'sub-section'}>
-                        <h5>Avalanche</h5>
-                      </div>
-                    </div>
-                    <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
-                  </div>
-
-                  <div className='network-section'>
-                    <div className="network-body">
-                      <div className={"icon-section"}>
-                        <img src={sol} alt={"sol"} />
-                      </div>
-                      <div className={'sub-section'}>
-                        <h5>{t("Solana")}</h5>
-                      </div>
-                    </div>
-                    <h5 className={"coming-soon"}>{t("Coming Soon")}</h5>
-                  </div>
-                </div>
               </div>
           </div>
         </div>
