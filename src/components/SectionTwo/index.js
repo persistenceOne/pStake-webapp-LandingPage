@@ -141,15 +141,15 @@ const SectionTwo = () => {
                     </div>
                     <div className={'sub-section'}>
                       <h5>{t("COSMOS")} </h5>
-                      <p className="coming-soon mb-1 mt-4">{t("Coming Soon")}</p>
+                      <h4 className="value">{17.82}% {t("APY")}</h4>
                     </div>
                   </div>
                   <a
-                      href={ATOM_WEB_URL}
+                      href={CHAIN[process.env.REACT_APP_ENV].atomURL}
                       rel="noopener noreferrer"
                       target="_blank"
                   >
-                    <h5>{t("Learn More")}</h5>
+                    <h5>{t("START_STAKING")}</h5>
                   </a>
                 </div>
                 <div className='network-section'>
@@ -159,7 +159,7 @@ const SectionTwo = () => {
                     </div>
                     <div className={'sub-section'}>
                       <h5>{t("BNB")}</h5>
-                      <h4  className="value">{bnbAPR}% {t("APY")}</h4>
+                      <h4 className="value">{bnbAPR}% {t("APY")}</h4>
                     </div>
                   </div>
                   <a href={CHAIN[process.env.REACT_APP_ENV].bnbURL}
