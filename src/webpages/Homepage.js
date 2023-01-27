@@ -1,5 +1,5 @@
 import React from "react";
-import pstakelogo from "../assets/pstakelogo.svg";
+import pstakelogo from "../../public/images/pstakelogo.svg";
 import SectionTwo from "../components/SectionTwo";
 import Footer from "../components/Footer";
 

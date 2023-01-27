@@ -1,11 +1,11 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import asset1 from "../../assets/atom.svg";
-import asset2 from "../../assets/stkETH.svg";
-import asset3 from "../../assets/xprt.svg";
-import asset4 from "../../assets/bnb.svg";
-import avax from "../../assets/avax.svg";
-import sol from "../../assets/sol.svg";
+import asset1 from "../../../public/images/atom.svg";
+import asset2 from "../../../public/images/stkETH.svg";
+import asset3 from "../../../public/images/xprt.svg";
+import asset4 from "../../../public/images/bnb.svg";
+import avax from "../../../public/images/avax.svg";
+import sol from "../../../public/images/sol.svg";
 import "../SectionTwo/index.css";
 import {ATOM_WEB_URL, CHAIN} from "../../constants/config";
 import {useEffect, useState} from "react";

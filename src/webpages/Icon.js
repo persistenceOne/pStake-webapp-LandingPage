@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import symbol_defs from '../assets/sprite.svg'
+import symbol_defs from '../../public/images/sprite.svg'
 
 export default class Icon extends Component {
     render() {
