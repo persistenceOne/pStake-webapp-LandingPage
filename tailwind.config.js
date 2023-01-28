@@ -1,5 +1,8 @@
+const plugin = require(`tailwindcss/plugin`);
+
 module.exports = {
-  content: ["./src/components/**/*.{js,ts,jsx,tsx}"],
+  mode: "jit",
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     colors: {
       light: {
@@ -19,8 +22,9 @@ module.exports = {
         low: "#787878",
         disabled: "#A9A9A9"
       },
-      primary: "#c73238",
-      secondary: "#47C28B"
+      red: "#c73238",
+      "red-light": "#cb575bfa",
+      green: "#47C28B"
     },
     backgroundImage: {
       "body-bg":
@@ -34,7 +38,22 @@ module.exports = {
       dropDown: "#282828",
       tabHeader: "#181818",
       tabContent: "rgba(24, 24, 24, 0.6)",
-      input: "rgba(27, 27, 27, 0.6)"
+      input: "rgba(27, 27, 27, 0.6)",
+      red: "#c73238",
+      "red-light": "#cb575bfa",
+      "black-full": "#000",
+      "black-900": "#171717",
+      "black-800": "#181818",
+      "black-700": "#1b1b1b",
+      "black-600": "#1b1b1b99",
+      "black-500": "#17171799",
+      "black-400": "#282828",
+      "white-full": "#ffffff",
+      "white-high": "#FCFCFC",
+      "white-emphasis": "#ECECEC",
+      "white-mid": "#A6A6A6",
+      "white-low": "#787878",
+      disabled: "#A9A9A9"
     },
     fontFamily: {
       primary: ["Poppins", "sans-serif"]
@@ -91,6 +110,23 @@ module.exports = {
       // // => @media (max-width: 512px) { ... }
 
       sm: { max: "512px" }
+    },
+    extend: {
+      keyframes: {
+        "menu-open": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.9)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)"
+          }
+        }
+      },
+      animation: {
+        "menu-open": "menu-open 200ms ease-in-out"
+      }
     }
   },
   plugins: []

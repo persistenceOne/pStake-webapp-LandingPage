@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import "react-toastify/dist/ReactToastify.css";
-import Maintenance from "./maintenance";
 import TermsModal from "../components/organisms/termsModal";
 import React, { useEffect } from "react";
 import Head from "next/head";
@@ -20,8 +19,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-
-  const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
 
   const GA_TRACKING_ID = "ssssss123";
   return (
@@ -75,35 +72,37 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#000000" />
         <meta
           name="description"
-          content="Liquid Staking for The Internet of Blockchains"
+          content="pSTAKE, developed by Persistence, is a liquid staking protocol unlocking the liquidity of staked assets. Stakers of PoS tokens can stake their assets while unlocking liquidity in the form of stkASSETs, which can then be used across DeFi to earn liquid staking rewards."
         />
         <meta
           name="keywords"
-          content="liquid staking, pstake, $pstake, cosmos, persistence, xprt, atom"
+          content="liquid staking, pstake, $pstake, cosmos, persistence, xprt, atom, stkBNB, stkETH, stkATOM"
         />
         {/*Open Graph Tags*/}
-        <meta content="pSTAKE | ATOM Liquid Staking" property="og:title" />
+        <meta
+          content="pSTAKE | Unlocking liquidity of staked assets"
+          property="og:title"
+        />
         <meta property="og:image" content="/og.jpg" />
         <meta
           property="og:description"
-          content="Liquid Staking for The Internet of Blockchains"
+          content="pSTAKE, developed by Persistence, is a liquid staking protocol unlocking the liquidity of staked assets. Stakers of PoS tokens can stake their assets while unlocking liquidity in the form of stkASSETs, which can then be used across DeFi to earn liquid staking rewards."
         />
         {/*Twitter Tags*/}
-        <meta content="pSTAKE | ATOM Liquid Staking" property="twitter:title" />
         <meta
-          content="Liquid Staking for The Internet of Blockchains"
+          content="pSTAKE | Unlocking liquidity of staked assets"
+          property="twitter:title"
+        />
+        <meta
+          content="pSTAKE, developed by Persistence, is a liquid staking protocol unlocking the liquidity of staked assets. Stakers of PoS tokens can stake their assets while unlocking liquidity in the form of stkASSETs, which can then be used across DeFi to earn liquid staking rewards."
           property="twitter:description"
         />
         <meta content="/og.jpg" property="twitter:image" />
-        <title>pSTAKE | ATOM Liquid Staking</title>
+        <title>pSTAKE | Unlocking liquidity of staked assets</title>
       </Head>
       <TermsModal />
 
-      {process.env.NEXT_PUBLIC_MAINTENANCE === "true" ? (
-        <Maintenance />
-      ) : (
-        <Component {...pageProps} />
-      )}
+      <Component {...pageProps} />
     </>
   );
 }

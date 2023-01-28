@@ -1,22 +1,102 @@
-import {
-  QueryAllBalancesResponse,
-  QueryClientImpl as BankQuery,
-  QueryTotalSupplyResponse
-} from "cosmjs-types/cosmos/bank/v1beta1/query";
-
-import { decimalize, RpcClient } from "../../helpers/utils";
-
-import { Scope } from "@sentry/nextjs";
-import { Coin } from "@cosmjs/proto-signing";
-import Long from "long";
-import moment from "moment";
+import { createProtobufRpcClient, QueryClient } from "@cosmjs/stargate";
+import { Tendermint34Client } from "@cosmjs/tendermint-rpc";
 import { ChainInfo } from "@keplr-wallet/types";
+import { CHAIN_ID, CosmosChains } from "../../helpers/config";
 import {
-  APR_BASE_RATE,
-  APR_DEFAULT,
-  STK_ATOM_MINIMAL_DENOM
-} from "../../../AppConstants";
-const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
+  QueryClientImpl,
+  QueryAllowListedValidatorsResponse
+} from "persistenceonejs/pstake/lscosmos/v1beta1/query";
+
+import {
+  QueryClientImpl as StakingQueryClient,
+  QueryValidatorsResponse
+} from "cosmjs-types/cosmos/staking/v1beta1/query";
+import { AllowListedValidator } from "persistenceonejs/pstake/lscosmos/v1beta1/lscosmos";
+import Long from "long";
+import { decimalize } from "../../helpers/utils";
+import { APR_BASE_RATE, APR_DEFAULT } from "../../../AppConstants";
+const STK_BNB_SUBGRAPH_API =
+  "https://api.thegraph.com/subgraphs/name/persistenceone/stkbnb";
+
+const env: string = process.env.NEXT_PUBLIC_ENV!;
+
+const persistenceChainInfo = CosmosChains[env].find(
+  (chain: ChainInfo) => chain.chainId === CHAIN_ID[env].persistenceChainID
+);
+
+const cosmosChainInfo = CosmosChains[env].find(
+  (chain: ChainInfo) => chain.chainId === CHAIN_ID[env].cosmosChainID
+);
+
+export async function RpcClient(rpc: string) {
+  const tendermintClient = await Tendermint34Client.connect(rpc);
+  const queryClient = new QueryClient(tendermintClient);
+  return createProtobufRpcClient(queryClient);
+}
+
+export const getCommission = async () => {
+  try {
+    const weight: number = 1;
+    let commission: number = 0;
+    const rpcClient = await RpcClient(persistenceChainInfo?.rpc!);
+    const pstakeQueryService = new QueryClientImpl(rpcClient);
+    const allowListedValidators: QueryAllowListedValidatorsResponse =
+      await pstakeQueryService.AllowListedValidators({});
+    const cosmosRpcClient = await RpcClient(cosmosChainInfo?.rpc!);
+    const cosmosQueryService = new StakingQueryClient(cosmosRpcClient);
+    const validators: AllowListedValidator[] | undefined =
+      allowListedValidators?.allowListedValidators?.allowListedValidators;
+    const commissionRates: number[] = [];
+
+    let key: any = new Uint8Array();
+    let cosmosValidators = [];
+
+    do {
+      const validatorCommission: QueryValidatorsResponse =
+        await cosmosQueryService.Validators({
+          status: "BOND_STATUS_BONDED",
+          pagination: {
+            key: key,
+            offset: Long.fromNumber(0, true),
+            limit: Long.fromNumber(0, true),
+            countTotal: true,
+            reverse: false
+          }
+        });
+      key = validatorCommission?.pagination?.nextKey;
+      cosmosValidators.push(...validatorCommission.validators);
+    } while (key.length !== 0);
+
+    if (cosmosValidators?.length !== 0) {
+      for (const validator of cosmosValidators) {
+        const listedValidator: any = validators?.find(
+          (item: any) => item?.validatorAddress === validator.operatorAddress
+        );
+        if (listedValidator) {
+          let commissionRate =
+            parseFloat(
+              decimalize(
+                validator!.commission
+                  ? validator!.commission.commissionRates!.rate
+                  : 0,
+                18
+              )
+            ) * 100;
+          commissionRates.push(commissionRate);
+        }
+      }
+      commission =
+        (weight * commissionRates.reduce((a, b) => a + b, 0)) /
+        validators!.length;
+    } else {
+      commission = 0;
+    }
+    return commission;
+  } catch (e) {
+    console.log(e);
+    return 0;
+  }
+};
 
 export const getAPR = async () => {
   try {
@@ -26,50 +106,41 @@ export const getAPR = async () => {
     const apr = baseRate - (commission / 100) * baseRate + incentives;
     return isNaN(apr) ? APR_DEFAULT : apr.toFixed(2);
   } catch (e) {
-    const customScope = new Scope();
-    customScope.setLevel("fatal");
-    customScope.setTags({
-      "Error while fetching exchange rate": "persistenceChainInfo?.rpc"
-    });
-    genericErrorHandler(e, customScope);
     return -1;
   }
 };
 
-export const getAPY = async () => {
+export const getCosmosApy = async () => {
   try {
     const apr = await getAPR();
-    const apy = ((1 + Number(apr) / 36500) ** 365 - 1) * 100;
-    return apy.toFixed(2);
+    return ((1 + Number(apr) / 36500) ** 365 - 1) * 100;
   } catch (e) {
     return -1;
   }
 };
 
-export const getTVU = async (rpc: string): Promise<number> => {
+export const getBNBApy = async () => {
   try {
-    const rpcClient = await RpcClient(rpc);
-    const bankQueryService = new BankQuery(rpcClient);
-    const supplyResponse: QueryTotalSupplyResponse =
-      await bankQueryService.TotalSupply({});
-    if (supplyResponse.supply.length) {
-      const token: Coin | undefined = supplyResponse.supply.find(
-        (item: Coin) => item.denom === STK_ATOM_MINIMAL_DENOM
-      );
-      if (token !== undefined) {
-        return Number(token?.amount);
-      } else {
-        return 0;
-      }
+    const res = await fetch(STK_BNB_SUBGRAPH_API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        query: `{
+                  stats {
+                    apr
+                  }
+             }`
+      })
+    });
+    const responseJson = await res.json();
+    if (responseJson && responseJson.data) {
+      return Number(responseJson.data.stats[0].apr).toFixed(2);
     }
     return 0;
   } catch (e) {
-    const customScope = new Scope();
-    customScope.setLevel("fatal");
-    customScope.setTags({
-      "Error while fetching exchange rate": rpc
-    });
-    genericErrorHandler(e, customScope);
+    console.log(e, "getBNB");
     return 0;
   }
 };

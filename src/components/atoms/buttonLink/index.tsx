@@ -17,7 +17,7 @@ export const ButtonLink = ({
       href={link}
       onClick={onClick}
       target={target}
-      className={`py-2.5 px-4 ${styles.appButton} ${styles[type]} ${size} ${className}`}
+      className={`py-2.5 px-4 ${styles.appButton} ${styles[type]} ${size} ${className} hover:bg-red-light`}
     >
       {content}
     </a>

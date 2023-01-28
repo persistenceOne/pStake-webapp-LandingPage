@@ -1,226 +1,195 @@
 import React, { useEffect, useState } from "react";
-import { CHAIN, ATOM_WEB_URL } from "../../helpers/config";
-import { getContractInstance } from "../../helpers/utils";
+import { CHAIN } from "../../helpers/config";
 import useTranslation from "next-translate/useTranslation";
-import BigNumber from "bignumber.js";
+import ButtonLink from "../atoms/buttonLink";
+import Button from "../atoms/button";
+import { getCosmosApy, getBNBApy } from "../../pages/api/onChain";
+import { APR_DEFAULT } from "../../../AppConstants";
 
 const env: string = process.env.NEXT_PUBLIC_ENV!;
 
 const HomepageContainer = () => {
-  const [ethAPR, setEthAPR] = useState("0.00");
-  const [bnbAPR, setBNBAPR] = useState("0.00");
-  const [atomAPR, setAtomAPR] = useState("0.00");
-  const [xprtAPR, setXprtAPR] = useState("0.00");
-
-  const handleEthAPR = async () => {
-    setEthAPR(CHAIN[env].ethAPR);
-    setBNBAPR(CHAIN[env].bnbAPR);
-  };
-
-  const handleAtomAPR = async () => {
-    let stkATOM_SC = CHAIN[env].SmartContracts.STokens;
-    let instance = await getContractInstance(stkATOM_SC);
-    if (instance) {
-      const props = await instance.methods.getRewardRate().call();
-      console.log("atom props: ", props);
-      if (props) {
-        const len = props["rewardRate"].length;
-        const rewardRate = new BigNumber(props["rewardRate"][len - 1]);
-        const valueDivisor = new BigNumber(props["valueDivisor"]);
-        const mulData = (3600 * 24 * CHAIN[env].inflationPeriod).toString();
-        const mulData1 = new BigNumber(mulData);
-
-        let rewards = rewardRate.multipliedBy(mulData1).dividedBy(valueDivisor);
-        console.log("atom rewards: ", rewards.toString());
-        setAtomAPR(rewards.toFixed(2));
-        // setLoading(false);
-      }
-    }
-  };
-
-  const handleXprtAPR = async () => {
-    let stkXprt_SC = CHAIN[env].SmartContracts.STokensXPRT;
-    let instance = await getContractInstance(stkXprt_SC);
-    if (instance) {
-      const props = await instance.methods.getRewardRate().call();
-      console.log("xprt props: ", props);
-      if (props) {
-        const len = props["rewardRate"].length;
-        const rewardRate = new BigNumber(props["rewardRate"][len - 1]);
-        const valueDivisor = new BigNumber(props["valueDivisor"]);
-        const mulData = (3600 * 24 * CHAIN[env].inflationPeriod).toString();
-        const mulData1 = new BigNumber(mulData);
-
-        let rewards = rewardRate.multipliedBy(mulData1).dividedBy(valueDivisor);
-        setXprtAPR(rewards.toFixed(2));
-        // setLoading(false);
-      }
-    }
-  };
+  const [ethAPR, setEthAPR] = useState(CHAIN[env].ethAPR);
+  const [bnbAPy, setBnbAPy] = useState(CHAIN[env].bnbAPR);
+  const [cosmosApy, setCosmosApy] = useState(APR_DEFAULT);
 
   useEffect(() => {
-    handleEthAPR();
-    handleAtomAPR();
-    handleXprtAPR();
+    const fetchValues = async () => {
+      setCosmosApy(await getCosmosApy());
+      setBnbAPy(await getBNBApy());
+    };
+    fetchValues();
   }, []);
+
   const { t } = useTranslation("common");
+
+  const networkList = [
+    {
+      asset: "Cosmos",
+      network: "cosmos",
+      imageUrl: "/images/atom.svg",
+      apy: cosmosApy.toFixed(2),
+      buttonText: "Start Staking",
+      buttonUrl: CHAIN[env].atomCosmosURL
+    },
+    {
+      asset: "BNB",
+      network: "binance",
+      imageUrl: "/images/bnb.svg",
+      apy: bnbAPy,
+      buttonText: "Start Staking",
+      buttonUrl: CHAIN[env].bnbURL
+    },
+    {
+      asset: "Ethereum",
+      network: "ethereum",
+      imageUrl: "/images/stkETH.svg",
+      apy: ethAPR,
+      buttonText: "Start Staking",
+      buttonUrl: CHAIN[env].ethURL
+    },
+    {
+      asset: "Persistence",
+      network: "ethereum",
+      imageUrl: "/images/xprt.svg",
+      apy: "0",
+      buttonText: "Withdraw Assets",
+      buttonUrl: CHAIN[env].atomURL
+    },
+    {
+      asset: "Cosmos",
+      network: "ethereum",
+      imageUrl: "/images/atom.svg",
+      apy: "0",
+      buttonText: "Withdraw Assets",
+      buttonUrl: CHAIN[env].atomURL
+    }
+  ];
+
   return (
     <>
-      <div className="container-fluid p-0 text-center pt-5">
-        <img src={"/images/pstakelogo.svg"} alt="logo" />
+      <div className="px-0 pt-6 pb-12">
+        <img
+          src={"/images/pstakelogo.svg"}
+          alt="logo"
+          className="m-auto pb-4"
+        />
+        <div className="max-w-[800px] m-auto">
+          <p className="text-light-emphasis text-center text-lg leading-normal font-medium">
+            Earn staking rewards on your Assets for securing PoS networks and
+            participate in DeFi with stkAssets for additional yields. Select a
+            network below to get started now.
+          </p>
+        </div>
       </div>
-      <div className="container">
-        <div className="row">
-          <section className="section-2 stake-section" id="sectiontwo">
-            <div className="container">
-              <div className="row">
-                <div className="heading mt-4 mb-4">
-                  <h4>Supported Networks</h4>
-                  <h6>
-                    Earn staking rewards on your Assets for securing PoS
-                    networks and participate in DeFi with stkAssets for
-                    additional yields. <br /> Select a network below to get
-                    started now.
-                  </h6>
-                </div>
-                <div className="row">
-                  <div className="network-list">
-                    <div className="network-section">
-                      <div className="network-body">
-                        <div className={"icon-section"}>
-                          <img src={"/images/atom.svg"} alt={"Cosmos"} />
-                        </div>
-                        <div className={"sub-section"}>
-                          <h5>{t("COSMOS")} </h5>
-                          <h4 className="value">
-                            ~{17.82}% {t("APY")}
-                          </h4>
-                        </div>
-                      </div>
-                      <a
-                        href={CHAIN[env].atomCosmosURL}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <h5>{t("START_STAKING")}</h5>
-                      </a>
-                    </div>
-                    <div className="network-section">
-                      <div className="network-body">
-                        <div className="icon-section">
-                          <img src={"/images/bnb.svg"} alt={"Binance"} />
-                        </div>
-                        <div className={"sub-section"}>
-                          <h5>{t("BNB")}</h5>
-                          <h4 className="value">
-                            {bnbAPR}% {t("APY")}
-                          </h4>
-                        </div>
-                      </div>
-                      <a
-                        href={CHAIN[env].bnbURL}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <h5>{t("START_STAKING")}</h5>
-                      </a>
-                      {/*<h5 className={"coming-soon"}>{t("Coming Soon")}</h5>*/}
-                    </div>
+      <div className="flex justify-center">
+        <div>
+          <div className="flex flex-wrap items-center justify-center">
+            {networkList.slice(0, 2).map((item, index) => (
+              <div
+                className="p-8 bg-black-800 m-2 min-w-[300px] max-w-[500px] rounded-md hover:bg-opacity-90"
+                key={index}
+              >
+                <div className="mb-2">
+                  <div className={"text-center mb-2"}>
+                    <img
+                      src={item.imageUrl}
+                      alt={item.asset}
+                      className="w-[40px] h-[40px] m-auto"
+                    />
+                  </div>
+                  <div>
+                    <h5 className="text-light-high text-lg font-semibold leading-normal text-center">
+                      {item.asset}
+                    </h5>
+                    <h4 className="text-green text-lg font-semibold leading-normal text-center">
+                      {item.apy}% APY
+                    </h4>
                   </div>
                 </div>
+                <ButtonLink
+                  className="button w-full md:py-2 md:text-sm block"
+                  type="primary"
+                  size="large"
+                  disabled={false}
+                  link={item.buttonUrl}
+                  content={item.buttonText}
+                />
+              </div>
+            ))}
+          </div>
 
-                <div className="row">
-                  <div className="network-list">
-                    <div className="network-section">
-                      <div className="network-body">
-                        <div className={"icon-section"}>
-                          <img src={"/images/stkETH.svg"} alt={"ETH"} />
-                        </div>
-                        <div className={"sub-section"}>
-                          <h5>
-                            {t("Ethereum")}
-                            <span> (ERC20)</span>
-                          </h5>
-                          <h4 className="value">
-                            {ethAPR}% {t("APY")}
-                          </h4>
-                        </div>
-                      </div>
-                      <a
-                        href={CHAIN[env].ethURL}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <h5>{t("START_STAKING")}</h5>
-                      </a>
-                    </div>
-                    <div className="network-section">
-                      <div className="network-body">
-                        <div className={"icon-section"}>
-                          <img src={"/images/xprt.svg"} alt={"ETH"} />
-                        </div>
-                        <div className={"sub-section"}>
-                          <h5 className="mb-0">
-                            {t("Persistence")} <span>(ERC20)</span>
-                          </h5>
-                          <span>(Deprecated)</span>
-                          <h4 className="value mt-2">
-                            {xprtAPR}% {t("APY")}
-                          </h4>
-                        </div>
-                      </div>
-                      <a
-                        href={CHAIN[env].atomURL}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <h5>Withdraw Assets</h5>
-                      </a>
-                      <a
-                        href={CHAIN[env].atomURL}
-                        rel="noopener noreferrer"
-                        className="pointer-events-none"
-                        target="_blank"
-                      >
-                        <h5>Migrate to Persistence (coming soon)</h5>
-                      </a>
-                    </div>
-                    <div className="network-section">
-                      <div className="network-body">
-                        <div className={"icon-section"}>
-                          <img src={"/images/atom.svg"} alt={"Cosmos"} />
-                        </div>
-                        <div className={"sub-section"}>
-                          <h5 className="mb-0">
-                            {t("COSMOS")} <span>(ERC20)</span>
-                          </h5>
-                          <span>(Deprecated)</span>
-                          <h4 className="value mt-2">
-                            {atomAPR}% {t("APY")}
-                          </h4>
-                        </div>
-                      </div>
-                      <a
-                        href={CHAIN[env].atomURL}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <h5>Withdraw Assets</h5>
-                      </a>
-                      <a
-                        href={CHAIN[env].atomURL}
-                        rel="noopener noreferrer"
-                        className="pointer-events-none"
-                        target="_blank"
-                      >
-                        <h5>Migrate to Persistence (coming soon)</h5>
-                      </a>
-                    </div>
+          <div className="flex flex-wrap justify-center">
+            {networkList.slice(2, networkList.length + 1).map((item, index) => (
+              <div
+                className="p-8 bg-black-800 m-2 min-w-[300px] max-w-[500px] rounded-md hover:bg-opacity-90"
+                key={index}
+              >
+                <div className="mb-2">
+                  <div className={"text-center mb-2"}>
+                    <img
+                      src={item.imageUrl}
+                      alt={item.asset}
+                      className="w-[40px] h-[40px] m-auto"
+                    />
                   </div>
+                  <div>
+                    <h5 className="text-light-high text-lg font-semibold leading-normal text-center">
+                      {item.asset}
+                      <span className="text-light-emphasis text-xsm">
+                        (ERC20)
+                      </span>
+                    </h5>
+                    {item.network === "ethereum" &&
+                    (item.asset === "Persistence" ||
+                      item.asset === "Cosmos") ? (
+                      <h4 className="text-light-mid text-xsm font-medium leading-normal text-center">
+                        (Deprecated)
+                      </h4>
+                    ) : (
+                      <h4 className="text-green text-lg font-semibold leading-normal text-center">
+                        {item.apy}% APY
+                      </h4>
+                    )}
+                  </div>
+                </div>
+                <div className="">
+                  {item.network === "ethereum" &&
+                  (item.asset === "Persistence" || item.asset === "Cosmos") ? (
+                    <>
+                      <div className={"text-center"}>
+                        <a
+                          className="inline-block text-light-high text-center text-xsm font-medium
+                        leading-normal hover:underline hover:cursor-pointer mb-3"
+                          href={item.buttonUrl}
+                          target={"_blank"}
+                        >
+                          {item.buttonText}
+                        </a>
+                      </div>
+                      <Button
+                        className="button w-full md:py-2 md:text-sm after:content-['Migrate_to_Persistence']
+                      hover:after:content-['Coming_soon']"
+                        type="primary"
+                        size="large"
+                        disabled={false}
+                        content=""
+                      />
+                    </>
+                  ) : (
+                    <ButtonLink
+                      className="button w-full md:py-2 md:text-sm block mt-8"
+                      type="primary"
+                      size="large"
+                      disabled={false}
+                      link={item.buttonUrl}
+                      content={item.buttonText}
+                    />
+                  )}
                 </div>
               </div>
-            </div>
-          </section>
+            ))}
+          </div>
         </div>
       </div>
     </>

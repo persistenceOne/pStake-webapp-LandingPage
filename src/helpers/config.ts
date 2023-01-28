@@ -1,3 +1,5 @@
+import { ChainInfo } from "@keplr-wallet/types";
+
 export const PSTAKE_TWITTER_URL = "https://twitter.com/pStakeFinance";
 export const PSTAKE_TELEGRAM_URL = "https://t.me/pstakefinance";
 export const PSTAKE_YOUTUBE_URL =
@@ -111,4 +113,299 @@ export const CHAIN: ChainTypes = {
       xprt: "https://api.persistence.one/ethplorer/getTokenInfo/xprt"
     }
   }
+};
+
+export const CHAIN_ID: any = {
+  Devnet: {
+    cosmosChainID: "gaiad-1",
+    persistenceChainID: "pstaked-1"
+  },
+  Testnet: {
+    cosmosChainID: "theta-testnet-001",
+    persistenceChainID: "test-core-1"
+  },
+  Mainnet: {
+    cosmosChainID: "cosmoshub-4",
+    persistenceChainID: "core-1"
+  }
+};
+
+interface CosmosChainData {
+  [index: string]: ChainInfo[];
+}
+
+export const CosmosChains: CosmosChainData = {
+  Devnet: [
+    {
+      rpc: "https://rpc.devnet.persistence.pstake.finance",
+      rest: "https://rest.devnet.persistence.pstake.finance",
+      chainId: "pstaked-1",
+      chainName: "pStake Persistence Devnet",
+      stakeCurrency: {
+        coinDenom: "XPRT",
+        coinMinimalDenom: "uxprt",
+        coinDecimals: 6,
+        coinGeckoId: "persistence"
+      },
+      bip44: {
+        coinType: 118
+      },
+      currencies: [
+        {
+          coinDenom: "XPRT",
+          coinMinimalDenom: "uxprt",
+          coinDecimals: 6,
+          coinGeckoId: "persistence"
+        },
+        {
+          coinDenom: "STKATOM",
+          coinMinimalDenom: "stk/uatom",
+          coinDecimals: 6,
+          coinGeckoId: "persistence"
+        }
+      ],
+      feeCurrencies: [
+        {
+          coinDenom: "XPRT",
+          coinMinimalDenom: "uxprt",
+          coinDecimals: 6,
+          coinGeckoId: "persistence"
+        }
+      ],
+      bech32Config: {
+        bech32PrefixAccAddr: "persistence",
+        bech32PrefixAccPub: "persistencepub",
+        bech32PrefixValAddr: "persistencevaloper",
+        bech32PrefixValPub: "persistencevaloperpub",
+        bech32PrefixConsAddr: "persistencevalcons",
+        bech32PrefixConsPub: "persistencevalconspub"
+      }
+    },
+    {
+      rpc: "https://rpc.devnet.cosmos.pstake.finance",
+      rest: "https://rest.devnet.cosmos.pstake.finance",
+      chainId: "gaiad-1",
+      chainName: "pStake Cosmos Devnet",
+      stakeCurrency: {
+        coinDenom: "ATOM",
+        coinMinimalDenom: "uatom",
+        coinDecimals: 6,
+        coinGeckoId: "cosmos"
+      },
+      bip44: {
+        coinType: 118
+      },
+      currencies: [
+        {
+          coinDenom: "ATOM",
+          coinMinimalDenom: "uatom",
+          coinDecimals: 6,
+          coinGeckoId: "cosmos"
+        }
+      ],
+      feeCurrencies: [
+        {
+          coinDenom: "ATOM",
+          coinMinimalDenom: "uatom",
+          coinDecimals: 6,
+          coinGeckoId: "cosmos"
+        }
+      ],
+      bech32Config: {
+        bech32PrefixAccAddr: "cosmos",
+        bech32PrefixAccPub: "cosmospub",
+        bech32PrefixValAddr: "cosmosvaloper",
+        bech32PrefixValPub: "cosmosvaloperpub",
+        bech32PrefixConsAddr: "cosmosvalcons",
+        bech32PrefixConsPub: "persistencevalconspub"
+      },
+      gasPriceStep: {
+        low: 0.0,
+        average: 0.0,
+        high: 0.0
+      }
+    }
+  ],
+  Testnet: [
+    {
+      rpc: "https://rpc.testnet.persistence.one",
+      rest: "https://rest.testnet.persistence.one/",
+      chainId: "test-core-1",
+      chainName: "Persistence test-net",
+      stakeCurrency: {
+        coinDenom: "XPRT",
+        coinMinimalDenom: "uxprt",
+        coinDecimals: 6,
+        coinGeckoId: "persistence"
+      },
+      bip44: {
+        coinType: 118
+      },
+      currencies: [
+        {
+          coinDenom: "XPRT",
+          coinMinimalDenom: "uxprt",
+          coinDecimals: 6,
+          coinGeckoId: "persistence"
+        },
+        {
+          coinDenom: "STKATOM",
+          coinMinimalDenom: "stk/uatom",
+          coinDecimals: 6,
+          coinGeckoId: "persistence"
+        }
+      ],
+      feeCurrencies: [
+        {
+          coinDenom: "XPRT",
+          coinMinimalDenom: "uxprt",
+          coinDecimals: 6,
+          coinGeckoId: "persistence"
+        }
+      ],
+      bech32Config: {
+        bech32PrefixAccAddr: "persistence",
+        bech32PrefixAccPub: "persistencepub",
+        bech32PrefixValAddr: "persistencevaloper",
+        bech32PrefixValPub: "persistencevaloperpub",
+        bech32PrefixConsAddr: "persistencevalcons",
+        bech32PrefixConsPub: "persistencevalconspub"
+      },
+      gasPriceStep: {
+        low: 0.0,
+        average: 0.01,
+        high: 0.025
+      }
+    },
+    {
+      rpc: "https://rpc.testnet-cosmos.audit.one",
+      rest: "https://rest.testnet-cosmos.audit.one",
+      chainId: "theta-testnet-001",
+      chainName: "pStake Cosmos Testnet",
+      stakeCurrency: {
+        coinDenom: "ATOM",
+        coinMinimalDenom: "uatom",
+        coinDecimals: 6,
+        coinGeckoId: "cosmos"
+      },
+      bip44: {
+        coinType: 118
+      },
+      currencies: [
+        {
+          coinDenom: "ATOM",
+          coinMinimalDenom: "uatom",
+          coinDecimals: 6,
+          coinGeckoId: "cosmos"
+        }
+      ],
+      feeCurrencies: [
+        {
+          coinDenom: "ATOM",
+          coinMinimalDenom: "uatom",
+          coinDecimals: 6,
+          coinGeckoId: "cosmos"
+        }
+      ],
+      bech32Config: {
+        bech32PrefixAccAddr: "cosmos",
+        bech32PrefixAccPub: "cosmospub",
+        bech32PrefixValAddr: "cosmosvaloper",
+        bech32PrefixValPub: "cosmosvaloperpub",
+        bech32PrefixConsAddr: "cosmosvalcons",
+        bech32PrefixConsPub: "persistencevalconspub"
+      }
+    }
+  ],
+  Mainnet: [
+    {
+      rpc: "https://rpc.cosmoshub-4.audit.one/",
+      rest: "https://rest.cosmoshub-4.audit.one/",
+      chainId: "cosmoshub-4",
+      chainName: "Cosmos Hub",
+      stakeCurrency: {
+        coinDenom: "ATOM",
+        coinMinimalDenom: "uatom",
+        coinDecimals: 6,
+        coinGeckoId: "cosmos"
+      },
+      bip44: {
+        coinType: 118
+      },
+      currencies: [
+        {
+          coinDenom: "ATOM",
+          coinMinimalDenom: "uatom",
+          coinDecimals: 6,
+          coinGeckoId: "cosmos"
+        }
+      ],
+      feeCurrencies: [
+        {
+          coinDenom: "ATOM",
+          coinMinimalDenom: "uatom",
+          coinDecimals: 6,
+          coinGeckoId: "cosmos"
+        }
+      ],
+      bech32Config: {
+        bech32PrefixAccAddr: "cosmos",
+        bech32PrefixAccPub: "cosmospub",
+        bech32PrefixValAddr: "cosmosvaloper",
+        bech32PrefixValPub: "cosmosvaloperpub",
+        bech32PrefixConsAddr: "cosmosvalcons",
+        bech32PrefixConsPub: "persistencevalconspub"
+      }
+    },
+    {
+      rpc: "https://rpc.core.persistence.one/",
+      rest: "https://rest.core.persistence.one/",
+      chainId: "core-1",
+      chainName: "Persistence",
+      stakeCurrency: {
+        coinDenom: "XPRT",
+        coinMinimalDenom: "uxprt",
+        coinDecimals: 6,
+        coinGeckoId: "persistence"
+      },
+      bip44: {
+        coinType: 750
+      },
+      currencies: [
+        {
+          coinDenom: "XPRT",
+          coinMinimalDenom: "uxprt",
+          coinDecimals: 6,
+          coinGeckoId: "persistence"
+        },
+        {
+          coinDenom: "STKATOM",
+          coinMinimalDenom: "stk/uatom",
+          coinDecimals: 6,
+          coinGeckoId: "persistence"
+        }
+      ],
+      feeCurrencies: [
+        {
+          coinDenom: "XPRT",
+          coinMinimalDenom: "uxprt",
+          coinDecimals: 6,
+          coinGeckoId: "persistence"
+        }
+      ],
+      bech32Config: {
+        bech32PrefixAccAddr: "persistence",
+        bech32PrefixAccPub: "persistencepub",
+        bech32PrefixValAddr: "persistencevaloper",
+        bech32PrefixValPub: "persistencevaloperpub",
+        bech32PrefixConsAddr: "persistencevalcons",
+        bech32PrefixConsPub: "persistencevalconspub"
+      },
+      gasPriceStep: {
+        low: 0.0,
+        average: 0.0,
+        high: 0.0
+      }
+    }
+  ]
 };
