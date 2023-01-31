@@ -74,8 +74,8 @@ const HomepageContainer = () => {
           alt="logo"
           className="m-auto pb-4"
         />
-        <div className="max-w-[800px] m-auto">
-          <p className="text-light-emphasis text-center text-lg leading-normal font-medium">
+        <div className="max-w-[800px] m-auto md:mx-4">
+          <p className="text-light-emphasis text-center text-lg leading-normal font-medium md:text-base">
             Earn staking rewards on your Assets for securing PoS networks and
             participate in DeFi with stkAssets for additional yields. Select a
             network below to get started now.
