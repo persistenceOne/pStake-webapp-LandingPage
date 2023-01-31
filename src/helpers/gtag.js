@@ -1,8 +1,9 @@
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
-import { GA_TRACKING_ID } from "../../AppConstants";
+
+import { ANALYTICS_MEASURE_ID } from "./config";
 
 export const pageview = (url) => {
-  window.gtag("config", GA_TRACKING_ID, {
+  window.gtag("config", ANALYTICS_MEASURE_ID, {
     page_path: url
   });
 };

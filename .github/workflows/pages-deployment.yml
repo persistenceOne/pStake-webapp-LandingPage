@@ -30,7 +30,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: 'pstakeapp-ui' # e.g. 'my-project'
+          projectName: 'pstake-webapp-landingpage' # e.g. 'my-project'
           directory: 'out' # e.g. 'dist'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
       - run: echo random-url ${{ steps.publish.outputs.url }}

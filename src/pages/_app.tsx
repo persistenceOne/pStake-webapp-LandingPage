@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import "react-toastify/dist/ReactToastify.css";
 import TermsModal from "../components/organisms/termsModal";
 import React, { useEffect } from "react";
 import Head from "next/head";
