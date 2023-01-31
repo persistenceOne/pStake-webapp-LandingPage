@@ -163,6 +163,7 @@ const HomepageContainer = () => {
                         leading-normal hover:underline hover:cursor-pointer mb-3"
                           href={item.buttonUrl}
                           target={"_blank"}
+                          rel="noreferrer"
                         >
                           {item.buttonText}
                         </a>
