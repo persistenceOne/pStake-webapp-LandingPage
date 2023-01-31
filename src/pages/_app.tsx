@@ -7,6 +7,7 @@ import Head from "next/head";
 import Script from "next/script";
 import { useRouter } from "next/router";
 import * as gtag from "../helpers/gtag";
+import { ANALYTICS_MEASURE_ID } from "../helpers/config";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -20,12 +21,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
   }, [router.events]);
 
-  const GA_TRACKING_ID = "ssssss123";
   return (
     <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_MEASURE_ID}`}
       />
       {/* eslint-disable-next-line @next/next/inline-script-id */}
       <Script
@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', {
+            gtag('config', '${ANALYTICS_MEASURE_ID}', {
               page_path: window.location.pathname,
             });
           `

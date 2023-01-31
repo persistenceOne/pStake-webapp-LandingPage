@@ -1,4 +1,4 @@
-# stkATOM WebApp 
+# pstake WebApp 
 
 ### Tools and Technologies
 
