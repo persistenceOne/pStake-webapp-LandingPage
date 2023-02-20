@@ -28,7 +28,7 @@ const HomepageContainer = () => {
       asset: "Cosmos",
       network: "cosmos",
       imageUrl: "/images/atom.svg",
-      apy: cosmosApy.toFixed(2),
+      apy: cosmosApy === -1 ? APR_DEFAULT : cosmosApy.toFixed(2)!,
       buttonText: "Start Staking",
       buttonUrl: CHAIN[env].atomCosmosURL
     },
