@@ -15,8 +15,10 @@ import { AllowListedValidator } from "persistenceonejs/pstake/lscosmos/v1beta1/l
 import Long from "long";
 import { decimalize } from "../../helpers/utils";
 import { APR_BASE_RATE, APR_DEFAULT } from "../../../AppConstants";
+import Axios from "axios";
 const STK_BNB_SUBGRAPH_API =
   "https://api.thegraph.com/subgraphs/name/persistenceone/stkbnb";
+export const APY_API = "https://api.persistence.one/pstake/stkatom/apy";
 
 const env: string = process.env.NEXT_PUBLIC_ENV!;
 
@@ -40,6 +42,7 @@ export const getCommission = async () => {
     let commission: number = 0;
     const rpcClient = await RpcClient(persistenceChainInfo?.rpc!);
     const pstakeQueryService = new QueryClientImpl(rpcClient);
+
     const allowListedValidators: QueryAllowListedValidatorsResponse =
       await pstakeQueryService.AllowListedValidators({});
     const cosmosRpcClient = await RpcClient(cosmosChainInfo?.rpc!);
@@ -110,11 +113,15 @@ export const getAPR = async () => {
   }
 };
 
-export const getCosmosApy = async () => {
+export const getCosmosApy = async (): Promise<number> => {
   try {
-    const apr = await getAPR();
-    return ((1 + Number(apr) / 36500) ** 365 - 1) * 100;
+    const res = await Axios.get(APY_API);
+    if (res && res.data) {
+      return Number((res.data * 100).toFixed(2));
+    }
+    return -1;
   } catch (e) {
+    console.log(e, "getCosmosApy");
     return -1;
   }
 };
