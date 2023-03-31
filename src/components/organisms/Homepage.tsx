@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { CHAIN } from "../../helpers/config";
 import useTranslation from "next-translate/useTranslation";
 import ButtonLink from "../atoms/buttonLink";
-import Button from "../atoms/button";
 import { getCosmosApy, getBNBApy } from "../../pages/api/onChain";
 import { APR_DEFAULT } from "../../../AppConstants";
 
