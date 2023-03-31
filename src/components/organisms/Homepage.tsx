@@ -54,7 +54,7 @@ const HomepageContainer = () => {
       imageUrl: "/images/xprt.svg",
       apy: "0",
       buttonText: "Withdraw Assets",
-      buttonUrl: CHAIN[env].atomURL
+      buttonUrl: "https://migration.pstake.finance/"
     },
     {
       asset: "Cosmos",
@@ -62,7 +62,7 @@ const HomepageContainer = () => {
       imageUrl: "/images/atom.svg",
       apy: "0",
       buttonText: "Withdraw Assets",
-      buttonUrl: CHAIN[env].atomURL
+      buttonUrl: "https://migration.pstake.finance/"
     }
   ];
 
@@ -154,39 +154,14 @@ const HomepageContainer = () => {
                   </div>
                 </div>
                 <div className="">
-                  {item.network === "ethereum" &&
-                  (item.asset === "Persistence" || item.asset === "Cosmos") ? (
-                    <>
-                      <div className={"text-center"}>
-                        <a
-                          className="inline-block text-light-high text-center text-xsm font-medium
-                        leading-normal hover:underline hover:cursor-pointer mb-3"
-                          href={item.buttonUrl}
-                          target={"_blank"}
-                          rel="noreferrer"
-                        >
-                          {item.buttonText}
-                        </a>
-                      </div>
-                      <Button
-                        className="button w-full md:py-2 md:text-sm after:content-['Migrate_to_Persistence']
-                      hover:after:content-['Coming_soon']"
-                        type="primary"
-                        size="large"
-                        disabled={false}
-                        content=""
-                      />
-                    </>
-                  ) : (
-                    <ButtonLink
-                      className="button w-full md:py-2 md:text-sm block mt-8"
-                      type="primary"
-                      size="large"
-                      disabled={false}
-                      link={item.buttonUrl}
-                      content={item.buttonText}
-                    />
-                  )}
+                  <ButtonLink
+                    className="button w-full md:py-2 md:text-sm block mt-8"
+                    type="primary"
+                    size="large"
+                    disabled={false}
+                    link={item.buttonUrl}
+                    content={item.buttonText}
+                  />
                 </div>
               </div>
             ))}
