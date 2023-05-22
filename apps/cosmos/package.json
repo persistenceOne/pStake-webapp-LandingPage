@@ -40,6 +40,7 @@
     "react-redux": "^8.0.4",
     "react-toastify": "^9.0.8",
     "redux-saga": "^1.2.1",
+    "tailwindconfig": "*",
     "ui": "*"
   },
   "devDependencies": {

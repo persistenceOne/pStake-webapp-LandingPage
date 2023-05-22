@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import InputText from "../../../atoms/input";
+import {InputText} from "ui";
 import { COIN_ATOM, MIN_STAKE_FEE } from "../../../../../AppConstants";
 import { formatNumber } from "../../../../helpers/utils";
 import { useDispatch, useSelector } from "react-redux";

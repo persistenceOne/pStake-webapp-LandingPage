@@ -1,4 +1,4 @@
-import Dropdown from "../../molecules/dropdown";
+import {Dropdown} from "ui";
 import { useState } from "react";
 import { chains, Networks } from "../../../helpers/config";
 import { NetworkInfo } from "./types";

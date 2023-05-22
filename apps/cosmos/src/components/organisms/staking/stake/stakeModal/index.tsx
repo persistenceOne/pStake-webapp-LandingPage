@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Modal from "../../../../molecules/modal";
+import {Modal} from "ui";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../../store/reducers";
 import { Icon } from "../../../../atoms/icon";
