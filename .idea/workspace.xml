@@ -4,178 +4,143 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70607c77-00e4-4bad-b26e-9cb416d1f94e" name="Changes" comment="add cosmos app">
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/AppConstants.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/android-chrome-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/android-chrome-512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/browserconfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/mstile-144x144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/mstile-150x150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/mstile-310x150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/mstile-310x310.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/mstile-70x70.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/safari-pinned-tab.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/favicons/site.webmanifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/bg/bg_round1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/bg/bg_round2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/bg/bg_round3.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/caution.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/defi/crescent.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/defi/dexter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/defi/osmosis.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/defi/umee.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/persistence_icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/symbols.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/tokens/atom.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/tokens/stk_atom.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/tokens/stk_xprt.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/tokens/xprt_logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/tokens/xprt_white.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/wallets/cosmos_station.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/wallets/keplr.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/wallets/keplr_round.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/wallets/leap.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/og.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/sitemap.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/button/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/button/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/button/types.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/buttonLink/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/buttonLink/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/buttonLink/types.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/icon/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/icon/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/icon/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/input/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/input/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/input/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/spinner/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/spinner/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/spinner/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/tooltip/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/tooltip/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/tooltip/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/copy/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/copy/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/copy/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/exchangeRate/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/exchangeRate/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/exchangeRate/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/modal/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/modal/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/modal/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/tabs/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/tabs/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/tabs/tabContent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/tabs/tabItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/tabs/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/toast/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/toast/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/toast/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/transactionHelper/transactiosIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/Example.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/defi/cardList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/defi/defiData.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/defi/filter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/defi/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/defi/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/maintenanceContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/loginOptions.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/balanceList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/mobileSidebar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/withdrawModal/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/withdrawModal/submit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/withdrawModal/withdrawToasts.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/claim/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/claim/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/To.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/from.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/stakeModal/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/stakeModal/submit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/stakeToasts.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/submit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stakingTabs/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stakingTabs/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/from.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/options.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/submit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/termsModal/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/templates/template.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/context/WalletConnect/WalletConnect.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/context/WalletConnect/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/customHooks/useLocalStorage/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/customHooks/useOnClickOutside.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/customHooks/useWindowSize.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/helpers/aminoConvter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/helpers/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/helpers/gtag.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/helpers/protoMsg.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/helpers/transaction.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/helpers/utils.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/helpers/wallets.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/pages/_app.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/pages/_document.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/pages/_error.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/pages/api/externalAPIs.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/pages/api/onChain.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/pages/defi/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/pages/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/pages/maintenance.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/balances/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/balances/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/claim/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/claim/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/initialData/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/initialData/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/liveData/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/liveData/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/sidebar/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/sidebar/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/transaction/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/transaction/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/transactions/claim/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/transactions/claim/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/transactions/deposit/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/transactions/deposit/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/transactions/stake/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/transactions/stake/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/transactions/unstake/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/transactions/unstake/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/transactions/withdraw/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/reducers/transactions/withdraw/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/sagas/fetchingSagas.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/sagas/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/sagas/init.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/sagas/sagaHelpers.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/store/sagas/transactions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/styles/globals.css" afterDir="false" />
+    <list default="true" id="70607c77-00e4-4bad-b26e-9cb416d1f94e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/additional.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/appConstants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/android-chrome-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/android-chrome-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/browserconfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/favicon-16x16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/favicon-32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/mstile-144x144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/mstile-150x150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/mstile-310x150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/mstile-310x310.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/mstile-70x70.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/safari-pinned-tab.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/favicons/site.webmanifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/bg/bg_round1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/bg/bg_round2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/bg/bg_round3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/logos/atom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/logos/crescent.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/logos/eth.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/logos/optimism.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/logos/osmosis.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/logos/stkEth.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/logos/stk_atom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/logos/uniswap.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/logos/xprt_logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/symbols.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/images/wallets/metamask.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/public/sitemap.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/button/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/button/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/button/types.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/buttonLink/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/buttonLink/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/buttonLink/types.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/icon/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/icon/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/icon/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/input/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/input/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/input/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/spinner/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/spinner/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/spinner/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/tooltip/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/tooltip/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/tooltip/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/copy/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/copy/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/copy/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/dropdown/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/exchangeRate/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/exchangeRate/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/exchangeRate/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/modal/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/modal/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/modal/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/tabs/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/tabs/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/tabs/tabContent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/tabs/tabItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/tabs/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/toast/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/toast/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/toast/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/submit.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/token/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/cardList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/defiData.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/filter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/addToken/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/addToken/modal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/loginOptions.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/networks.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/balanceList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/sidebarContent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/To.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/from.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/stakeOption.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/submit.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stakeModal/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stakingTabs/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stakingTabs/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/templates/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/contracts/abi/staking.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/contracts/abi/stkETH.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/contracts/types/Staking.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/contracts/types/StkETH.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/contracts/types/common.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/contracts/types/factories/Staking__factory.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/contracts/types/factories/StkETH__factory.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/contracts/types/factories/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/contracts/types/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/customHooks/useLocalStorage/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/customHooks/useOnClickOutside.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/customHooks/useWindowSize.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/helpers/config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/helpers/data.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/helpers/transaction.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/helpers/utils.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/helpers/wallets.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/pages/_app.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/pages/_document.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/pages/_error.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/pages/api/externalApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/pages/api/hello.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/pages/bridge.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/pages/defi.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/pages/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/pages/sentry_sample_error.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/store/slices/balanceSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/store/slices/initialDataSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/store/slices/sidebarSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/store/slices/transactions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/store/slices/walletSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/store/store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/styles/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/app/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/app/globals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/app/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/app/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +164,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "turbo__repo",
-    "last_opened_file_path": "C:/Users/black/Documents/pStake-webapp-LandingPage/apps/cosmos",
+    "last_opened_file_path": "C:/Users/black/Documents/pStake-webapp-LandingPage/apps/ethereum",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -211,7 +176,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps\ethereum" />
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps\cosmos" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -225,7 +194,7 @@
       <workItem from="1684739931817" duration="1035000" />
       <workItem from="1684740993408" duration="3086000" />
       <workItem from="1684745331623" duration="1295000" />
-      <workItem from="1684746769397" duration="1921000" />
+      <workItem from="1684746769397" duration="2921000" />
     </task>
     <task id="LOCAL-00001" summary="remove old files">
       <created>1684740707715</created>
