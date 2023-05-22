@@ -1,0 +1,11 @@
+.iconBox{
+    border: 2px solid #272727;
+    transform: translateX(0%) translateY(-50%);
+    top: 3px;
+    z-index: 1;
+    left: auto;
+}
+
+.stakeModalBody{
+    border-top: 1px solid #383838;
+}

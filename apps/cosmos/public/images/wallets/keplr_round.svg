@@ -1,0 +1,25 @@
+<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_216_3128" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="42" height="42">
+<circle cx="21.2295" cy="20.7856" r="20.2563" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_216_3128)">
+<path d="M32.947 -1.65233H7.33039C2.61453 -1.65233 -1.20847 2.17067 -1.20847 6.88653V32.5031C-1.20847 37.2192 2.61453 41.042 7.33039 41.042H32.947C37.663 41.042 41.4858 37.2192 41.4858 32.5031V6.88653C41.4858 2.17067 37.663 -1.65233 32.947 -1.65233Z" fill="url(#paint0_radial_216_3128)"/>
+<path d="M32.947 -1.65233H7.33039C2.61453 -1.65233 -1.20847 2.17067 -1.20847 6.88653V32.5031C-1.20847 37.2192 2.61453 41.042 7.33039 41.042H32.947C37.663 41.042 41.4858 37.2192 41.4858 32.5031V6.88653C41.4858 2.17067 37.663 -1.65233 32.947 -1.65233Z" fill="url(#paint1_radial_216_3128)" fill-opacity="0.57"/>
+<path d="M32.947 -1.65233H7.33039C2.61453 -1.65233 -1.20847 2.17067 -1.20847 6.88653V32.5031C-1.20847 37.2192 2.61453 41.042 7.33039 41.042H32.947C37.663 41.042 41.4858 37.2192 41.4858 32.5031V6.88653C41.4858 2.17067 37.663 -1.65233 32.947 -1.65233Z" fill="url(#paint2_radial_216_3128)" fill-opacity="0.68"/>
+</g>
+<path d="M16.4201 32.4972V23.2942L25.1184 32.4972H29.9574V32.2597L19.9528 21.7802L29.1855 11.835V11.7162H24.3168L16.4201 20.5036V11.7162H12.5013V32.4972H16.4201Z" fill="white"/>
+<defs>
+<radialGradient id="paint0_radial_216_3128" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(37.5865 3.02633) scale(73.4346)">
+<stop stop-color="#2F80F2"/>
+<stop offset="0.999657" stop-color="#A942B5"/>
+</radialGradient>
+<radialGradient id="paint1_radial_216_3128" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-1.20847 -0.735207) scale(67.93)">
+<stop stop-color="#45F9DE"/>
+<stop offset="1" stop-color="#A942B5" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint2_radial_216_3128" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(41.4858 41.042) scale(41.0051)">
+<stop stop-color="#E957C5"/>
+<stop offset="1" stop-color="#A942B5" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

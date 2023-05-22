@@ -1,0 +1,33 @@
+.Input{
+    max-width: 160px;
+}
+
+.iconBox{
+    border: 2px solid #272727;
+    background: #1A1A1A;
+    width: 40px;
+    height: 40px;
+    transform: translateX(0%) translateY(-50%);
+    top: 0;
+    z-index: 1;
+    left: auto;
+}
+
+.options{
+
+}
+
+.preferred{
+    left: -1px;
+    top: -15px;
+    background: #47C28B;
+    border-radius: 6px 6px 6px 0;
+}
+
+.amount{
+    max-width: 200px;
+}
+
+.styles.activeOption{
+
+}
