@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="70607c77-00e4-4bad-b26e-9cb416d1f94e" name="Changes" comment="initialize turbo repo">
+      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.npmrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/cosmos/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/app/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/app/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/next-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/next.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/web/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/web/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/web/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/web/app/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/web/app/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/web/next-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/web/next.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/web/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/web/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-config-custom/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-config-custom/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/tsconfig/base.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/tsconfig/nextjs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/tsconfig/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/tsconfig/react-library.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/Button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/turbo/generators/config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/turbo/generators/templates/component.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/turbo.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Q8f3ciGlEKNdzy1rnyKW058K27" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;turbo__repo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/black/Documents/pStake-webapp-LandingPage/apps/cosmos&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps\cosmos" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="70607c77-00e4-4bad-b26e-9cb416d1f94e" name="Changes" comment="" />
+      <created>1684739930652</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684739930652</updated>
+      <workItem from="1684739931817" duration="1035000" />
+      <workItem from="1684740993408" duration="3086000" />
+      <workItem from="1684745331623" duration="1295000" />
+      <workItem from="1684746769397" duration="1076000" />
+    </task>
+    <task id="LOCAL-00001" summary="remove old files">
+      <created>1684740707715</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684740707715</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="remove old files" />
+    <MESSAGE value="initialize turbo repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="initialize turbo repo" />
+  </component>
+</project>
