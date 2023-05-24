@@ -75,7 +75,7 @@ const StakingTabs = () => {
             </Tooltip>
           </div>
           {apy !== 0 ? (
-            <p className="text-secondary font-semibold leading-normal text-2xl text-center md:text-base">
+            <p className="text-light-emphasis font-semibold leading-normal text-2xl text-center md:text-base">
               {apy === -1 ? APR_DEFAULT : apy}%
             </p>
           ) : (

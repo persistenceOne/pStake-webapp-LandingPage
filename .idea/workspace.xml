@@ -5,141 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70607c77-00e4-4bad-b26e-9cb416d1f94e" name="Changes" comment="add cosmos app">
-      <change afterPath="$PROJECT_DIR$/packages/ui/styles/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/button/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/button/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/button/types.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/buttonLink/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/buttonLink/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/buttonLink/types.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/icon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/icon/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/icon/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/icon/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/input/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/input/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/input/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/spinner/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/spinner/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/spinner/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/tooltip/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/tooltip/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/atoms/tooltip/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/copy/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/copy/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/copy/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/exchangeRate/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/exchangeRate/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/modal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/modal/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/tabs/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/tabs/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/tabs/tabContent.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/tabs/tabItem.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/tabs/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/toast/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/toast/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/toast/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/transactionHelper/transactiosIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/transactionHelper/transactiosIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/defi/cardList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/defi/cardList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/defi/filter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/defi/filter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/loginOptions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/loginOptions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/balanceList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/balanceList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/withdrawModal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/withdrawModal/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/withdrawModal/submit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/withdrawModal/submit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/withdrawModal/withdrawToasts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/withdrawModal/withdrawToasts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/claim/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/claim/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/To.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/To.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/stakeModal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/stakeModal/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/stakeModal/submit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/stakeModal/submit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/stakeToasts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/stakeToasts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/submit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/submit.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stakingTabs/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stakingTabs/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/from.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/from.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/options.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/options.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/submit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/submit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/termsModal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/termsModal/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/context/WalletConnect/WalletConnect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/context/WalletConnect/WalletConnect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/store/sagas/sagaHelpers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/store/sagas/sagaHelpers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/store/sagas/transactions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/store/sagas/transactions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/button/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/button/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/button/types.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/buttonLink/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/buttonLink/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/buttonLink/types.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/icon/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/icon/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/icon/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/input/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/input/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/input/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/spinner/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/spinner/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/spinner/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/tooltip/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/tooltip/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/tooltip/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/copy/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/copy/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/dropdown/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/exchangeRate/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/exchangeRate/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/modal/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/modal/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/modal/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/tabs/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/tabs/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/tabs/tabContent.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/tabs/tabItem.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/tabs/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/toast/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/toast/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/toast/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/submit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/submit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/token/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/token/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/cardList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/cardList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/filter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/filter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/addToken/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/addToken/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/addToken/modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/addToken/modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/loginOptions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/loginOptions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/networks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/networks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/balanceList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/balanceList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/sidebarContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/sidebarContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/To.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/To.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/from.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/from.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/stakeOption.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/stakeOption.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/submit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/submit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stakeModal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stakeModal/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stakingTabs/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stakingTabs/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/templates/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/templates/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/helpers/transaction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/helpers/transaction.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/helpers/utils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/helpers/utils.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/helpers/wallets.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/helpers/wallets.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/pages/bridge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/pages/bridge.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/tailwind.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/tailwindconfig/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tailwindconfig/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/atoms/button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/atoms/button/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/atoms/icon/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/atoms/icon/styles.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/atoms/icon/symbols.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/atoms/icon/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/atoms/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/atoms/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/atoms/spinner/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/atoms/spinner/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/molecules/copy/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/molecules/copy/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/molecules/dropdown/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/molecules/dropdown/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/molecules/tabs/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/molecules/tabs/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/molecules/tabs/tabContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/molecules/tabs/tabContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/molecules/tabs/tabItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/molecules/tabs/tabItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/ui/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/turbo/generators/config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/turbo/generators/templates/component.hbs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,23 +31,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;turbo__repo&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/black/Documents/pStake-webapp-LandingPage/packages/ui&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\black\\Documents\\pStake-webapp-LandingPage\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\black\\Documents\\pStake-webapp-LandingPage\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "turbo__repo",
+    "last_opened_file_path": "C:/Users/black/Documents/design-system-template",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\black\\Documents\\pStake-webapp-LandingPage\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "C:\\Users\\black\\Documents\\pStake-webapp-LandingPage\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages\ui" />
@@ -184,11 +57,11 @@
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages\ui\components\atoms" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages\ui\src" />
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps\cosmos\public\images" />
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps\cosmos\public" />
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps\cosmos\src\components\atoms" />
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps\cosmos\src" />
-      <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages\ui\components\atoms" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -205,7 +78,7 @@
       <workItem from="1684746769397" duration="17561000" />
       <workItem from="1684817952033" duration="10953000" />
       <workItem from="1684836294979" duration="416000" />
-      <workItem from="1684894416729" duration="6965000" />
+      <workItem from="1684894416729" duration="9069000" />
     </task>
     <task id="LOCAL-00001" summary="remove old files">
       <created>1684740707715</created>
@@ -249,7 +122,6 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/apps/ethereum/tailwind.config.js</url>
-          <line>9</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
