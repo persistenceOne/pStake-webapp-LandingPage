@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store/reducers";
 import Styles from "./styles.module.css";
 import { useRouter } from "next/router";
-import { emptyFunc } from "../../../helpers/utils";
+import { emptyFunc } from "utils";
 import { useWindowSize } from "../../../customHooks/useWindowSize";
 import Tooltip from "rc-tooltip";
 import "rc-tooltip/assets/bootstrap.css";

@@ -1,12 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import Styles from "./styles.module.css";
-import { Icon, Button, Copy } from "ui";
+import { Button, Copy } from "ui";
+import { Icon } from "../../atoms/icon";
 import { stringTruncate } from "../../../helpers/utils";
 import { useOnClickOutside } from "../../../customHooks/useOnClickOutside";
 import { useWindowSize } from "../../../customHooks/useWindowSize";
 import { handleMetamask } from "../../../helpers/wallets";
 import { META_MASK } from "../../../../appConstants";
 import { useAppStore } from "../../../store/store";
+import { getStorageValue } from "../../../customHooks/useLocalStorage";
 
 const getWalletIcon = (walletName: string) => {
   if (walletName === META_MASK) {
@@ -19,11 +21,14 @@ export const LoginOptions = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [walletIcon, setWalletIcon] = useState("metamask");
 
+  const networkItem = getStorageValue("network", "");
+
   const walletInfo = useAppStore((state) => state.wallet);
   const { isTablet } = useWindowSize();
+  const handleWalletNetwork = useAppStore((state) => state.handleWalletNetwork);
 
   const disconnectHandler = async () => {
-    localStorage.removeItem("wallet");
+    localStorage.removeItem("network");
     window.location.reload();
   };
 
@@ -36,6 +41,13 @@ export const LoginOptions = () => {
   useOnClickOutside(ref, () => {
     setDropdownOpen(false);
   });
+
+  useEffect(() => {
+    if (networkItem !== "" && networkItem !== null) {
+      handleWalletNetwork(networkItem);
+      handleMetamask();
+    }
+  }, [networkItem]);
 
   const walletHandler = async () => {
     await handleMetamask();

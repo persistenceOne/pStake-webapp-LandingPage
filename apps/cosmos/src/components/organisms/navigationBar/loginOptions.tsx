@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Styles from "./styles.module.css";
 import { useWallet } from "../../../context/WalletConnect/WalletConnect";
 import { Icon, Button, Copy } from "ui";
-import { stringTruncate } from "../../../helpers/utils";
+import { stringTruncate } from "utils";
 import { Window as KeplrWindow } from "@keplr-wallet/types/build/window";
 import { useOnClickOutside } from "../../../customHooks/useOnClickOutside";
 import { useWindowSize } from "../../../customHooks/useWindowSize";

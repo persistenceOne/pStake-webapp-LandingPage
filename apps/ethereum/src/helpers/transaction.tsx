@@ -1,12 +1,13 @@
 import React from "react";
-import { displayToast, Icon } from "ui";
-import { ToastType } from "ui/components/molecules/toast/types";
+import { displayToast } from "ui";
 import { BigNumberish, ContractTransaction, utils } from "ethers";
 import { exceptionHandle, stringTruncate } from "./utils";
+import { Icon } from "../components/atoms/icon";
 import { useAppStore } from "../store/store";
 import { Staking } from "../contracts/types";
 import { PromiseOrValue } from "../contracts/types/common";
-import { chains } from "./config";
+import { chains, messengerId } from "./config";
+import { ToastType } from "ui/components/molecules/toast/types";
 
 const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
 
@@ -26,7 +27,7 @@ export type TransferToOptimism = {
 };
 
 export const formBlockExplorerLink = (txnHash: string) => {
-  const network = useAppStore.getState().wallet.network!;
+  const network = useAppStore.getState().network.name!;
   const chain = chains[env][network].explorerUrl;
   if (txnHash) return `${chain}/tx/${txnHash}`;
   return "";
@@ -49,24 +50,30 @@ export const executeStakeTransaction = async (
 ) => {
   useAppStore.getState().setTxnInfo(true, "stake", null);
   try {
-    console.log(
-      contractParams,
-      "contractParams",
-      utils.parseEther(contractParams.amount.toString())
-    );
-    const txn: ContractTransaction | undefined = await instance?.stake({
+    const walletSigner = useAppStore.getState().walletSigner;
+    const gasPrice = await walletSigner!.estimateGas({
       from: contractParams.ethAddress,
       value: utils.parseEther(contractParams.amount.toString()),
     });
+    // const maxFeePerGas: any = utils.formatEther(gasFeeData["maxFeePerGas"]);
+    // const transactionFees = result.toNumber() * maxFeePerGas;
+
+    const gasLimit = await instance!.estimateGas.stake({
+      from: contractParams.ethAddress,
+      value: utils.parseEther(contractParams.amount.toString()),
+    });
+    console.log(gasLimit, "transactionFees");
+    const txn: ContractTransaction | undefined = await instance?.stake({
+      from: contractParams.ethAddress,
+      value: utils.parseEther(contractParams.amount.toString()),
+      gasLimit: gasLimit.toString(),
+    });
     console.log(txn, "txn");
+    useAppStore.getState().setTxnBroadCast(true);
     await transactionActions(txn);
   } catch (e: any) {
     exceptionHandle(e, { "Error while staking": "" });
   }
-};
-
-export type sparams = {
-  token: number;
 };
 
 export const executeMintOnOptimismTransaction = async (
@@ -75,20 +82,26 @@ export const executeMintOnOptimismTransaction = async (
 ) => {
   useAppStore.getState().setTxnInfo(true, "mintOnOptimism", null);
   try {
-    console.log(
-      contractParams,
-      "minting",
-      utils.parseEther(contractParams!.amount.toString())
-    );
-    const txn: ContractTransaction | undefined = await instance?.mintOptimism(
+    const gasLimit = await instance!.estimateGas.mintL2(
+      messengerId[env],
       contractParams!.address,
       {
         value: utils.parseEther(contractParams!.amount!.toString()),
       }
     );
+
+    const txn: ContractTransaction | undefined = await instance?.mintL2(
+      messengerId[env],
+      contractParams!.address,
+      {
+        value: utils.parseEther(contractParams!.amount!.toString()),
+        gasLimit: gasLimit,
+      }
+    );
+    useAppStore.getState().setTxnBroadCast(true);
     await transactionActions(txn);
   } catch (e: any) {
-    exceptionHandle(e, { "Error while un-staking": "" });
+    exceptionHandle(e, { "Error while minting on optimism": "" });
   }
 };
 
@@ -98,12 +111,22 @@ export const executeTransferToOptimismTransaction = async (
 ) => {
   useAppStore.getState().setTxnInfo(true, "transferToOptimism", null);
   try {
-    const txn: ContractTransaction | undefined =
-      await instance?.transferToOptimism(
-        contractParams!.address,
-        utils.parseEther(contractParams!.amount!.toString()),
-        { from: contractParams!.address }
-      );
+    console.log(contractParams, "contractParams");
+    const gasLimit = await instance!.estimateGas.transferToL2(
+      messengerId[env],
+      utils.parseEther(contractParams!.amount!.toString()),
+      contractParams!.address
+    );
+
+    const txn: ContractTransaction | undefined = await instance?.transferToL2(
+      messengerId[env],
+      utils.parseEther(contractParams!.amount!.toString()),
+      contractParams!.address,
+      {
+        gasLimit: gasLimit,
+      }
+    );
+    useAppStore.getState().setTxnBroadCast(true);
     await transactionActions(txn);
   } catch (e: any) {
     exceptionHandle(e, { "Error while transfer": "" });
@@ -142,9 +165,11 @@ export const transactionActions = async (
       ToastType.SUCCESS
     );
     await useAppStore.getState().fetchBalances();
+    useAppStore.getState().setTxnBroadCast(false);
     useAppStore.getState().setTxnInfo(false, null, "success");
     console.log(txn);
   } catch (e) {
+    useAppStore.getState().setTxnBroadCast(false);
     useAppStore.getState().setTxnInfo(false, null, "failed");
     exceptionHandle(e, { "Error while making txn": "" });
   }

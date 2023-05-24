@@ -9,8 +9,8 @@ import {
 } from "../../../../store/reducers/transactions/withdraw";
 import { Icon, Button, Modal } from "ui";
 import styles from "../../staking/stake/styles.module.css";
-import TransactionIcon from "../../../molecules/transactionHelper/transactiosIcon";
 import { resetTransaction } from "../../../../store/reducers/transaction";
+import TransactionIcon from "@/components/molecules/transactionHelper/transactiosIcon";
 
 const WithdrawModal = () => {
   const dispatch = useDispatch();

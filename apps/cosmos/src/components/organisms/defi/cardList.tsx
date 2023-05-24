@@ -3,7 +3,7 @@ import React from "react";
 import { Icon, ButtonLink } from "ui";
 import Tooltip from "rc-tooltip";
 import { useWindowSize } from "../../../customHooks/useWindowSize";
-import { numberFormat } from "../../../helpers/utils";
+import { numberFormat } from "utils";
 import { DefiDataList, DefiInfo } from "./defiData";
 import { SortOptions } from "./index";
 

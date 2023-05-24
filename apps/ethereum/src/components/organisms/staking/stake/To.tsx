@@ -1,9 +1,6 @@
 import React from "react";
 import { InputText } from "ui";
-import {
-  formatNumber,
-  truncateToFixedDecimalPlaces,
-} from "../../../../helpers/utils";
+import { truncateToFixedDecimalPlaces } from "utils";
 import { useWindowSize } from "../../../../customHooks/useWindowSize";
 import { useAppStore } from "../../../../store/store";
 

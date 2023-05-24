@@ -1,7 +1,10 @@
 import { StateCreator } from "zustand";
+import produce from "immer";
 
 export interface SidebarSliceState {
-  show: boolean;
+  sidebar: {
+    show: boolean;
+  };
 }
 
 export interface SidebarSliceActions {
@@ -11,13 +14,17 @@ export interface SidebarSliceActions {
 export type SidebarSlice = SidebarSliceState & SidebarSliceActions;
 
 const initialState = {
-  show: false,
+  sidebar: {
+    show: false,
+  },
 };
+
 export const createSidebarSlice: StateCreator<SidebarSlice> = (set) => ({
   ...initialState,
-  handleSidebar: async (value: boolean) => {
-    set({
-      show: value,
-    });
-  },
+  handleSidebar: (value: boolean) =>
+    set(
+      produce((state: SidebarSlice) => {
+        state.sidebar.show = value;
+      })
+    ),
 });

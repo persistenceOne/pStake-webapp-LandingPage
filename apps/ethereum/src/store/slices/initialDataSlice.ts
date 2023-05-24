@@ -21,7 +21,7 @@ export interface InitialDataSliceState {
 
 export interface InitialDataSliceActions {
   fetchInitialData: () => Promise<void>;
-  fetchExchangeRate: (value: AlchemyProvider) => Promise<void>;
+  fetchExchangeRate: () => Promise<void>;
   resetInitialDataSlice: () => void;
 }
 
@@ -50,8 +50,8 @@ export const createInitialDataSlice: StateCreator<InitialDataSlice> = (
       ethPrice: response,
     });
   },
-  fetchExchangeRate: async (value: AlchemyProvider) => {
-    const response: string = await getExchangeRate(value);
+  fetchExchangeRate: async () => {
+    const response: string = await getExchangeRate();
     set({
       exchangeRate: response,
     });

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Icon } from 'ui';
-import { toast } from 'react-toastify';
-import { Alert, ToastType } from './types';
+import React from "react";
+import { toast } from "react-toastify";
+import { Alert, ToastType } from "./types";
+import { Icon } from "cosmos/src/components/atoms/icon";
 
 const BroadCastMsg = ({ message }: any) => (
   <div className="toast-content">
@@ -29,11 +29,11 @@ const TransactionSuccess = ({ message, txHash }: any) => (
   </div>
 );
 
-const TransactionFailed = ({ message }: any) => (
+const TransactionFailed = ({ message, heading }: any) => (
   <div className="toast-content">
     <div className="title-section">
       <Icon iconName="failed" viewClass="icon-toast" />
-      <p className="title">Transaction Failed</p>
+      <p className="title">{heading ? heading : "Transaction Failed"}</p>
     </div>
     <p className="content">{message}</p>
   </div>
@@ -49,7 +49,7 @@ const TransactionInfo = ({ message }: any) => (
   </div>
 );
 
-export const displayToast = (alert: Alert, type: ToastType) => {
+export function displayToast(alert: Alert, type: ToastType) {
   switch (type) {
     case ToastType.SUCCESS:
       toast(<TransactionSuccess {...alert} />);

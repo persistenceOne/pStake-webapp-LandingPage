@@ -1,12 +1,45 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
-import { EthereumData, ethereumData, optimismData } from "./defiData";
+import { DefiInfo, EthereumData, ethereumData, optimismData } from "./defiData";
 import { useAppStore } from "../../../store/store";
 import CardList from "./cardList";
 import Filters from "./filter";
 import { Networks } from "../../../helpers/config";
 
 export type SortOptions = "all" | "dexes" | "lending";
+
+const arraySortDestruct = (defiList: any) => {
+  let arrayKeys = Object.keys(defiList);
+  let sortedTotalData: any[] = [];
+  let sortedDefiList: EthereumData = defiList;
+  arrayKeys.map((arrayIndex: string) => {
+    const filterd = defiList[arrayIndex as keyof typeof defiList].sort(
+      (a: any, b: any) => a.id - b.id
+    );
+    sortedTotalData.push(...filterd);
+    sortedDefiList[arrayIndex as keyof typeof defiList] = filterd;
+  });
+  return [sortedTotalData, sortedDefiList];
+};
+
+const arrayFilterDestruct = (defiList: any, searchTerm: string) => {
+  let arrayKeys = Object.keys(defiList);
+  let sortedTotalData: any[] = [];
+  let sortedDefiList: EthereumData = defiList;
+  arrayKeys.map((arrayIndex: string) => {
+    const filterd = defiList[arrayIndex as keyof typeof defiList].filter(
+      (val) => {
+        return (
+          val.token0.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          val.platform.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      }
+    );
+    sortedTotalData.push(...filterd);
+    sortedDefiList[arrayIndex as keyof typeof defiList] = filterd;
+  });
+  return [sortedTotalData, sortedDefiList];
+};
 
 const DefiList = () => {
   const [sortActive, setSortActive] = useState<{
@@ -28,66 +61,74 @@ const DefiList = () => {
   const [allDefiList, setAllDefiList] = useState<any>([]);
 
   const defiListData = useAppStore((state) => state.defiList);
+
   useEffect(() => {
-    let sortByNetworkKeys = Object.keys(sortByNetwork);
-    const activeNetwork = sortByNetworkKeys.find(
-      (key) => sortByNetwork[key as keyof typeof sortByNetwork]
-    );
+    let allNetworkDefiList: any = [];
     let defiList: EthereumData = {
       dexList: [],
       blList: [],
     };
-    if (activeNetwork === "ethereum") {
-      defiList = ethereumData(defiListData.uniSwap, defiListData.uniSwap);
-    } else if (activeNetwork === "optimism") {
-      defiList = optimismData(defiListData.uniSwap, defiListData.uniSwap);
+    for (const key in sortByNetwork) {
+      if (key === "ethereum" && sortByNetwork[key]) {
+        const ethDefiList = ethereumData(
+          defiListData.uniSwap,
+          defiListData.uniSwap
+        );
+        const filteredArray: any[] = arraySortDestruct(ethDefiList);
+        defiList.dexList.push(...filteredArray[1].dexList);
+        defiList.blList.push(...filteredArray[1].blList);
+        allNetworkDefiList.push(...filteredArray[0]);
+      } else if (key === "optimism" && sortByNetwork[key]) {
+        const optDefiList = optimismData(
+          defiListData.uniSwap,
+          defiListData.uniSwap
+        );
+        const filteredArray: any[] = arraySortDestruct(optDefiList);
+        defiList.dexList.push(...filteredArray[1].dexList);
+        defiList.blList.push(...filteredArray[1].blList);
+        allNetworkDefiList.push(...filteredArray[0]);
+      }
     }
     setNetworkDefiList(defiList);
-    let arrayKeys = Object.keys(defiList);
-    let sortedDefiList: EthereumData = defiList;
-    let sortedTotalData: any[] = [];
-    arrayKeys.map((arrayIndex: string) => {
-      const restdd = defiList[arrayIndex as keyof typeof defiList].sort(
-        (a: any, b: any) => a.id - b.id
-      );
-      sortedTotalData.push(...restdd);
-      sortedDefiList[arrayIndex as keyof typeof defiList] = restdd;
-    });
-    setAllDefiList(sortedTotalData);
+    setAllDefiList(allNetworkDefiList);
   }, [defiListData, sortByNetwork]);
 
   const searchHandler = (evt: any) => {
     const searchTerm = evt.target.value;
+    let allNetworkDefiList: any = [];
     let defiList: EthereumData = {
       dexList: [],
       blList: [],
     };
-    let sortByNetworkKeys = Object.keys(sortByNetwork);
-    const activeNetwork = sortByNetworkKeys.find(
-      (key) => sortByNetwork[key as keyof typeof sortByNetwork]
-    );
-    if (activeNetwork === "ethereum") {
-      defiList = ethereumData(defiListData.uniSwap, defiListData.uniSwap);
-    } else if (activeNetwork === "optimism") {
-      defiList = optimismData(defiListData.uniSwap, defiListData.uniSwap);
+    for (const key in sortByNetwork) {
+      if (key === "ethereum" && sortByNetwork[key]) {
+        const ethDefiList = ethereumData(
+          defiListData.uniSwap,
+          defiListData.uniSwap
+        );
+        const filteredArray: any[] = arrayFilterDestruct(
+          ethDefiList,
+          searchTerm
+        );
+        defiList.dexList.push(...filteredArray[1].dexList);
+        defiList.blList.push(...filteredArray[1].blList);
+        allNetworkDefiList.push(...filteredArray[0]);
+      } else if (key === "optimism" && sortByNetwork[key]) {
+        const optDefiList = optimismData(
+          defiListData.uniSwap,
+          defiListData.uniSwap
+        );
+        const filteredArray: any[] = arrayFilterDestruct(
+          optDefiList,
+          searchTerm
+        );
+        defiList.dexList.push(...filteredArray[1].dexList);
+        defiList.blList.push(...filteredArray[1].blList);
+        allNetworkDefiList.push(...filteredArray[0]);
+      }
     }
     setNetworkDefiList(defiList);
-    let arrayKeys = Object.keys(defiList);
-    let sortedDefiList: EthereumData = defiList;
-    let sortedTotalData: any[] = [];
-    arrayKeys.map((arrayIndex: string) => {
-      const filterd = defiList[arrayIndex as keyof typeof defiList].filter(
-        (val) => {
-          return (
-            val.token0.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            val.platform.toLowerCase().includes(searchTerm.toLowerCase())
-          );
-        }
-      );
-      sortedTotalData.push(...filterd);
-      sortedDefiList[arrayIndex as keyof typeof defiList] = filterd;
-    });
-    setAllDefiList(sortedTotalData);
+    setAllDefiList(allNetworkDefiList);
   };
 
   return (

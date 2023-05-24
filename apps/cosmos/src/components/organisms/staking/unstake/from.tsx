@@ -1,9 +1,7 @@
 import React, { ChangeEvent } from "react";
 import { InputText } from "ui";
-import {
-  formatNumber,
-  truncateToFixedDecimalPlaces,
-} from "../../../../helpers/utils";
+import { formatNumber } from "utils";
+import { truncateToFixedDecimalPlaces } from "utils";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store/reducers";
 import { setUnStakeAmount } from "../../../../store/reducers/transactions/unstake";

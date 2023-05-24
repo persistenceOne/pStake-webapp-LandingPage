@@ -1,4 +1,4 @@
-import { truncateToFixedDecimalPlaces } from "../../../../helpers/utils";
+import { truncateToFixedDecimalPlaces } from "utils";
 import styles from "./styles.module.css";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";

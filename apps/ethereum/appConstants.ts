@@ -11,7 +11,7 @@ export const TOTAL_APY = "total_apy";
 export const LATEST = "latest";
 export const ETH_REQUEST_ACCOUNTS = "eth_requestAccounts";
 export const GA_TRACKING_ID = "G-53Y9MZ1BYN";
-
+export const GAS_LIMIT = 12000000;
 // TODO(fixme): This should always be fetch from contract. Shouldn't be a constant here.
 export const COOLDOWN_PERIOD = 15;
 
@@ -40,3 +40,8 @@ export const START_CLAIM = "START_CLAIM";
 export const START_UNSTAKE = "START_UNSTAKE";
 export const START_STAKE = "START_STAKE";
 export const FATAL = "fatal";
+
+// Error Constants
+export const WALLET_ERROR = "Connection failed";
+export const METAMASK_ERROR = "Metamask error";
+export const UNSUPPORTED_NETWORK = "Unsupported network";

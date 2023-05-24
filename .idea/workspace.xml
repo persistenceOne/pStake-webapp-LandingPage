@@ -4,12 +4,71 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70607c77-00e4-4bad-b26e-9cb416d1f94e" name="Changes" comment="update tailwind config">
+    <list default="true" id="70607c77-00e4-4bad-b26e-9cb416d1f94e" name="Changes" comment="spacing fixes">
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/icon/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/icon/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/atoms/icon/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/txnModal/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/exchangeRate/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/molecules/exchangeRate/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/defi/cardList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/defi/cardList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/loginOptions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/loginOptions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/balanceList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/balanceList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/templates/template.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/templates/template.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/withdrawModal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/withdrawModal/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/claim/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/claim/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/To.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/To.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/from.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stake/from.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stakingTabs/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stakingTabs/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/from.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/from.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/options.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/options.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/submit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/unstake/submit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/appConstants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/appConstants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/copy/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/copy/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/copy/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/copy/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/exchangeRate/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/molecules/exchangeRate/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/submit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/submit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/token/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/bridge/token/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/cardList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/cardList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/defiData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/defiData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/filter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/filter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/addToken/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/addToken/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/addToken/modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/addToken/modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/loginOptions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/loginOptions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/networks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/networks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/balanceList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/balanceList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/sidebarContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/sidebarContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/To.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/To.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/from.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/from.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/stakeOption.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/stakeOption.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/submit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stake/submit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stakeModal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stakeModal/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stakingTabs/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/staking/stakingTabs/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/templates/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/templates/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/contracts/abi/staking.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/contracts/abi/staking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/contracts/types/Staking.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/contracts/types/Staking.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/contracts/types/factories/Staking__factory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/contracts/types/factories/Staking__factory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/helpers/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/helpers/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/helpers/data.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/helpers/transaction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/helpers/transaction.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/helpers/utils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/helpers/utils.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/helpers/wallets.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/helpers/wallets.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/pages/api/externalApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/pages/api/externalApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/store/slices/initialDataSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/store/slices/initialDataSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/store/slices/sidebarSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/store/slices/sidebarSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/store/slices/transactions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/store/slices/transactions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/store/slices/walletSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/store/slices/walletSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/components/molecules/toast/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/molecules/toast/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/components/molecules/toast/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/molecules/toast/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/utils/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/utils/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,30 +87,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;turbo__repo&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/black/Documents/pStake-website&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\black\\Documents\\pStake-webapp-LandingPage\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\black\\Documents\\pStake-webapp-LandingPage\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "turbo__repo",
+    "last_opened_file_path": "C:/Users/black/Documents/pStake-webapp-LandingPage/packages/ui/components/molecules",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\black\\Documents\\pStake-webapp-LandingPage\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "C:\\Users\\black\\Documents\\pStake-webapp-LandingPage\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages\ui\components\molecules" />
+      <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps\ethereum\src\components\atoms" />
+      <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps\ethereum" />
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages\ui" />
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps\cosmos" />
-      <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages\hooks" />
-      <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages" />
-      <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages\ui\components\atoms" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages\ui\src" />
@@ -76,7 +135,9 @@
       <workItem from="1684817952033" duration="10953000" />
       <workItem from="1684836294979" duration="416000" />
       <workItem from="1684894416729" duration="9996000" />
-      <workItem from="1684908374046" duration="1280000" />
+      <workItem from="1684908374046" duration="2000000" />
+      <workItem from="1684910664310" duration="696000" />
+      <workItem from="1684917965375" duration="5455000" />
     </task>
     <task id="LOCAL-00001" summary="remove old files">
       <created>1684740707715</created>
@@ -99,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684906507178</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="spacing fixes">
+      <created>1684909730018</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684909730018</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,7 +189,8 @@
     <MESSAGE value="initialize turbo repo" />
     <MESSAGE value="add cosmos app" />
     <MESSAGE value="update tailwind config" />
-    <option name="LAST_COMMIT_MESSAGE" value="update tailwind config" />
+    <MESSAGE value="spacing fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="spacing fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -134,6 +203,12 @@
           <url>file://$PROJECT_DIR$/packages/tailwindconfig/index.js</url>
           <line>4</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/apps/cosmos/src/helpers/utils.tsx</url>
+          <line>326</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

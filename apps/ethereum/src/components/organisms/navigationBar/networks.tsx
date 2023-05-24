@@ -1,12 +1,14 @@
 import { Dropdown } from "ui";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { chains, Networks } from "../../../helpers/config";
 import { NetworkInfo } from "./types";
 import { useAppStore } from "../../../store/store";
 import { getWalletProvider } from "../../../helpers/utils";
-import { META_MASK } from "../../../../appConstants";
+import { META_MASK, WALLET_ERROR } from "../../../../appConstants";
 import { displayToast } from "ui";
 import { addNetwork } from "../../../helpers/wallets";
+import { Icon } from "../../atoms/icon";
+import useLocalStorage from "../../../customHooks/useLocalStorage";
 import { ToastType } from "ui/components/molecules/toast/types";
 
 const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
@@ -26,16 +28,23 @@ const networkList: NetworkInfo[] = [
 const Networks = () => {
   const [show, setShow] = useState<boolean>(false);
   const walletInfo = useAppStore((state) => state.wallet);
+  const network = useAppStore((state) => state.network);
   const connectWallet = useAppStore((state) => state.connectWallet);
+  const [networkItem, setNetworkItem] = useLocalStorage("network", "");
 
   // selected network info based network connected
   const selectedNetwork: NetworkInfo | undefined = networkList.find(
-    (item) => item.network === walletInfo.network
+    (item) => item.network === network.name
   );
 
   const [dropDownItem, setDropdownItem] = useState<NetworkInfo | undefined>(
     selectedNetwork // set initial data
   );
+
+  useEffect(() => {
+    setDropdownItem(selectedNetwork);
+    setNetworkItem(selectedNetwork!.network);
+  }, [network.name]);
 
   const dropDownHandler = async (type: Networks) => {
     const dropDownSelection: NetworkInfo | undefined = networkList.find(
@@ -43,21 +52,19 @@ const Networks = () => {
     );
     const chain = chains[env][type];
     const provider = getWalletProvider(walletInfo.walletName!);
-    if (provider.chainId !== chain.networkIdHex) {
-      const response = await addNetwork(provider, chain);
-      if (!response) {
-        displayToast(
-          {
-            message: "Error while Switching network",
-          },
-          ToastType.ERROR
-        );
-        return;
-      }
+    const response = await addNetwork(provider, chain);
+    if (!response) {
+      displayToast(
+        {
+          heading: WALLET_ERROR,
+          message: "Error while Switching network",
+        },
+        ToastType.ERROR
+      );
+      return;
     }
     setShow(false);
     setDropdownItem(dropDownSelection!);
-    await connectWallet(provider, META_MASK, type);
   };
 
   const dropCloseDownHandler = (value: boolean) => {
@@ -74,16 +81,28 @@ const Networks = () => {
         dropDownVariantBg="bg-[#181818] text-[12px] text-light-high"
         dropdownLabel={
           <div className="flex items-center">
-            <img
-              width={20}
-              height={20}
-              className="mr-2"
-              src={`/images/logos/${dropDownItem!.logo}.svg`}
-              alt="stkATOM logo"
-            />
-            <span className="text-sm text-light-emphasis font-medium leading-normal md:text-xsm md:ml-2 capitalize">
-              {dropDownItem!.network}
-            </span>
+            {!network.error ? (
+              <>
+                <img
+                  width={20}
+                  height={20}
+                  className="mr-2"
+                  src={`/images/logos/${dropDownItem!.logo}.svg`}
+                  alt="stkATOM logo"
+                />
+                <span className="text-sm text-light-emphasis font-medium leading-normal md:text-xsm md:ml-2 capitalize">
+                  {dropDownItem!.network}
+                </span>
+              </>
+            ) : (
+              <div className={"flex items-center"}>
+                <Icon
+                  iconName="exclamation"
+                  viewClass="disconnect !w-[16px] !h-[14px] mr-[5px] -mt-[3px]"
+                />
+                Unsupported Network
+              </div>
+            )}
           </div>
         }
         dropDownButtonClass="!py-2.5"
@@ -93,54 +112,31 @@ const Networks = () => {
         dropDownContentClass="!bg-[#282828] drop-shadow-md round-md w-max py-1 md:p-0"
       >
         {networkList.map((item, index) =>
-          item.network !== selectedNetwork?.network ? (
-            item.network !== "optimism" ? (
-              <div
-                className="px-4 py-2 flex items-center md:py-3
+          item.network !== dropDownItem?.network || network.error ? (
+            <div
+              className="px-4 py-2 flex items-center md:py-3
                         hover:cursor-pointer hover:bg-[#383838] text-dark-high whitespace-nowrap"
-                key={index}
-                onClick={() => {
-                  dropDownHandler(item.network);
-                }}
-              >
-                <div className="flex items-center">
-                  <img
-                    width={20}
-                    height={20}
-                    className="mr-2"
-                    src={`/images/logos/${item.logo}.svg`}
-                    alt="stkATOM logo"
-                  />
-                  <span
-                    className="text-sm text-light-emphasis font-medium
+              key={index}
+              onClick={() => {
+                dropDownHandler(item.network);
+              }}
+            >
+              <div className="flex items-center">
+                <img
+                  width={20}
+                  height={20}
+                  className="mr-2"
+                  src={`/images/logos/${item.logo}.svg`}
+                  alt="stkATOM logo"
+                />
+                <span
+                  className="text-sm text-light-emphasis font-medium
                   leading-normal md:text-xsm md:ml-2 capitalize"
-                  >
-                    {item.network}
-                  </span>
-                </div>
+                >
+                  {item.network}
+                </span>
               </div>
-            ) : (
-              <div
-                className="px-4 py-2 flex items-center md:py-3 hover:bg-[#383838] text-dark-high whitespace-nowrap"
-                key={index}
-              >
-                <div className="flex items-center">
-                  <img
-                    width={20}
-                    height={20}
-                    className="mr-2"
-                    src={`/images/logos/${item.logo}.svg`}
-                    alt="stkATOM logo"
-                  />
-                  <span className="text-sm text-light-emphasis font-medium leading-normal md:text-xsm md:ml-2 capitalize">
-                    {item.network}
-                    <span className="font-normal text-[10px] text-light-mid">
-                      (Coming Soon)
-                    </span>
-                  </span>
-                </div>
-              </div>
-            )
+            </div>
           ) : (
             ""
           )

@@ -1,10 +1,10 @@
 import React from "react";
-import { Modal } from "ui";
 import { useAppStore } from "../../../../store/store";
-import { Button, displayToast } from "ui";
+import { Button, Modal, displayToast } from "ui";
 import { chains, contracts } from "../../../../helpers/config";
 import { getWalletProvider } from "../../../../helpers/utils";
 import { addNetwork, registerToken } from "../../../../helpers/wallets";
+import { WALLET_ERROR } from "../../../../../appConstants";
 import { ToastType } from "ui/components/molecules/toast/types";
 
 const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
@@ -28,6 +28,7 @@ const AddTokenModal = () => {
       if (!response) {
         displayToast(
           {
+            heading: WALLET_ERROR,
             message: "Error while Switching network",
           },
           ToastType.ERROR
@@ -48,6 +49,7 @@ const AddTokenModal = () => {
       if (provider.chainId !== chain.networkIdHex) {
         displayToast(
           {
+            heading: WALLET_ERROR,
             message: "Please switch the network to optimism",
           },
           ToastType.ERROR

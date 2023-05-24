@@ -2,24 +2,25 @@ import React, { ChangeEvent } from "react";
 import { InputText } from "ui";
 
 import { useWindowSize } from "../../../../customHooks/useWindowSize";
-import {
-  formatNumber,
-  truncateToFixedDecimalPlaces,
-} from "../../../../helpers/utils";
+import { truncateToFixedDecimalPlaces } from "utils";
 import { useAppStore } from "../../../../store/store";
 import { shallow } from "zustand/shallow";
 
 const From = () => {
-  const [ethPrice, stakeTxnInfo, setStakeInputAmount] = useAppStore(
-    (state) => [state.ethPrice, state.stakeTxnInfo, state.setStakeInputAmount],
+  const [ethPrice, stakeAmount] = useAppStore(
+    (state) => [state.ethPrice, state.stakeTxnInfo.amount],
     shallow
   );
-  const wallet = useAppStore((state) => state.wallet);
-  const balance = useAppStore((state) => state.balance);
+
+  const setStakeInputAmount = useAppStore((state) => state.setStakeInputAmount);
+  const walletConnection = useAppStore(
+    (state) => state.wallet.walletConnection
+  );
+  const ethBalance = useAppStore((state) => state.balance.eth);
 
   const { isMobile } = useWindowSize();
 
-  const inputStakeAmount = stakeTxnInfo.amount;
+  const inputStakeAmount = stakeAmount;
   const priceInDollars = (ethPrice * Number(inputStakeAmount)).toFixed(2);
 
   const inputHandler = (evt: ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +33,7 @@ const From = () => {
   };
 
   const maxHandler = async () => {
-    setStakeInputAmount(balance.eth);
+    setStakeInputAmount(ethBalance);
   };
 
   return (
@@ -54,9 +55,9 @@ const From = () => {
           <p className="mt-3 leading-normal text-sm md:text-xsm">
             <span className="text-light-low">Available: </span>
             <span className="text-light-mid">
-              {truncateToFixedDecimalPlaces(balance.eth!, isMobile ? 2 : 6)}
+              {truncateToFixedDecimalPlaces(ethBalance!, isMobile ? 2 : 6)}
             </span>
-            {wallet.walletConnection && Number(balance.eth) > 0 ? (
+            {walletConnection && Number(ethBalance) > 0 ? (
               <span
                 className="text-light-high ml-2 font-bold uppercase cursor-pointer"
                 onClick={maxHandler}

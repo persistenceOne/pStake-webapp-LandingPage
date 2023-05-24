@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-import { Icon } from "ui";
-import Tooltip from "rc-tooltip";
 import Stake from "../stake";
 import { useAppStore } from "../../../../store/store";
 import { shallow } from "zustand/shallow";
+import { Button } from "ui";
+import { useRouter } from "next/router";
 import { TabItem } from "ui/components/molecules/tabs/tabItem";
 import { TabContent } from "ui/components/molecules/tabs/tabContent";
 
 const StakingTabs = () => {
-  const [apr, tvl] = useAppStore((state) => [state.apr, state.tvl], shallow);
+  const [apr, tvl, network] = useAppStore(
+    (state) => [state.apr, state.tvl, state.network.name],
+    shallow
+  );
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState("Stake");
   const tabItemClasses =
     "cursor-pointer w-full bg-tabHeader " +
@@ -49,21 +53,29 @@ const StakingTabs = () => {
           activeTab={activeTab}
           className="p-6 md:p-4 bg-tabContent rounded-md"
         >
-          <p className="text-light-emphasis text-center">Coming soon</p>
+          <div className="h-[300px] flex items-center justify-center flex-col">
+            <p className="text-center text-light-mid mb-4">
+              pSTAKE will enable withdrawals soon. Till then you can exchange
+              your stkETH for ETH through our DeFI integrations
+            </p>
+            <Button
+              className="button w-[250px] mx-auto md:py-2 md:text-sm"
+              type="primary"
+              size="large"
+              disabled={false}
+              onClick={() => {
+                router.push("/defi");
+              }}
+              content="Go to DeFi page"
+            />
+          </div>
         </TabContent>
       </div>
       <div className="p-4 bg-[#18181899] flex items-center mt-4 rounded-md">
         <div className="flex-1 border-r-[1px] border-solid border-[#2a2a2a]">
-          <div className="text-center">
-            <span className="text-light-mid font-normal leading-normal text-sm text-center">
-              APR
-            </span>
-            <Tooltip placement="bottom" overlay={<span>Apr</span>}>
-              <button className="icon-button px-1 align-middle mb-1">
-                <Icon viewClass="info" iconName="info" />
-              </button>
-            </Tooltip>
-          </div>
+          <p className="text-light-mid font-normal leading-normal text-sm text-center">
+            APR
+          </p>
           <p className="text-light-emphasis font-semibold leading-normal text-2xl text-center md:text-base">
             {apr}%
           </p>

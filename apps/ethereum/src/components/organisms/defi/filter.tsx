@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import styles from "./styles.module.css";
-import { Icon } from "ui";
+import { Icon } from "../../atoms/icon";
 import { Networks } from "../../../helpers/config";
 import { SortOptions } from "./index";
 
@@ -12,7 +12,6 @@ interface Props {
   searchHandler: any;
 }
 
-// const CardList: React.FC<Props> = ({ sortActive, allData, defiData }) => {
 const Filters: React.FC<Props> = ({
   setSortByNetwork,
   setSortActive,
@@ -20,7 +19,6 @@ const Filters: React.FC<Props> = ({
   sortByNetwork,
   searchHandler,
 }: any) => {
-  console.log(sortActive, "sortActive");
   const handleSort = (sortKey: SortOptions) => {
     const sortList = sortActive;
     for (const key in sortList) {
@@ -35,14 +33,26 @@ const Filters: React.FC<Props> = ({
 
   const handleNetworkSort = (sortKey: Networks) => {
     const sortList = sortByNetwork;
+    let activeNetworkCount = 0;
+    for (const key in sortList) {
+      sortByNetwork[key] === true
+        ? (activeNetworkCount += 1)
+        : activeNetworkCount;
+    }
     for (const key in sortList) {
       if (key === sortKey) {
-        sortByNetwork[key] = true;
+        if (sortByNetwork[key] === true && activeNetworkCount === 1) {
+          sortByNetwork[key] = sortByNetwork[key];
+        } else if (activeNetworkCount > 1) {
+          sortByNetwork[key] = false;
+        } else {
+          sortByNetwork[key] = true;
+        }
       } else {
-        sortByNetwork[key] = false;
+        sortByNetwork[key] = sortByNetwork[key];
       }
-      setSortByNetwork({ ...sortByNetwork });
     }
+    setSortByNetwork({ ...sortByNetwork });
   };
 
   const buttonClass =

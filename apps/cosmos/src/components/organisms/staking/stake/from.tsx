@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from "react";
-import {InputText} from "ui";
+import { InputText } from "ui";
 import { COIN_ATOM, MIN_STAKE_FEE } from "../../../../../AppConstants";
-import { formatNumber } from "../../../../helpers/utils";
+import { formatNumber } from "utils";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store/reducers";
 import { setStakeAmount } from "../../../../store/reducers/transactions/stake";

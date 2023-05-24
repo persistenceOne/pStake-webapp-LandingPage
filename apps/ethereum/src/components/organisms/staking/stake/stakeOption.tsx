@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useAppStore } from "../../../../store/store";
-import { useWindowSize } from "../../../../customHooks/useWindowSize";
 import { Networks } from "../../../../helpers/config";
 import { Dropdown } from "ui";
 
@@ -9,16 +8,25 @@ interface MintList {
   image: string;
 }
 
+export const getLogoPath = (network: Networks) => {
+  let imgUrl = "";
+  switch (network) {
+    case "ethereum":
+      imgUrl = "/images/logos/eth.svg";
+      break;
+    case "optimism":
+      imgUrl = "/images/logos/optimism.svg";
+      break;
+    default:
+      imgUrl = "/images/logos/eth.svg";
+  }
+  return imgUrl;
+};
 const Networks = () => {
   const setStakeNetwork = useAppStore((state) => state.setStakeNetwork);
-  const stakeTxnInfo = useAppStore((state) => state.stakeTxnInfo);
-  const [dropDownItem, setDropdownItem] = useState<MintList>({
-    name: "ethereum",
-    image: "/images/logos/eth.svg",
-  });
+  const stakeNetwork = useAppStore((state) => state.stakeTxnInfo.stakeNetwork);
 
   const [show, setShow] = useState<boolean>(false);
-  const { isMobile } = useWindowSize();
 
   const list: MintList[] = [
     {
@@ -32,18 +40,13 @@ const Networks = () => {
   ];
 
   const dropDownHandler = async (type: Networks) => {
-    const token: MintList | undefined = list.find((item) => item.name === type);
     setStakeNetwork(type);
-    console.log("value", type);
-
     setShow(false);
-    setDropdownItem(token!);
   };
 
   const dropCloseDownHandler = (value: boolean) => {
     setShow(value);
   };
-  console.log(show, "sho");
   return (
     <div className="lex justify-between items-center">
       <Dropdown
@@ -58,11 +61,11 @@ const Networks = () => {
               width={20}
               height={20}
               className="mr-2"
-              src={dropDownItem.image}
+              src={getLogoPath(stakeNetwork)}
               alt="stkATOM logo"
             />
             <span className="text-sm text-light-emphasis font-medium leading-normal md:text-xsm md:ml-2 capitalize">
-              {dropDownItem.name}
+              {stakeNetwork}
             </span>
           </div>
         }
@@ -75,7 +78,7 @@ const Networks = () => {
       >
         {list.map((item, index) => (
           <div key={index}>
-            {item.name !== stakeTxnInfo.stakeNetwork ? (
+            {item.name !== stakeNetwork ? (
               <div
                 className="px-4 py-2 flex items-center md:py-3
                         hover:cursor-pointer hover:bg-[#383838] text-dark-high whitespace-nowrap"
@@ -89,7 +92,7 @@ const Networks = () => {
                     width={20}
                     height={20}
                     className="mr-2"
-                    src={item.image}
+                    src={getLogoPath(item.name)}
                     alt="stkATOM logo"
                   />
                   <span className="text-sm text-light-emphasis font-medium leading-normal md:text-xsm md:ml-2 capitalize">

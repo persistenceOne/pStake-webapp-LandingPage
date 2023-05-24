@@ -1,6 +1,6 @@
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import React, { useState } from "react";
-import { Icon } from "ui";
+import { Icon } from "../../atoms/icon";
 import Styles from "./styles.module.css";
 import { IconTypes } from "./types";
 

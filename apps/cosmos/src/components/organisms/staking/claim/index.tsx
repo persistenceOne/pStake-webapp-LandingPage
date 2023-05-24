@@ -7,10 +7,8 @@ import {
   ClaimMsgTypes,
   LiquidUnStakeMsgTypes,
 } from "../../../../helpers/protoMsg";
-import {
-  decimalize,
-  truncateToFixedDecimalPlaces,
-} from "../../../../helpers/utils";
+import { decimalize } from "../../../../helpers/utils";
+import { truncateToFixedDecimalPlaces } from "utils";
 import { useWallet } from "../../../../context/WalletConnect/WalletConnect";
 import {
   executeClaimTransactionSaga,

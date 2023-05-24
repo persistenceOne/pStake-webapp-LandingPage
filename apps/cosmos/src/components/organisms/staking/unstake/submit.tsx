@@ -8,11 +8,8 @@ import {
   LiquidUnStakeMsgTypes,
   RedeemMsg,
 } from "../../../../helpers/protoMsg";
-import {
-  decimalize,
-  truncateToFixedDecimalPlaces,
-  unDecimalize,
-} from "../../../../helpers/utils";
+import { decimalize, unDecimalize } from "../../../../helpers/utils";
+import { truncateToFixedDecimalPlaces } from "utils";
 import {
   COSMOS_CHAIN_ID,
   INSTANT,

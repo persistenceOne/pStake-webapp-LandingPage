@@ -1,9 +1,7 @@
 import React from "react";
-import {InputText} from "ui";
-import {
-  formatNumber,
-  truncateToFixedDecimalPlaces
-} from "../../../../helpers/utils";
+import { InputText } from "ui";
+import { formatNumber, truncateToFixedDecimalPlaces } from "utils";
+
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../store/reducers";
 import { useWindowSize } from "../../../../customHooks/useWindowSize";

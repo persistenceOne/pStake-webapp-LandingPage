@@ -28,88 +28,374 @@ import type {
   PromiseOrValue,
 } from "./common";
 
+export declare namespace Issuer {
+  export type MessengerDataStruct = {
+    messenger: PromiseOrValue<string>;
+    isEnabled: PromiseOrValue<boolean>;
+  };
+
+  export type MessengerDataStructOutput = [string, boolean] & {
+    messenger: string;
+    isEnabled: boolean;
+  };
+}
+
 export interface StakingInterface extends utils.Interface {
   functions: {
-    "l1Messenger()": FunctionFragment;
-    "mintOptimism(address)": FunctionFragment;
+    "BASIS_POINT()": FunctionFragment;
+    "DEPOSIT_CONTRACT()": FunctionFragment;
+    "VALIDATOR_DEPOSIT()": FunctionFragment;
+    "VERIFICATION_DEPOSIT()": FunctionFragment;
+    "addMessenger((address,bool)[])": FunctionFragment;
+    "core()": FunctionFragment;
+    "depositToEth2(bytes)": FunctionFragment;
+    "disableMessenger(uint256)": FunctionFragment;
+    "enableMessenger(uint256)": FunctionFragment;
+    "ethStaked()": FunctionFragment;
+    "getDepositOptimism()": FunctionFragment;
+    "getMessenger(uint256)": FunctionFragment;
+    "getNumberMessengers()": FunctionFragment;
+    "initialize(address,uint256,address,uint256,uint256,uint256)": FunctionFragment;
+    "messengers(uint256)": FunctionFragment;
+    "mintL2(uint256,address)": FunctionFragment;
     "owner()": FunctionFragment;
+    "pause()": FunctionFragment;
+    "pendingValidatorLimit()": FunctionFragment;
+    "pendingValidators()": FunctionFragment;
+    "pendingValidatorsLimit()": FunctionFragment;
     "renounceOwnership()": FunctionFragment;
+    "setPendingValidatorsLimit(uint256)": FunctionFragment;
     "stake()": FunctionFragment;
-    "stkETH()": FunctionFragment;
+    "stkEthMinted()": FunctionFragment;
     "transferOwnership(address)": FunctionFragment;
-    "transferToOptimism(address,uint256)": FunctionFragment;
+    "transferToL2(uint256,uint256,address)": FunctionFragment;
+    "unpause()": FunctionFragment;
+    "updatePendingValidator(uint256)": FunctionFragment;
   };
 
   getFunction(
     nameOrSignatureOrTopic:
-      | "l1Messenger"
-      | "mintOptimism"
+      | "BASIS_POINT"
+      | "DEPOSIT_CONTRACT"
+      | "VALIDATOR_DEPOSIT"
+      | "VERIFICATION_DEPOSIT"
+      | "addMessenger"
+      | "core"
+      | "depositToEth2"
+      | "disableMessenger"
+      | "enableMessenger"
+      | "ethStaked"
+      | "getDepositOptimism"
+      | "getMessenger"
+      | "getNumberMessengers"
+      | "initialize"
+      | "messengers"
+      | "mintL2"
       | "owner"
+      | "pause"
+      | "pendingValidatorLimit"
+      | "pendingValidators"
+      | "pendingValidatorsLimit"
       | "renounceOwnership"
+      | "setPendingValidatorsLimit"
       | "stake"
-      | "stkETH"
+      | "stkEthMinted"
       | "transferOwnership"
-      | "transferToOptimism"
+      | "transferToL2"
+      | "unpause"
+      | "updatePendingValidator"
   ): FunctionFragment;
 
   encodeFunctionData(
-    functionFragment: "l1Messenger",
+    functionFragment: "BASIS_POINT",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "mintOptimism",
-    values: [PromiseOrValue<string>]
+    functionFragment: "DEPOSIT_CONTRACT",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "VALIDATOR_DEPOSIT",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "VERIFICATION_DEPOSIT",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "addMessenger",
+    values: [Issuer.MessengerDataStruct[]]
+  ): string;
+  encodeFunctionData(functionFragment: "core", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "depositToEth2",
+    values: [PromiseOrValue<BytesLike>]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "disableMessenger",
+    values: [PromiseOrValue<BigNumberish>]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "enableMessenger",
+    values: [PromiseOrValue<BigNumberish>]
+  ): string;
+  encodeFunctionData(functionFragment: "ethStaked", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "getDepositOptimism",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getMessenger",
+    values: [PromiseOrValue<BigNumberish>]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getNumberMessengers",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "initialize",
+    values: [
+      PromiseOrValue<string>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<string>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>
+    ]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "messengers",
+    values: [PromiseOrValue<BigNumberish>]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "mintL2",
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>]
   ): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(functionFragment: "pause", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "pendingValidatorLimit",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "pendingValidators",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "pendingValidatorsLimit",
+    values?: undefined
+  ): string;
   encodeFunctionData(
     functionFragment: "renounceOwnership",
     values?: undefined
   ): string;
+  encodeFunctionData(
+    functionFragment: "setPendingValidatorsLimit",
+    values: [PromiseOrValue<BigNumberish>]
+  ): string;
   encodeFunctionData(functionFragment: "stake", values?: undefined): string;
-  encodeFunctionData(functionFragment: "stkETH", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "stkEthMinted",
+    values?: undefined
+  ): string;
   encodeFunctionData(
     functionFragment: "transferOwnership",
     values: [PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
-    functionFragment: "transferToOptimism",
-    values: [PromiseOrValue<string>, PromiseOrValue<BigNumberish>]
+    functionFragment: "transferToL2",
+    values: [
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<string>
+    ]
+  ): string;
+  encodeFunctionData(functionFragment: "unpause", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "updatePendingValidator",
+    values: [PromiseOrValue<BigNumberish>]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "l1Messenger",
+    functionFragment: "BASIS_POINT",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "mintOptimism",
+    functionFragment: "DEPOSIT_CONTRACT",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "VALIDATOR_DEPOSIT",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "VERIFICATION_DEPOSIT",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "addMessenger",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "core", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "depositToEth2",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "disableMessenger",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "enableMessenger",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "ethStaked", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "getDepositOptimism",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "getMessenger",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "getNumberMessengers",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "messengers", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "mintL2", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "pause", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "pendingValidatorLimit",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "pendingValidators",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "pendingValidatorsLimit",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "renounceOwnership",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "setPendingValidatorsLimit",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "stake", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "stkETH", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "stkEthMinted",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "transferOwnership",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "transferToOptimism",
+    functionFragment: "transferToL2",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "unpause", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "updatePendingValidator",
     data: BytesLike
   ): Result;
 
   events: {
+    "ContractPaused(uint256)": EventFragment;
+    "ContractUnPaused(uint256)": EventFragment;
+    "Initialized(uint8)": EventFragment;
+    "MessengerAdded(uint256,address,bool)": EventFragment;
+    "MessengerDisabled(uint256)": EventFragment;
+    "MessengerEnabled(uint256)": EventFragment;
     "OwnershipTransferred(address,address)": EventFragment;
+    "SetMinActivationDeposit(uint256)": EventFragment;
+    "SetPendingValidatorsLimit(uint256)": EventFragment;
     "Stake(address,uint256,uint256)": EventFragment;
-    "TransferredToOptimism(address,address,uint256)": EventFragment;
+    "TransferredToL2(address,address,uint256,uint256)": EventFragment;
+    "UpdatePendingValidators(uint256)": EventFragment;
   };
 
+  getEvent(nameOrSignatureOrTopic: "ContractPaused"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "ContractUnPaused"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Initialized"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "MessengerAdded"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "MessengerDisabled"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "MessengerEnabled"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "OwnershipTransferred"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "SetMinActivationDeposit"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "SetPendingValidatorsLimit"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "Stake"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "TransferredToOptimism"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "TransferredToL2"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "UpdatePendingValidators"): EventFragment;
 }
+
+export interface ContractPausedEventObject {
+  block: BigNumber;
+}
+export type ContractPausedEvent = TypedEvent<
+  [BigNumber],
+  ContractPausedEventObject
+>;
+
+export type ContractPausedEventFilter = TypedEventFilter<ContractPausedEvent>;
+
+export interface ContractUnPausedEventObject {
+  block: BigNumber;
+}
+export type ContractUnPausedEvent = TypedEvent<
+  [BigNumber],
+  ContractUnPausedEventObject
+>;
+
+export type ContractUnPausedEventFilter =
+  TypedEventFilter<ContractUnPausedEvent>;
+
+export interface InitializedEventObject {
+  version: number;
+}
+export type InitializedEvent = TypedEvent<[number], InitializedEventObject>;
+
+export type InitializedEventFilter = TypedEventFilter<InitializedEvent>;
+
+export interface MessengerAddedEventObject {
+  messengerId: BigNumber;
+  messenger: string;
+  isEnabled: boolean;
+}
+export type MessengerAddedEvent = TypedEvent<
+  [BigNumber, string, boolean],
+  MessengerAddedEventObject
+>;
+
+export type MessengerAddedEventFilter = TypedEventFilter<MessengerAddedEvent>;
+
+export interface MessengerDisabledEventObject {
+  messengerId: BigNumber;
+}
+export type MessengerDisabledEvent = TypedEvent<
+  [BigNumber],
+  MessengerDisabledEventObject
+>;
+
+export type MessengerDisabledEventFilter =
+  TypedEventFilter<MessengerDisabledEvent>;
+
+export interface MessengerEnabledEventObject {
+  messengerId: BigNumber;
+}
+export type MessengerEnabledEvent = TypedEvent<
+  [BigNumber],
+  MessengerEnabledEventObject
+>;
+
+export type MessengerEnabledEventFilter =
+  TypedEventFilter<MessengerEnabledEvent>;
 
 export interface OwnershipTransferredEventObject {
   previousOwner: string;
@@ -123,6 +409,28 @@ export type OwnershipTransferredEvent = TypedEvent<
 export type OwnershipTransferredEventFilter =
   TypedEventFilter<OwnershipTransferredEvent>;
 
+export interface SetMinActivationDepositEventObject {
+  _minActivatingDeposit: BigNumber;
+}
+export type SetMinActivationDepositEvent = TypedEvent<
+  [BigNumber],
+  SetMinActivationDepositEventObject
+>;
+
+export type SetMinActivationDepositEventFilter =
+  TypedEventFilter<SetMinActivationDepositEvent>;
+
+export interface SetPendingValidatorsLimitEventObject {
+  _pendingValidatorsLimit: BigNumber;
+}
+export type SetPendingValidatorsLimitEvent = TypedEvent<
+  [BigNumber],
+  SetPendingValidatorsLimitEventObject
+>;
+
+export type SetPendingValidatorsLimitEventFilter =
+  TypedEventFilter<SetPendingValidatorsLimitEvent>;
+
 export interface StakeEventObject {
   indexed_user: string;
   amount: BigNumber;
@@ -135,18 +443,29 @@ export type StakeEvent = TypedEvent<
 
 export type StakeEventFilter = TypedEventFilter<StakeEvent>;
 
-export interface TransferredToOptimismEventObject {
+export interface TransferredToL2EventObject {
   user: string;
   optimism: string;
   amount: BigNumber;
+  messengerId: BigNumber;
 }
-export type TransferredToOptimismEvent = TypedEvent<
-  [string, string, BigNumber],
-  TransferredToOptimismEventObject
+export type TransferredToL2Event = TypedEvent<
+  [string, string, BigNumber, BigNumber],
+  TransferredToL2EventObject
 >;
 
-export type TransferredToOptimismEventFilter =
-  TypedEventFilter<TransferredToOptimismEvent>;
+export type TransferredToL2EventFilter = TypedEventFilter<TransferredToL2Event>;
+
+export interface UpdatePendingValidatorsEventObject {
+  _pendingValidators: BigNumber;
+}
+export type UpdatePendingValidatorsEvent = TypedEvent<
+  [BigNumber],
+  UpdatePendingValidatorsEventObject
+>;
+
+export type UpdatePendingValidatorsEventFilter =
+  TypedEventFilter<UpdatePendingValidatorsEvent>;
 
 export interface Staking extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this;
@@ -175,16 +494,88 @@ export interface Staking extends BaseContract {
   removeListener: OnEvent<this>;
 
   functions: {
-    l1Messenger(overrides?: CallOverrides): Promise<[string]>;
+    BASIS_POINT(overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    mintOptimism(
-      optimismAddress: PromiseOrValue<string>,
+    DEPOSIT_CONTRACT(overrides?: CallOverrides): Promise<[string]>;
+
+    VALIDATOR_DEPOSIT(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    VERIFICATION_DEPOSIT(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    addMessenger(
+      _messengers: Issuer.MessengerDataStruct[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    core(overrides?: CallOverrides): Promise<[string]>;
+
+    depositToEth2(
+      publicKey: PromiseOrValue<BytesLike>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    disableMessenger(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    enableMessenger(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    ethStaked(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    getDepositOptimism(
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    getMessenger(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<[boolean, string]>;
+
+    getNumberMessengers(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    initialize(
+      _core: PromiseOrValue<string>,
+      _pendingValidatorsLimit: PromiseOrValue<BigNumberish>,
+      _depositContract: PromiseOrValue<string>,
+      _pendingValidators: PromiseOrValue<BigNumberish>,
+      _ethStaked: PromiseOrValue<BigNumberish>,
+      _ethMinted: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    messengers(
+      arg0: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<[string, boolean] & { messenger: string; isEnabled: boolean }>;
+
+    mintL2(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      _receiverAddress: PromiseOrValue<string>,
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     owner(overrides?: CallOverrides): Promise<[string]>;
 
+    pause(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    pendingValidatorLimit(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    pendingValidators(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    pendingValidatorsLimit(overrides?: CallOverrides): Promise<[BigNumber]>;
+
     renounceOwnership(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    setPendingValidatorsLimit(
+      _pendingValidatorsLimit: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -192,30 +583,112 @@ export interface Staking extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    stkETH(overrides?: CallOverrides): Promise<[string]>;
+    stkEthMinted(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     transferOwnership(
       newOwner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    transferToOptimism(
-      optimismAddress: PromiseOrValue<string>,
-      amount: PromiseOrValue<BigNumberish>,
+    transferToL2(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      _amount: PromiseOrValue<BigNumberish>,
+      _receiverAddress: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    unpause(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    updatePendingValidator(
+      newActiveValidators: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
   };
 
-  l1Messenger(overrides?: CallOverrides): Promise<string>;
+  BASIS_POINT(overrides?: CallOverrides): Promise<BigNumber>;
 
-  mintOptimism(
-    optimismAddress: PromiseOrValue<string>,
+  DEPOSIT_CONTRACT(overrides?: CallOverrides): Promise<string>;
+
+  VALIDATOR_DEPOSIT(overrides?: CallOverrides): Promise<BigNumber>;
+
+  VERIFICATION_DEPOSIT(overrides?: CallOverrides): Promise<BigNumber>;
+
+  addMessenger(
+    _messengers: Issuer.MessengerDataStruct[],
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  core(overrides?: CallOverrides): Promise<string>;
+
+  depositToEth2(
+    publicKey: PromiseOrValue<BytesLike>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  disableMessenger(
+    _messengerId: PromiseOrValue<BigNumberish>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  enableMessenger(
+    _messengerId: PromiseOrValue<BigNumberish>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  ethStaked(overrides?: CallOverrides): Promise<BigNumber>;
+
+  getDepositOptimism(
+    overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  getMessenger(
+    _messengerId: PromiseOrValue<BigNumberish>,
+    overrides?: CallOverrides
+  ): Promise<[boolean, string]>;
+
+  getNumberMessengers(overrides?: CallOverrides): Promise<BigNumber>;
+
+  initialize(
+    _core: PromiseOrValue<string>,
+    _pendingValidatorsLimit: PromiseOrValue<BigNumberish>,
+    _depositContract: PromiseOrValue<string>,
+    _pendingValidators: PromiseOrValue<BigNumberish>,
+    _ethStaked: PromiseOrValue<BigNumberish>,
+    _ethMinted: PromiseOrValue<BigNumberish>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  messengers(
+    arg0: PromiseOrValue<BigNumberish>,
+    overrides?: CallOverrides
+  ): Promise<[string, boolean] & { messenger: string; isEnabled: boolean }>;
+
+  mintL2(
+    _messengerId: PromiseOrValue<BigNumberish>,
+    _receiverAddress: PromiseOrValue<string>,
     overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   owner(overrides?: CallOverrides): Promise<string>;
 
+  pause(
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  pendingValidatorLimit(overrides?: CallOverrides): Promise<BigNumber>;
+
+  pendingValidators(overrides?: CallOverrides): Promise<BigNumber>;
+
+  pendingValidatorsLimit(overrides?: CallOverrides): Promise<BigNumber>;
+
   renounceOwnership(
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  setPendingValidatorsLimit(
+    _pendingValidatorsLimit: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -223,48 +696,164 @@ export interface Staking extends BaseContract {
     overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  stkETH(overrides?: CallOverrides): Promise<string>;
+  stkEthMinted(overrides?: CallOverrides): Promise<BigNumber>;
 
   transferOwnership(
     newOwner: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  transferToOptimism(
-    optimismAddress: PromiseOrValue<string>,
-    amount: PromiseOrValue<BigNumberish>,
+  transferToL2(
+    _messengerId: PromiseOrValue<BigNumberish>,
+    _amount: PromiseOrValue<BigNumberish>,
+    _receiverAddress: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  unpause(
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  updatePendingValidator(
+    newActiveValidators: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   callStatic: {
-    l1Messenger(overrides?: CallOverrides): Promise<string>;
+    BASIS_POINT(overrides?: CallOverrides): Promise<BigNumber>;
 
-    mintOptimism(
-      optimismAddress: PromiseOrValue<string>,
+    DEPOSIT_CONTRACT(overrides?: CallOverrides): Promise<string>;
+
+    VALIDATOR_DEPOSIT(overrides?: CallOverrides): Promise<BigNumber>;
+
+    VERIFICATION_DEPOSIT(overrides?: CallOverrides): Promise<BigNumber>;
+
+    addMessenger(
+      _messengers: Issuer.MessengerDataStruct[],
+      overrides?: CallOverrides
+    ): Promise<BigNumber[]>;
+
+    core(overrides?: CallOverrides): Promise<string>;
+
+    depositToEth2(
+      publicKey: PromiseOrValue<BytesLike>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    disableMessenger(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    enableMessenger(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    ethStaked(overrides?: CallOverrides): Promise<BigNumber>;
+
+    getDepositOptimism(overrides?: CallOverrides): Promise<void>;
+
+    getMessenger(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<[boolean, string]>;
+
+    getNumberMessengers(overrides?: CallOverrides): Promise<BigNumber>;
+
+    initialize(
+      _core: PromiseOrValue<string>,
+      _pendingValidatorsLimit: PromiseOrValue<BigNumberish>,
+      _depositContract: PromiseOrValue<string>,
+      _pendingValidators: PromiseOrValue<BigNumberish>,
+      _ethStaked: PromiseOrValue<BigNumberish>,
+      _ethMinted: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    messengers(
+      arg0: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<[string, boolean] & { messenger: string; isEnabled: boolean }>;
+
+    mintL2(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      _receiverAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     owner(overrides?: CallOverrides): Promise<string>;
 
+    pause(overrides?: CallOverrides): Promise<void>;
+
+    pendingValidatorLimit(overrides?: CallOverrides): Promise<BigNumber>;
+
+    pendingValidators(overrides?: CallOverrides): Promise<BigNumber>;
+
+    pendingValidatorsLimit(overrides?: CallOverrides): Promise<BigNumber>;
+
     renounceOwnership(overrides?: CallOverrides): Promise<void>;
+
+    setPendingValidatorsLimit(
+      _pendingValidatorsLimit: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<void>;
 
     stake(overrides?: CallOverrides): Promise<void>;
 
-    stkETH(overrides?: CallOverrides): Promise<string>;
+    stkEthMinted(overrides?: CallOverrides): Promise<BigNumber>;
 
     transferOwnership(
       newOwner: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    transferToOptimism(
-      optimismAddress: PromiseOrValue<string>,
-      amount: PromiseOrValue<BigNumberish>,
+    transferToL2(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      _amount: PromiseOrValue<BigNumberish>,
+      _receiverAddress: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    unpause(overrides?: CallOverrides): Promise<void>;
+
+    updatePendingValidator(
+      newActiveValidators: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
   };
 
   filters: {
+    "ContractPaused(uint256)"(block?: null): ContractPausedEventFilter;
+    ContractPaused(block?: null): ContractPausedEventFilter;
+
+    "ContractUnPaused(uint256)"(block?: null): ContractUnPausedEventFilter;
+    ContractUnPaused(block?: null): ContractUnPausedEventFilter;
+
+    "Initialized(uint8)"(version?: null): InitializedEventFilter;
+    Initialized(version?: null): InitializedEventFilter;
+
+    "MessengerAdded(uint256,address,bool)"(
+      messengerId?: null,
+      messenger?: null,
+      isEnabled?: null
+    ): MessengerAddedEventFilter;
+    MessengerAdded(
+      messengerId?: null,
+      messenger?: null,
+      isEnabled?: null
+    ): MessengerAddedEventFilter;
+
+    "MessengerDisabled(uint256)"(
+      messengerId?: null
+    ): MessengerDisabledEventFilter;
+    MessengerDisabled(messengerId?: null): MessengerDisabledEventFilter;
+
+    "MessengerEnabled(uint256)"(
+      messengerId?: null
+    ): MessengerEnabledEventFilter;
+    MessengerEnabled(messengerId?: null): MessengerEnabledEventFilter;
+
     "OwnershipTransferred(address,address)"(
       previousOwner?: PromiseOrValue<string> | null,
       newOwner?: PromiseOrValue<string> | null
@@ -273,6 +862,20 @@ export interface Staking extends BaseContract {
       previousOwner?: PromiseOrValue<string> | null,
       newOwner?: PromiseOrValue<string> | null
     ): OwnershipTransferredEventFilter;
+
+    "SetMinActivationDeposit(uint256)"(
+      _minActivatingDeposit?: null
+    ): SetMinActivationDepositEventFilter;
+    SetMinActivationDeposit(
+      _minActivatingDeposit?: null
+    ): SetMinActivationDepositEventFilter;
+
+    "SetPendingValidatorsLimit(uint256)"(
+      _pendingValidatorsLimit?: null
+    ): SetPendingValidatorsLimitEventFilter;
+    SetPendingValidatorsLimit(
+      _pendingValidatorsLimit?: null
+    ): SetPendingValidatorsLimitEventFilter;
 
     "Stake(address,uint256,uint256)"(
       indexed_user?: null,
@@ -285,29 +888,110 @@ export interface Staking extends BaseContract {
       block_time?: null
     ): StakeEventFilter;
 
-    "TransferredToOptimism(address,address,uint256)"(
+    "TransferredToL2(address,address,uint256,uint256)"(
       user?: null,
       optimism?: null,
-      amount?: null
-    ): TransferredToOptimismEventFilter;
-    TransferredToOptimism(
+      amount?: null,
+      messengerId?: null
+    ): TransferredToL2EventFilter;
+    TransferredToL2(
       user?: null,
       optimism?: null,
-      amount?: null
-    ): TransferredToOptimismEventFilter;
+      amount?: null,
+      messengerId?: null
+    ): TransferredToL2EventFilter;
+
+    "UpdatePendingValidators(uint256)"(
+      _pendingValidators?: null
+    ): UpdatePendingValidatorsEventFilter;
+    UpdatePendingValidators(
+      _pendingValidators?: null
+    ): UpdatePendingValidatorsEventFilter;
   };
 
   estimateGas: {
-    l1Messenger(overrides?: CallOverrides): Promise<BigNumber>;
+    BASIS_POINT(overrides?: CallOverrides): Promise<BigNumber>;
 
-    mintOptimism(
-      optimismAddress: PromiseOrValue<string>,
+    DEPOSIT_CONTRACT(overrides?: CallOverrides): Promise<BigNumber>;
+
+    VALIDATOR_DEPOSIT(overrides?: CallOverrides): Promise<BigNumber>;
+
+    VERIFICATION_DEPOSIT(overrides?: CallOverrides): Promise<BigNumber>;
+
+    addMessenger(
+      _messengers: Issuer.MessengerDataStruct[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    core(overrides?: CallOverrides): Promise<BigNumber>;
+
+    depositToEth2(
+      publicKey: PromiseOrValue<BytesLike>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    disableMessenger(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    enableMessenger(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    ethStaked(overrides?: CallOverrides): Promise<BigNumber>;
+
+    getDepositOptimism(
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    getMessenger(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    getNumberMessengers(overrides?: CallOverrides): Promise<BigNumber>;
+
+    initialize(
+      _core: PromiseOrValue<string>,
+      _pendingValidatorsLimit: PromiseOrValue<BigNumberish>,
+      _depositContract: PromiseOrValue<string>,
+      _pendingValidators: PromiseOrValue<BigNumberish>,
+      _ethStaked: PromiseOrValue<BigNumberish>,
+      _ethMinted: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    messengers(
+      arg0: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    mintL2(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      _receiverAddress: PromiseOrValue<string>,
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<BigNumber>;
 
+    pause(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    pendingValidatorLimit(overrides?: CallOverrides): Promise<BigNumber>;
+
+    pendingValidators(overrides?: CallOverrides): Promise<BigNumber>;
+
+    pendingValidatorsLimit(overrides?: CallOverrides): Promise<BigNumber>;
+
     renounceOwnership(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    setPendingValidatorsLimit(
+      _pendingValidatorsLimit: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -315,31 +999,121 @@ export interface Staking extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    stkETH(overrides?: CallOverrides): Promise<BigNumber>;
+    stkEthMinted(overrides?: CallOverrides): Promise<BigNumber>;
 
     transferOwnership(
       newOwner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    transferToOptimism(
-      optimismAddress: PromiseOrValue<string>,
-      amount: PromiseOrValue<BigNumberish>,
+    transferToL2(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      _amount: PromiseOrValue<BigNumberish>,
+      _receiverAddress: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    unpause(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    updatePendingValidator(
+      newActiveValidators: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
   };
 
   populateTransaction: {
-    l1Messenger(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    BASIS_POINT(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    mintOptimism(
-      optimismAddress: PromiseOrValue<string>,
+    DEPOSIT_CONTRACT(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    VALIDATOR_DEPOSIT(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    VERIFICATION_DEPOSIT(
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    addMessenger(
+      _messengers: Issuer.MessengerDataStruct[],
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    core(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    depositToEth2(
+      publicKey: PromiseOrValue<BytesLike>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    disableMessenger(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    enableMessenger(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    ethStaked(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    getDepositOptimism(
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    getMessenger(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    getNumberMessengers(
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    initialize(
+      _core: PromiseOrValue<string>,
+      _pendingValidatorsLimit: PromiseOrValue<BigNumberish>,
+      _depositContract: PromiseOrValue<string>,
+      _pendingValidators: PromiseOrValue<BigNumberish>,
+      _ethStaked: PromiseOrValue<BigNumberish>,
+      _ethMinted: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    messengers(
+      arg0: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    mintL2(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      _receiverAddress: PromiseOrValue<string>,
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
+    pause(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    pendingValidatorLimit(
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    pendingValidators(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    pendingValidatorsLimit(
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
     renounceOwnership(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    setPendingValidatorsLimit(
+      _pendingValidatorsLimit: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -347,16 +1121,26 @@ export interface Staking extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    stkETH(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    stkEthMinted(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     transferOwnership(
       newOwner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    transferToOptimism(
-      optimismAddress: PromiseOrValue<string>,
-      amount: PromiseOrValue<BigNumberish>,
+    transferToL2(
+      _messengerId: PromiseOrValue<BigNumberish>,
+      _amount: PromiseOrValue<BigNumberish>,
+      _receiverAddress: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    unpause(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    updatePendingValidator(
+      newActiveValidators: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
   };

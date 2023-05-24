@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Styles from "./styles.module.css";
 import Tooltip from "rc-tooltip";
-import { Icon } from "ui";
-import {
-  formatNumber,
-  truncateToFixedDecimalPlaces,
-} from "../../../helpers/utils";
+import { Icon } from "../../atoms/icon";
+import { truncateToFixedDecimalPlaces } from "../../../helpers/utils";
 import { useAppStore } from "../../../store/store";
+
 const BalanceList = () => {
   const balance = useAppStore((state) => state.balance);
   const ethPrice = useAppStore((state) => state.ethPrice);
-  const walletConnection = true;
-
-  const claimHandler = async () => {
-    console.log("dcald");
-  };
-
-  const unstakingAmount = 0;
+  const network = useAppStore((state) => state.network.name);
 
   return (
     <>
@@ -27,7 +19,8 @@ const BalanceList = () => {
             placement="bottom"
             overlay={
               <span>
-                Only showing balances of <br /> your assets staked via pSTAKE.
+                Showing assets on <br />
+                <span className="capitalize">{network}</span> network
               </span>
             }
           >

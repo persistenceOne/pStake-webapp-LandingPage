@@ -1,23 +1,68 @@
 import React from "react";
 import { useAppStore } from "../../../store/store";
+import { Button, Spinner, displayToast } from "ui";
 import { executeTransferToOptimismTransaction } from "../../../helpers/transaction";
-import { Spinner, Button } from "ui";
+import { addNetwork, handleMetamask } from "../../../helpers/wallets";
+import { chains, Networks } from "../../../helpers/config";
+import { getWalletProvider } from "../../../helpers/utils";
+import { WALLET_ERROR } from "../../../../appConstants";
+import { shallow } from "zustand/shallow";
+import { ToastType } from "ui/components/molecules/toast/types";
+
+const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
 
 const Submit = () => {
-  const walletInfo = useAppStore((state) => state.wallet);
-  const instances = useAppStore((state) => state.instances);
-  const transactionInfo = useAppStore((state) => state.transactionInfo);
-  const bridgeTxnInfo = useAppStore((state) => state.bridgeTxnInfo);
+  const setBridgeTxnModal = useAppStore((state) => state.setBridgeTxnModal);
+
+  const [
+    instances,
+    transactionInfo,
+    walletInfo,
+    stkEthBalance,
+    bridgingAmount,
+    network,
+  ] = useAppStore(
+    (state) => [
+      state.instances,
+      state.transactionInfo,
+      state.wallet,
+      state.balance.stkETH,
+      state.bridgeTxnInfo.amount,
+      state.network,
+    ],
+    shallow
+  );
 
   const transferHandler = async () => {
-    console.log("transferHandler");
+    setBridgeTxnModal(true);
     await executeTransferToOptimismTransaction(instances?.stakingInstance, {
       address: walletInfo.account!,
-      amount: bridgeTxnInfo.amount,
+      amount: bridgingAmount,
     });
   };
 
-  const enable = bridgeTxnInfo.amount && Number(bridgeTxnInfo.amount) > 0;
+  const switchNetworkHandler = async (type: Networks) => {
+    const chain = chains[env][type];
+    const provider = getWalletProvider(walletInfo.walletName!);
+    const response = await addNetwork(provider, chain);
+    if (!response) {
+      displayToast(
+        {
+          heading: WALLET_ERROR,
+          message: "Error while Switching network",
+        },
+        ToastType.ERROR
+      );
+      return;
+    }
+  };
+
+  const enable =
+    (stkEthBalance >= Number(bridgingAmount) &&
+      bridgingAmount &&
+      Number(bridgingAmount) > 0 &&
+      !network.error) ||
+    network.name === "optimism";
 
   return (
     <div className="mt-6">
@@ -35,18 +80,27 @@ const Submit = () => {
             transactionInfo.name === "transferToOptimism" &&
             transactionInfo.inProgress ? (
               <Spinner size={"small"} />
-            ) : (
+            ) : network.name === "ethereum" ? (
               "Transfer"
+            ) : (
+              "Change Network"
             )
           }
-          onClick={transferHandler}
+          onClick={
+            network.name === "ethereum"
+              ? transferHandler
+              : () => switchNetworkHandler("ethereum")
+          }
         />
       ) : (
         <Button
           className="button w-full md:py-2 md:text-sm"
           type="primary"
           size="large"
-          disabled={true}
+          onClick={() => {
+            handleMetamask();
+          }}
+          disabled={false}
           content="Connect wallet"
         />
       )}

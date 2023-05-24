@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Icon, ButtonLink } from "ui";
+import { Icon } from "../../atoms/icon";
+import { ButtonLink } from "ui";
 import Tooltip from "rc-tooltip";
 import { useWindowSize } from "../../../customHooks/useWindowSize";
 import { DefiInfo, EthereumData } from "./defiData";

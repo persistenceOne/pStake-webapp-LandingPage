@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ExchangeRateTypes } from "./types";
-import { formatNumber } from "../../../helpers/utils";
+import { formatNumber } from "utils";
 import { Icon } from "ui";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../store/reducers";

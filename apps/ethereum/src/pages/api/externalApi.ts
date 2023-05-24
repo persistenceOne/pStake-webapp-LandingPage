@@ -1,13 +1,13 @@
 import Axios from "axios";
 
 export const coingeckoTokenApi =
-  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum";
+  "https://api.coingecko.com/api/v3/coins/ethereum";
 
 export const fetchTokensInfo = async (): Promise<number> => {
   try {
     const res = await Axios.get(coingeckoTokenApi);
     if (res && res.data) {
-      return Number(res.data[0].current_price);
+      return Number(res.data.market_data.current_price.usd);
     }
     return 0;
   } catch (e) {

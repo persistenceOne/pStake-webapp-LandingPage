@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { contracts } from "./config";
+import { chains, contracts, Networks } from "./config";
 import { AlchemyProvider, JsonRpcSigner } from "@ethersproject/providers";
 import { Instances, WalletNames } from "../store/slices/walletSlice";
 import { Scope } from "@sentry/nextjs";
@@ -7,7 +7,6 @@ import * as Sentry from "@sentry/nextjs";
 import { CaptureContext } from "@sentry/types/types/scope";
 import { Primitive } from "@sentry/types";
 import { displayToast } from "ui";
-import { ToastType } from "ui/components/molecules/toast/types";
 import { useAppStore } from "../store/store";
 import {
   Staking,
@@ -15,7 +14,8 @@ import {
   StkETH,
   StkETH__factory,
 } from "../contracts/types";
-import { BigNumberish, utils } from "ethers";
+import { BigNumberish, ethers, utils } from "ethers";
+import { ToastType } from "ui/components/molecules/toast/types";
 
 export const emptyFunc = () => ({});
 
@@ -161,11 +161,20 @@ export const sentryReport = (exception: any, context: CaptureContext) => {
 export const getInstance = (
   signer: JsonRpcSigner | AlchemyProvider
 ): Instances => {
-  const stkEthAddress =
-    contracts[process.env.NEXT_PUBLIC_ENVIRONMENT!]["stkETH"];
-  const stakingContractAddress =
-    contracts[process.env.NEXT_PUBLIC_ENVIRONMENT!]["staking"];
-
+  let stkEthAddress: string = "";
+  let stakingContractAddress: string = "";
+  const network: Networks = useAppStore.getState().network.name!;
+  if (network === "ethereum") {
+    stkEthAddress = contracts[process.env.NEXT_PUBLIC_ENVIRONMENT!]["stkETH"];
+    stakingContractAddress =
+      contracts[process.env.NEXT_PUBLIC_ENVIRONMENT!]["l1staking"];
+  } else if (network === "optimism") {
+    stkEthAddress = contracts[process.env.NEXT_PUBLIC_ENVIRONMENT!]["l2stkETH"];
+    stakingContractAddress =
+      contracts[process.env.NEXT_PUBLIC_ENVIRONMENT!]["l2staking"];
+  }
+  console.log("stkEthContract-", stkEthAddress);
+  console.log("ethIssuerContract-", stakingContractAddress);
   const stkEthContract: StkETH = StkETH__factory.connect(stkEthAddress, signer);
   const stakingContract: Staking = Staking__factory.connect(
     stakingContractAddress,
@@ -179,7 +188,7 @@ export const getInstance = (
 
 export const getEthBalance = async (): Promise<string | number> => {
   try {
-    const signer = useAppStore.getState().wallet.signer;
+    const signer = useAppStore.getState().walletSigner;
     const balance: BigNumberish = await signer?.getBalance()!;
     return utils.formatEther(balance!);
   } catch (e) {
@@ -192,32 +201,32 @@ export const getStkEthBalance = async () => {
     const stkEthInstance: StkETH =
       useAppStore.getState().instances?.stkEthInstance!;
     const address: string = useAppStore.getState().wallet.account!;
-    // const stkEthAddress =
-    //   contracts[process.env.NEXT_PUBLIC_ENVIRONMENT!]["stkETH"];
-    console.log(address, "address");
     const balance = await stkEthInstance.balanceOf(address);
-    console.log(balance, "balance123");
     return utils.formatEther(balance!);
   } catch (e) {
-    console.log(e, "in getStkEthBalance");
+    console.log(e, "error in getStkEthBalance");
     return "0";
   }
 };
 
-export const getExchangeRate = async (provider: AlchemyProvider) => {
+export const getExchangeRate = async () => {
   try {
+    const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
     const stkETHContractAddress =
       contracts[process.env.NEXT_PUBLIC_ENVIRONMENT!]["stkETH"];
+
+    const chain = chains[env]["ethereum"];
+
+    const JsonRpcProvider = new ethers.providers.JsonRpcProvider(chain.rpcUrl);
     const stkEthContract: StkETH = StkETH__factory.connect(
       stkETHContractAddress,
-      provider
+      JsonRpcProvider
     );
-    //   contracts[process.env.NEXT_PUBLIC_ENVIRONMENT!]["stkETH"];
     const balance = await stkEthContract.pricePerShare();
-    console.log(balance, "getExchangeRate", utils.formatEther(balance!));
+    console.log(balance.toString(), "getExchangeRate");
     return utils.formatEther(balance!);
   } catch (e) {
-    console.log(e, "in getExchangeRate");
+    console.log(e, "getExchangeRate");
     return "0";
   }
 };

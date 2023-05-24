@@ -1,10 +1,11 @@
 import { displayToast } from "ui";
-import { ToastType } from "ui/components/molecules/toast/types";
 import {
   ETH,
   ETH_REQUEST_ACCOUNTS,
   ETH_TOKEN_DECIMALS,
   META_MASK,
+  METAMASK_ERROR,
+  WALLET_ERROR,
 } from "../../appConstants";
 import { chains, ChainInfo, Networks } from "./config";
 import { JsonRpcProvider, JsonRpcSigner } from "@ethersproject/providers";
@@ -16,12 +17,14 @@ import {
 import { useAppStore } from "../store/store";
 import { WalletInfo, WalletNames } from "../store/slices/walletSlice";
 import { getWalletProvider } from "./utils";
+import { ToastType } from "ui/components/molecules/toast/types";
 
 const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
 
 // this function helps to switch connected network to supported network,
 // if network not present in metamask, it will add network to metamask.
 export const addNetwork = async (provider: any, chain: ChainInfo) => {
+  console.log(provider, chain, "addNetwork");
   try {
     await provider.request({
       method: "wallet_switchEthereumChain",
@@ -66,7 +69,7 @@ export const registerToken = async (
 ) => {
   const provider = getWalletProvider(walletInfo.walletName!);
   try {
-    await provider.request({
+    const response = await provider.request({
       method: "wallet_watchAsset",
       params: {
         type: "ERC20",
@@ -78,6 +81,12 @@ export const registerToken = async (
         },
       },
     });
+    if (response) {
+      console.log("Thanks for your interest!");
+    } else {
+      console.log("Your loss!");
+    }
+    console.log(response, "response");
   } catch (error) {
     console.log(error, "registerToken");
   }
@@ -87,20 +96,38 @@ export const handleMetamask = async () => {
   if (!window.ethereum || !window.ethereum) {
     displayToast(
       {
-        message: "please install metamask",
+        heading: METAMASK_ERROR,
+        message: "Please install metamask",
       },
       ToastType.ERROR
     );
     return;
   }
   const connectWallet = useAppStore.getState().connectWallet;
-  const chain = chains[env]["ethereum"];
   const provider = window.ethereum!;
-  if (provider.chainId !== chain.networkIdHex) {
+
+  const chainsData: any = chains[env];
+  let networkCheck = false;
+  let network: any;
+  //checking connected network in supported network list or not.
+  for (const item in chainsData) {
+    const chainInfo: ChainInfo = chainsData[item];
+    if (provider.chainId === chainInfo.networkIdHex) {
+      network = item;
+      networkCheck = true;
+      break;
+    } else {
+      networkCheck = false;
+    }
+  }
+  if (!networkCheck) {
+    const chain = chains[env].ethereum;
+    network = "ethereum";
     const response = await addNetwork(provider, chain);
     if (!response) {
       displayToast(
         {
+          heading: WALLET_ERROR,
           message: "Error while Switching network",
         },
         ToastType.ERROR
@@ -108,7 +135,7 @@ export const handleMetamask = async () => {
       return;
     }
   }
-  await connectWallet(provider, META_MASK, "ethereum");
+  await connectWallet(provider, META_MASK, network);
 };
 
 export const handleWalletConnection = async (
@@ -125,15 +152,13 @@ export const handleWalletConnection = async (
         contract
       );
       const signer: JsonRpcSigner = await provider.getSigner();
-      const balance = await signer.getBalance();
-      console.log(balance, "balance", utils.formatEther(balance));
+      await useAppStore.getState().handleWalletNetwork(network);
+      await useAppStore.getState().handleWalletSigner(signer);
       await useAppStore.getState().fetchInstances(signer);
       return {
         account: account,
         walletConnection: true,
         walletName: wallet,
-        network: network,
-        signer,
       };
     } else {
       throw new Error("No authorized account found");
@@ -141,6 +166,7 @@ export const handleWalletConnection = async (
   } catch (e: any) {
     displayToast(
       {
+        heading: WALLET_ERROR,
         message: e.message!,
       },
       ToastType.ERROR
@@ -149,9 +175,7 @@ export const handleWalletConnection = async (
     return {
       account: "",
       walletConnection: false,
-      network: null,
       walletName: null,
-      signer: null,
     };
   }
 };

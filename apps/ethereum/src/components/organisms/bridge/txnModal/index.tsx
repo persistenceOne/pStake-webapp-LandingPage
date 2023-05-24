@@ -17,7 +17,7 @@ const TransactionIcon = (
       iconName="error"
       viewClass="icon-error !w-[1.5rem] !h-[1.5rem] md:!w-[1.3rem] md:!h-[1.3rem]"
     />
-  ) : (txName === "stake" || txName === "mintOnOptimism") && inProgress ? (
+  ) : txName === "transferToOptimism" && inProgress ? (
     <Spinner size="medium" />
   ) : status === "success" ? (
     <Icon
@@ -32,22 +32,21 @@ const TransactionIcon = (
   );
 };
 
-const StakeInfoModal = () => {
+const TxnInfoModal = () => {
   const transactionInfo = useAppStore((state) => state.transactionInfo);
-  const network = useAppStore((state) => state.network);
-  const txnBroadCast = useAppStore((state) => state.txnBroadCast);
   const setTxnInfo = useAppStore((state) => state.setTxnInfo);
-  const stakeTxnInfo = useAppStore((state) => state.stakeTxnInfo);
-  const setStakeTxnModal = useAppStore((state) => state.setStakeTxnModal);
+  const txnBroadCast = useAppStore((state) => state.txnBroadCast);
+  const bridgeTxnInfo = useAppStore((state) => state.bridgeTxnInfo);
+  const setBridgeTxnModal = useAppStore((state) => state.setBridgeTxnModal);
 
   const handleClose = () => {
-    setStakeTxnModal(false);
+    setBridgeTxnModal(false);
     setTxnInfo(false, null, null);
   };
 
   return (
     <Modal
-      show={stakeTxnInfo.modal}
+      show={bridgeTxnInfo.modal}
       onClose={handleClose}
       header=""
       className="txnInfoModal"
@@ -66,14 +65,14 @@ const StakeInfoModal = () => {
           <Icon iconName="arrow-right" viewClass="icon-arrow mx-4" />
           <div className="w-[60px] h-[60px] md:w-[46px] md:h-[46px] bg-[#000] rounded-full flex items-center justify-center">
             <img
-              src={"/images/logos/stkEth.svg"}
+              src={"/images/logos/optimism.svg"}
               className="logo w-[40px] h-[40px] md:w-[26px] md:h-[26px]"
               alt="atomIcon"
             />
           </div>
         </div>
         <p className="text-light-high text-center font-semibold text-lg leading normal md:text-base pt-4">
-          Liquid Staking {stakeTxnInfo.amount} ETH
+          Transferring {bridgeTxnInfo.amount} ETH
         </p>
       </div>
       <div className={`p-6`}>
@@ -91,7 +90,7 @@ const StakeInfoModal = () => {
               : !transactionInfo.inProgress &&
                 transactionInfo.status === "success"
               ? "Transaction complete."
-              : "Approve transaction to stake"}
+              : "Approve transaction to bridge"}
           </p>
         </div>
 
@@ -100,18 +99,14 @@ const StakeInfoModal = () => {
             Transaction failed. Please try again
           </p>
         ) : null}
-        {transactionInfo.status === "success" &&
-          (stakeTxnInfo.stakeNetwork === "optimism" &&
-          network.name === "ethereum" ? (
-            <p className="text-base text-light-high text-center font-semibold my-4 md:text-sm">
-              You will receive {stakeTxnInfo.amount} stkETH on Optimism in about
-              20 min
-            </p>
-          ) : (
-            <p className="text-base text-light-high text-center font-semibold my-4 md:text-sm">
-              You have been minted {stakeTxnInfo.amount} stkETH
-            </p>
-          ))}
+        {transactionInfo.status === "success" ? (
+          <p className="text-base text-light-high text-center font-semibold my-4 md:text-sm">
+            You will be get {bridgeTxnInfo.amount} stkETH on Optimism in about
+            20 min
+          </p>
+        ) : (
+          ""
+        )}
         {transactionInfo.status === "failed" ||
         transactionInfo.status === "success" ? (
           <Button
@@ -128,4 +123,4 @@ const StakeInfoModal = () => {
   );
 };
 
-export default StakeInfoModal;
+export default TxnInfoModal;

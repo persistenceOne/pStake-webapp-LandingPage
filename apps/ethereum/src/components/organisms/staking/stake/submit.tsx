@@ -1,23 +1,26 @@
 import React from "react";
-import { Button } from "ui";
+import { Button, Spinner } from "ui";
 import { useAppStore } from "../../../../store/store";
 import {
   executeMintOnOptimismTransaction,
   executeStakeTransaction,
 } from "../../../../helpers/transaction";
-import { Spinner } from "ui";
+import { handleMetamask } from "../../../../helpers/wallets";
 
 const Submit = () => {
   const stakeTxnInfo = useAppStore((state) => state.stakeTxnInfo);
   const setStakeTxnModal = useAppStore((state) => state.setStakeTxnModal);
   const transactionInfo = useAppStore((state) => state.transactionInfo);
   const walletInfo = useAppStore((state) => state.wallet);
+  const network = useAppStore((state) => state.network);
   const instances = useAppStore((state) => state.instances);
 
   const stakeHandler = async () => {
     setStakeTxnModal(true);
-    console.log("stakeNetwork", stakeTxnInfo);
-    if (stakeTxnInfo.stakeNetwork === "ethereum") {
+    if (
+      stakeTxnInfo.stakeNetwork === "ethereum" ||
+      network.name === "optimism"
+    ) {
       await executeStakeTransaction(instances?.stakingInstance, {
         ethAddress: walletInfo.account!,
         amount: stakeTxnInfo.amount,
@@ -30,7 +33,8 @@ const Submit = () => {
     }
   };
 
-  const enable = stakeTxnInfo.amount && Number(stakeTxnInfo.amount) > 0;
+  const enable =
+    stakeTxnInfo.amount && Number(stakeTxnInfo.amount) > 0 && !network.error;
 
   return walletInfo.walletConnection ? (
     <Button
@@ -59,7 +63,10 @@ const Submit = () => {
       className="button w-full md:py-2 md:text-sm"
       type="primary"
       size="large"
-      disabled={true}
+      disabled={false}
+      onClick={() => {
+        handleMetamask();
+      }}
       content="Connect wallet"
     />
   );

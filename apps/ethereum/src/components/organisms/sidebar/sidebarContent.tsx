@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useWindowSize } from "../../../customHooks/useWindowSize";
 import { useRouter } from "next/router";
 import { emptyFunc } from "../../../helpers/utils";
-import { Icon } from "ui";
+import { Icon } from "../../atoms/icon";
 import { useAppStore } from "../../../store/store";
 import BalanceList from "./balanceList";
 import Tooltip from "rc-tooltip";
@@ -40,6 +40,7 @@ const SidebarContent = () => {
   const { handleSidebar } = useAppStore();
   const router = useRouter();
   const wallet = useAppStore((state) => state.wallet);
+  const network = useAppStore((state) => state.network.name);
 
   const chain = chains[env];
 
@@ -110,7 +111,7 @@ const SidebarContent = () => {
             {wallet.walletConnection ? (
               <li className={`list-none`}>
                 <Link
-                  href={`${chain[wallet.network!].explorerUrl}/address/${
+                  href={`${chain[network!].explorerUrl}/address/${
                     wallet.account
                   }`}
                   className="nav-link"

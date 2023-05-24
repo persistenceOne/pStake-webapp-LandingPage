@@ -3,11 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store/reducers";
 import Tooltip from "rc-tooltip";
 import { Icon, Button } from "ui";
-import {
-  decimalize,
-  formatNumber,
-  truncateToFixedDecimalPlaces
-} from "../../../helpers/utils";
+import { decimalize } from "../../../helpers/utils";
+import { formatNumber, truncateToFixedDecimalPlaces } from "utils";
 import { hideMobileSidebar } from "../../../store/reducers/sidebar";
 import { showClaimModal } from "../../../store/reducers/transactions/claim";
 import { useWallet } from "../../../context/WalletConnect/WalletConnect";
@@ -25,7 +22,7 @@ const BalanceList = () => {
   const [open, setOpen] = useState<any>({
     persistenceBalance: true,
     cosmosBalance: false,
-    unStaking: false
+    unStaking: false,
   });
   const [totalPendingBalance, setTotalPendingBalance] = useState<number>(0);
   const [totalUnListedPendingClaims, setTotalUnlistedPendingClaims] =
@@ -44,7 +41,7 @@ const BalanceList = () => {
     claimableBalance,
     pendingClaimList,
     claimableStkAtomBalance,
-    unlistedPendingClaimList
+    unlistedPendingClaimList,
   } = useSelector((state: RootState) => state.claimQueries);
 
   const claimHandler = async () => {
@@ -77,7 +74,7 @@ const BalanceList = () => {
     pendingClaimList,
     claimableStkAtomBalance,
     pendingList,
-    unlistedPendingClaimList
+    unlistedPendingClaimList,
   ]);
 
   const handleCollapse = (value: string) => {

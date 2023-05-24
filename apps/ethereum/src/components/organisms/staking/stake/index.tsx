@@ -1,14 +1,21 @@
 import React from "react";
 import From from "./from";
 import To from "./To";
-import { Icon } from "ui";
+import { Icon } from "../../../atoms/icon";
 import styles from "./styles.module.css";
 import Submit from "./submit";
 import Tooltip from "rc-tooltip";
 import Networks from "./stakeOption";
 import ExchangeRate from "../../../molecules/exchangeRate";
+import { useAppStore } from "../../../../store/store";
+import { shallow } from "zustand/shallow";
 
 const Stake = () => {
+  const [stakeNetwork, network] = useAppStore(
+    (state) => [state.stakeTxnInfo.stakeNetwork, state.network.name],
+    shallow
+  );
+
   return (
     <>
       <From />
@@ -25,10 +32,14 @@ const Stake = () => {
         </div>
       </div>
       <To />
-      <div className="px-6 py-2 bg-input border rounded-md border-solid border-[#1b1b1b99] flex justify-between items-center">
-        <p className="text-sm text-light-mid">I want to mint stkETH on </p>
-        <Networks />
-      </div>
+      {network === "ethereum" ? (
+        <div className="px-6 py-2 bg-input border rounded-md border-solid border-[#1b1b1b99] flex justify-between items-center">
+          <p className="text-sm text-light-mid">I want to mint stkETH on </p>
+          <Networks />
+        </div>
+      ) : (
+        ""
+      )}
       <div className="flex items-center justify-between flex-wrap px-4 md:p-0 mt-3">
         <p className="font-normal text-sm leading-7 text-light-emphasis">
           Exchange Rate
@@ -40,7 +51,16 @@ const Stake = () => {
       <div className="flex items-center justify-between flex-wrap px-4 md:p-0">
         <p className="font-normal text-sm leading-7 text-light-emphasis flex items-center">
           Fee
-          <Tooltip placement="bottom" overlay={<span>Protocol fee</span>}>
+          <Tooltip
+            placement="bottom"
+            overlay={
+              <span>
+                {stakeNetwork === "ethereum"
+                  ? "Protocol fee"
+                  : "Protocol fee + Bridging and minting fee"}
+              </span>
+            }
+          >
             <button className="icon-button px-1">
               <Icon viewClass="arrow-right" iconName="info" />
             </button>

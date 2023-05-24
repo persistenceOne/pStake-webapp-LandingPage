@@ -23,6 +23,7 @@ export interface TransactionSliceActions {
     name: TransactionNames,
     status?: TransactionStatus
   ) => void;
+  setTxnBroadCast: (broadCast: boolean) => void;
   resetTxnSlice: () => void;
 }
 
@@ -41,6 +42,7 @@ export interface TransactionSliceState {
     name: TransactionNames | null;
     status?: TransactionStatus;
   };
+  txnBroadCast: boolean;
 }
 
 export type TransactionSlice = TransactionSliceState & TransactionSliceActions;
@@ -48,7 +50,7 @@ export type TransactionSlice = TransactionSliceState & TransactionSliceActions;
 const initialState: TransactionSliceState = {
   stakeTxnInfo: {
     amount: "",
-    stakeNetwork: "ethereum",
+    stakeNetwork: "optimism",
     modal: false,
   },
   transactionInfo: {
@@ -60,6 +62,7 @@ const initialState: TransactionSliceState = {
     amount: "",
     modal: false,
   },
+  txnBroadCast: false,
 };
 
 export const createTransactionSlice: StateCreator<TransactionSlice> = (
@@ -101,6 +104,12 @@ export const createTransactionSlice: StateCreator<TransactionSlice> = (
     name: TransactionNames,
     status?: TransactionStatus
   ) => set((state) => ({ transactionInfo: { inProgress, name, status } })),
+  setTxnBroadCast: (broadCast: boolean) =>
+    set(
+      produce((state: TransactionSlice) => {
+        state.txnBroadCast = broadCast;
+      })
+    ),
   resetTxnSlice: () => {
     set(initialState);
   },

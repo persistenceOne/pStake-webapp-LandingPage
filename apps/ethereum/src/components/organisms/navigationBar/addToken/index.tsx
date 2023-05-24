@@ -1,11 +1,11 @@
 import { Dropdown } from "ui";
 import { useState } from "react";
-import { WalletInfo } from "../../../../store/slices/walletSlice";
-import { getWalletProvider } from "../../../../helpers/utils";
 import { contracts, Networks } from "../../../../helpers/config";
 import { useAppStore } from "../../../../store/store";
 import { NetworkInfo } from "../types";
 import { registerToken } from "../../../../helpers/wallets";
+import { displayToast } from "ui";
+import { ToastType } from "ui/components/molecules/toast/types";
 
 const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
 
@@ -24,20 +24,30 @@ const networkList: NetworkInfo[] = [
 const AddToken = () => {
   const [show, setShow] = useState<boolean>(false);
   const walletInfo = useAppStore((state) => state.wallet);
-  const handleAddTokenModal = useAppStore((state) => state.handleAddTokenModal);
-  const handleAddTokenNetwork = useAppStore(
-    (state) => state.handleAddTokenNetwork
-  );
+  const network = useAppStore((state) => state.network);
 
   const dropDownHandler = async (type: Networks) => {
     setShow(false);
-    if (type === "ethereum") {
-      const ethContractAddressOnEthereum =
-        contracts[process.env.NEXT_PUBLIC_ENVIRONMENT!]["stkETH"];
-      await registerToken(walletInfo, ethContractAddressOnEthereum);
+    if (type === network.name && !network.error) {
+      let contractAddress: string = "";
+      if (type === "ethereum") {
+        contractAddress = contracts[env]["stkETH"];
+      } else if (type === "optimism") {
+        contractAddress = contracts[env]["l2stkETH"];
+      }
+      await registerToken(walletInfo, contractAddress);
     } else {
-      handleAddTokenModal(true);
-      handleAddTokenNetwork(type);
+      displayToast(
+        {
+          message: (
+            <>
+              Please connect with <span className="capitalize">{type}</span>{" "}
+              <span>{env}</span> network to add stkEth to wallet
+            </>
+          ),
+        },
+        ToastType.INFO
+      );
     }
   };
 
@@ -90,8 +100,8 @@ const AddToken = () => {
                 src={`/images/logos/${item.logo}.svg`}
                 alt="stkATOM logo"
               />
-              <span className="text-sm text-light-emphasis font-medium leading-normal md:text-xsm mr-2">
-                on {item.network}
+              <span className="text-sm text-light-emphasis font-medium leading-normal md:text-xsm mr-2 capitalize">
+                On {item.network}
               </span>
             </div>
           </div>

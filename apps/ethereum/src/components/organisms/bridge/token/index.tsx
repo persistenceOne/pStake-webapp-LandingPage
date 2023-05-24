@@ -1,22 +1,26 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import React, { ChangeEvent } from "react";
 import { InputText } from "ui";
 import { useWindowSize } from "../../../../customHooks/useWindowSize";
 import { formatNumber } from "../../../../helpers/utils";
 import { useAppStore } from "../../../../store/store";
-import { shallow } from "zustand/esm/shallow";
+import { shallow } from "zustand/shallow";
 
 const Token = () => {
   const { isMobile } = useWindowSize();
   const setBridgeInputAmount = useAppStore(
     (state) => state.setBridgeInputAmount
   );
-  const bridgeTxnInfo = useAppStore((state) => state.bridgeTxnInfo);
 
-  const ethPrice = useAppStore((state) => state.ethPrice);
+  const [ethPrice, stkEthBalance, bridgingAmount] = useAppStore(
+    (state) => [
+      state.ethPrice,
+      state.balance.stkETH,
+      state.bridgeTxnInfo.amount,
+    ],
+    shallow
+  );
 
-  const balance = useAppStore((state) => state.balance);
-
-  const inputAmount = bridgeTxnInfo.amount;
+  const inputAmount = bridgingAmount;
   const priceInDollars = ethPrice * Number(inputAmount);
 
   const inputHandler = (evt: ChangeEvent<HTMLInputElement>) => {
@@ -51,10 +55,10 @@ const Token = () => {
             </div>
             <p className="mt-3 leading-normal text-sm md:text-xsm">
               <span className="text-light-low">Total Available: </span>
-              <span className="text-light-mid">{balance.stkETH}</span>
+              <span className="text-light-mid">{stkEthBalance}</span>
               <span
                 className="text-light-high ml-2 font-bold uppercase cursor-pointer"
-                onClick={() => maxHandler(balance.stkETH.toString())}
+                onClick={() => maxHandler(stkEthBalance.toString())}
               >
                 Max
               </span>

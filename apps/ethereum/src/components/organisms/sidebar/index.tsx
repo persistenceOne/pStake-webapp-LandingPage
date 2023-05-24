@@ -7,7 +7,7 @@ import { useAppStore } from "../../../store/store";
 
 const SideBar = () => {
   const handleSidebar = useAppStore((state) => state.handleSidebar);
-  const show = useAppStore((state) => state.show);
+  const show = useAppStore((state) => state.sidebar.show);
 
   const closeHandler = () => {
     handleSidebar(false);
@@ -26,7 +26,7 @@ const SideBar = () => {
       />
       <div
         className={`${isMobile ? styles.mobileSidebar : ""}`}
-        ref={sideBarRef}
+        ref={isMobile ? sideBarRef : null}
       >
         <SidebarContent />
       </div>
