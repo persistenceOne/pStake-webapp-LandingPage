@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70607c77-00e4-4bad-b26e-9cb416d1f94e" name="Changes" comment="add cosmos app">
+    <list default="true" id="70607c77-00e4-4bad-b26e-9cb416d1f94e" name="Changes" comment="update tailwind config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stakingTabs/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/staking/stakingTabs/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/tailwindconfig/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tailwindconfig/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/turbo/generators/config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/turbo/generators/templates/component.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/sidebar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/templates/template.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/templates/template.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/sidebarContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/sidebar/sidebarContent.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,23 +28,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "turbo__repo",
-    "last_opened_file_path": "C:/Users/black/Documents/design-system-template",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\black\\Documents\\pStake-webapp-LandingPage\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "C:\\Users\\black\\Documents\\pStake-webapp-LandingPage\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;turbo__repo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/black/Documents/pStake-website&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\black\\Documents\\pStake-webapp-LandingPage\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\black\\Documents\\pStake-webapp-LandingPage\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages\ui" />
@@ -78,7 +75,8 @@
       <workItem from="1684746769397" duration="17561000" />
       <workItem from="1684817952033" duration="10953000" />
       <workItem from="1684836294979" duration="416000" />
-      <workItem from="1684894416729" duration="9069000" />
+      <workItem from="1684894416729" duration="9996000" />
+      <workItem from="1684908374046" duration="1280000" />
     </task>
     <task id="LOCAL-00001" summary="remove old files">
       <created>1684740707715</created>
@@ -94,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684748142191</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update tailwind config">
+      <created>1684906507178</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684906507178</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,7 +120,8 @@
     <MESSAGE value="remove old files" />
     <MESSAGE value="initialize turbo repo" />
     <MESSAGE value="add cosmos app" />
-    <option name="LAST_COMMIT_MESSAGE" value="add cosmos app" />
+    <MESSAGE value="update tailwind config" />
+    <option name="LAST_COMMIT_MESSAGE" value="update tailwind config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

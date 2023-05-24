@@ -12,7 +12,7 @@ import { RootState } from "../../store/reducers";
 export const PageTemplate = ({
   children,
   className,
-  title
+  title,
 }: {
   children: React.ReactNode;
   className: string;
@@ -21,11 +21,12 @@ export const PageTemplate = ({
   const { showModal } = useSelector((state: RootState) => state.stake);
   return (
     <div>
-      <div className="appLayout grid gap-6 md:block">
+      <div className="flex md:block bg-body-bg">
         <MobileSideBar />
         <div
           className={
-            `mainContainer h-screen overflow-auto bg-no-repeat ` + className
+            `flex-1 px-8 lg:px-4 h-screen overflow-auto bg-no-repeat ` +
+            className
           }
         >
           <Topbar />

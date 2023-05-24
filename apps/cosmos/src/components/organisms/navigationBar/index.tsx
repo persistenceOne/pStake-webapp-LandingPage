@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import LoginOptions from "./loginOptions";
-import {Button, Icon} from "ui";
+import { Button, Icon } from "ui";
 import {
   DEV_NET,
   MID_INTERVAL,
   SHORT_INTERVAL,
-  TEST_NET
+  TEST_NET,
 } from "../../../../AppConstants";
 import { useDispatch, useSelector } from "react-redux";
 import { showMobileSidebar } from "../../../store/reducers/sidebar";
@@ -33,7 +33,7 @@ const NavigationBar = () => {
     persistenceAccountData,
     cosmosAccountData,
     cosmosChainData,
-    persistenceChainData
+    persistenceChainData,
   } = useWallet();
 
   // fetch call on every 10 sec
@@ -42,7 +42,7 @@ const NavigationBar = () => {
       dispatch(
         fetchLiveDataSaga({
           persistenceChainInfo: persistenceChainData!,
-          cosmosChainInfo: cosmosChainData!
+          cosmosChainInfo: cosmosChainData!,
         })
       );
     }, SHORT_INTERVAL);
@@ -56,13 +56,13 @@ const NavigationBar = () => {
         dispatch(
           fetchPendingClaimsSaga({
             address: persistenceAccountData!.address,
-            persistenceChainInfo: persistenceChainData!
+            persistenceChainInfo: persistenceChainData!,
           })
         );
         dispatch(
           fetchInitSaga({
             persistenceChainInfo: persistenceChainData!,
-            cosmosChainInfo: cosmosChainData!
+            cosmosChainInfo: cosmosChainData!,
           })
         );
         dispatch(
@@ -70,7 +70,7 @@ const NavigationBar = () => {
             persistenceAddress: persistenceAccountData!.address,
             cosmosAddress: cosmosAccountData!.address,
             persistenceChainInfo: persistenceChainData!,
-            cosmosChainInfo: cosmosChainData!
+            cosmosChainInfo: cosmosChainData!,
           })
         );
       }
@@ -82,7 +82,7 @@ const NavigationBar = () => {
     isWalletConnected,
     dispatch,
     persistenceChainData,
-    cosmosChainData
+    cosmosChainData,
   ]);
 
   const { cosmosChainStatus, persistenceChainStatus } = useSelector(
@@ -94,7 +94,7 @@ const NavigationBar = () => {
   }
 
   return (
-    <div className="flex mb-10 py-6 pl-7 pr-14 md:px-3">
+    <div className="flex mb-10 py-6 px-3">
       <div className="flex items-center flex-1">
         <div className="hidden md:block">
           <Link href="/" className="nav-link" passHref>

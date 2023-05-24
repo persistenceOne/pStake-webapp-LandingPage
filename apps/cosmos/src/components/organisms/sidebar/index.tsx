@@ -20,41 +20,41 @@ const socialList = [
   {
     url: "https://twitter.com/pSTAKE_Cosmos",
     iconName: "twitter-logo",
-    tooltip: "Twitter"
+    tooltip: "Twitter",
   },
   {
     url: " https://t.me/pstakefinancechat",
     iconName: "telegram-plane",
-    tooltip: "Telegram"
+    tooltip: "Telegram",
   },
   {
     url: "https://blog.pstake.finance/category/stkatom/",
     iconName: "medium-m",
-    tooltip: "Medium"
+    tooltip: "Medium",
   },
   {
     url: "https://pstake.finance/atom",
     iconName: "globe",
-    tooltip: "Website"
+    tooltip: "Website",
   },
   {
     url: BUG_REPORT_URL,
     iconName: "bug",
-    tooltip: "Bug Report"
-  }
+    tooltip: "Bug Report",
+  },
 ];
 
 const moreList = [
   {
     url: "https://docs.pstake.finance/stkATOM_Introduction/",
     name: "Docs",
-    icon: "docs"
+    icon: "docs",
   },
   {
     url: "https://forum.pstake.finance/",
     name: "Governance",
-    icon: "governance"
-  }
+    icon: "governance",
+  },
 ];
 
 const Sidebar = () => {
@@ -69,6 +69,19 @@ const Sidebar = () => {
     dispatch(hideMobileSidebar());
   };
 
+  const routeList = [
+    {
+      icon: "staking",
+      text: "Staking",
+      path: "/",
+    },
+    {
+      icon: "defi",
+      text: "DeFi",
+      path: "/defi",
+    },
+  ];
+
   const router = useRouter();
   return (
     <aside className="w-[284px] md:w-[220px]">
@@ -78,61 +91,45 @@ const Sidebar = () => {
         <div>
           <div className="text-center pt-8 pb-[1.9rem]">
             <Link href="/" className="nav-link text-center" passHref>
-                <img
-                  src={"/images/logo.svg"}
-                  alt={"logo"}
-                  className="m-auto"
-                  width={isMobile ? 90 : 124}
-                />
+              <img
+                src={"/images/logo.svg"}
+                alt={"logo"}
+                className="m-auto"
+                width={isMobile ? 90 : 124}
+              />
             </Link>
           </div>
           <div className="pb-4">
-            <li className={`list-none`}>
-              <Link href="/" passHref>
-                <p
-                  className={`${Styles.navBarLink} ${
-                    router.pathname == "/"
-                      ? `${Styles.active} navItemActive`
-                      : "group"
-                  } 
-                py-[0.625rem] px-8 flex items-center active:bg-sideBar-navLinkActive cursor-pointer`}
-                  onClick={isMobile ? closeSideHandler : emptyFunc}
-                >
-                  <span className={"mr-8 md:mr-4 "}>
-                    <Icon
-                      iconName="staking"
-                      viewClass={`${Styles.navBarLinkIcon} side-bar-icon group-hover:fill-[#fcfcfc]`}
-                    />
-                  </span>
-                  <span className="text text-light-mid leading-6 text-base md:text-sm group-hover:text-light-high">
-                    Staking
-                  </span>
-                </p>
-              </Link>
-            </li>
-            <li className={`list-none`}>
-              <Link href={"/defi"} passHref>
-                <p
-                  className={`${Styles.navBarLink} ${
-                    router.pathname == "/defi"
-                      ? `${Styles.active} navItemActive`
-                      : "group"
-                  } 
+            {routeList.map((item, index) => (
+              <li className={`list-none`} key={index}>
+                <Link href={item.path} passHref>
+                  <p
+                    className={`${
+                      router.pathname == item.path
+                        ? `border-r-[3px] border-[#c73238] bg-black-700 navItemActive`
+                        : "group"
+                    } 
                 py-[0.625rem] px-8 flex items-center cursor-pointer`}
-                  onClick={isMobile ? closeSideHandler : emptyFunc}
-                >
-                  <span className={"mr-8 md:mr-4 "}>
-                    <Icon
-                      iconName="defi"
-                      viewClass={`${Styles.navBarLinkIcon} side-bar-icon group-hover:fill-[#fcfcfc]`}
-                    />
-                  </span>
-                  <span className="text text-light-mid leading-6 text-base md:text-sm group-hover:text-light-high">
-                    DeFi
-                  </span>
-                </p>
-              </Link>
-            </li>
+                    onClick={isMobile ? closeSideHandler : emptyFunc}
+                  >
+                    <span className={"mr-8 md:mr-4 "}>
+                      <Icon
+                        iconName={item.icon}
+                        viewClass="!w-[20px] !h-auto fill-[#a6a6a6] [.navItemActive_&]:fill-[#c73238] side-bar-icon
+                         group-hover:fill-[#fcfcfc]"
+                      />
+                    </span>
+                    <span
+                      className="[.navItemActive_&]:text-light-high text-light-mid leading-6 text-base md:text-sm
+                      group-hover:text-light-high"
+                    >
+                      {item.text}
+                    </span>
+                  </p>
+                </Link>
+              </li>
+            ))}
+
             {isWalletConnected ? (
               <li className={`list-none`}>
                 <Link
@@ -142,21 +139,21 @@ const Sidebar = () => {
                   passHref
                   target={"_blank"}
                 >
-                    <span className={"mr-8 md:mr-4 "}>
-                      <Icon
-                        iconName="transactions"
-                        viewClass={`!w-[18px] !h-[18px] side-bar-icon  group-hover:fill-[#fcfcfc]`}
-                      />
-                    </span>
-                    <span className="text text-light-mid leading-6 text-base md:text-sm group-hover:text-light-high">
-                      Transactions
-                    </span>
-                    <span>
-                      <Icon
-                        iconName="new-tab"
-                        viewClass={`!w-[8px] !h-[8px] side-bar-icon -mb-0.5 mr-8 ml-1.5 group-hover:fill-[#fcfcfc]`}
-                      />
-                    </span>
+                  <span className={"mr-8 md:mr-4 "}>
+                    <Icon
+                      iconName="transactions"
+                      viewClass={`!w-[18px] !h-[18px] side-bar-icon  group-hover:fill-[#fcfcfc]`}
+                    />
+                  </span>
+                  <span className="text text-light-mid leading-6 text-base md:text-sm group-hover:text-light-high">
+                    Transactions
+                  </span>
+                  <span>
+                    <Icon
+                      iconName="new-tab"
+                      viewClass={`!w-[8px] !h-[8px] side-bar-icon -mb-0.5 mr-8 ml-1.5 group-hover:fill-[#fcfcfc]`}
+                    />
+                  </span>
                 </Link>
               </li>
             ) : null}
