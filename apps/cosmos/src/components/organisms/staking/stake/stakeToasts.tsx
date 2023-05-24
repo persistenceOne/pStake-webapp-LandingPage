@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store/reducers";
-import { displayToast } from "../../../molecules/toast";
-import { ToastType } from "../../../molecules/toast/types";
+import { displayToast } from "ui";
 import {
   setStakeTxnFailed,
-  setStakeTxnStepNumber
+  setStakeTxnStepNumber,
 } from "../../../../store/reducers/transactions/stake";
 import { resetTransaction } from "../../../../store/reducers/transaction";
+import { ToastType } from "ui/components/molecules/toast/types";
 
 const StakeToasts = () => {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const StakeToasts = () => {
       {txFailed ? (
         displayToast(
           {
-            message: "This transaction could not be completed"
+            message: "This transaction could not be completed",
           },
           ToastType.ERROR
         )
@@ -43,7 +43,7 @@ const StakeToasts = () => {
           {stepNumber === 2 && !txFailed
             ? displayToast(
                 {
-                  message: "Deposit Transaction in progress"
+                  message: "Deposit Transaction in progress",
                 },
                 ToastType.LOADING
               )
@@ -51,7 +51,7 @@ const StakeToasts = () => {
           {stepNumber === 3 && !txFailed
             ? displayToast(
                 {
-                  message: "Atom transferred to persistence chain successfully"
+                  message: "Atom transferred to persistence chain successfully",
                 },
                 ToastType.SUCCESS
               )
@@ -59,7 +59,7 @@ const StakeToasts = () => {
           {stepNumber === 4 && !txFailed
             ? displayToast(
                 {
-                  message: "Stake Transaction in progress"
+                  message: "Stake Transaction in progress",
                 },
                 ToastType.LOADING
               )
@@ -67,7 +67,7 @@ const StakeToasts = () => {
           {stepNumber === 5 && !txFailed
             ? displayToast(
                 {
-                  message: "Your ATOM Staked Successfully"
+                  message: "Your ATOM Staked Successfully",
                 },
                 ToastType.SUCCESS
               )

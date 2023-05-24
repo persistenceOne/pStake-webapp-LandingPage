@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-import TabItem from "../../../molecules/tabs/tabItem";
-import TabContent from "../../../molecules/tabs/tabContent";
-import { Icon } from "../../../atoms/icon";
+import { Icon } from "ui";
 import Tooltip from "rc-tooltip";
 import Stake from "../stake";
 import { useAppStore } from "../../../../store/store";
 import { shallow } from "zustand/shallow";
+import { TabItem } from "ui/components/molecules/tabs/tabItem";
+import { TabContent } from "ui/components/molecules/tabs/tabContent";
 
 const StakingTabs = () => {
   const [apr, tvl] = useAppStore((state) => [state.apr, state.tvl], shallow);

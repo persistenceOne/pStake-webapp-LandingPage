@@ -1,7 +1,7 @@
 import React from "react";
 import From from "./from";
 import To from "./To";
-import { Icon } from "../../../atoms/icon";
+import { Icon } from "ui";
 import styles from "./styles.module.css";
 import ExchangeRate from "../../../molecules/exchangeRate";
 import Submit from "./submit";

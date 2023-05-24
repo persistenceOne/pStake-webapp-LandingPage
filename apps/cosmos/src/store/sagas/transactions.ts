@@ -2,7 +2,7 @@ import { put, select } from "@redux-saga/core/effects";
 import { StakeTransactionPayload } from "../reducers/transactions/stake/types";
 import {
   resetTransaction,
-  setTransactionProgress
+  setTransactionProgress,
 } from "../reducers/transaction";
 import {
   COSMOS_FEE,
@@ -15,31 +15,30 @@ import {
   INSTANT,
   PERSISTENCE_FEE,
   STAKE,
-  STK_ATOM_MINIMAL_DENOM
+  STK_ATOM_MINIMAL_DENOM,
 } from "../../../AppConstants";
 import {
   executeStakeTransactionSaga,
   setStakeAmount,
   setStakeTxnFailed,
-  setStakeTxnStepNumber
+  setStakeTxnStepNumber,
 } from "../reducers/transactions/stake";
 import { Transaction } from "../../helpers/transaction";
 import { DeliverTxResponse } from "@cosmjs/stargate/build/stargateclient";
-import { displayToast } from "../../components/molecules/toast";
-import { ToastType } from "../../components/molecules/toast/types";
+import { displayToast } from "ui";
 import {
   genericErrorHandler,
   pollAccountBalance,
-  printConsole
+  printConsole,
 } from "../../helpers/utils";
 import {
   failedTransactionActions,
-  postTransactionActions
+  postTransactionActions,
 } from "./sagaHelpers";
 import * as Sentry from "@sentry/nextjs";
 import {
   UnStakeTransactionPayload,
-  unStakeType
+  unStakeType,
 } from "../reducers/transactions/unstake/types";
 import { toast } from "react-toastify";
 import { DepositTransactionPayload } from "../reducers/transactions/deposit/types";
@@ -51,8 +50,9 @@ import { setUnStakeAmount } from "../reducers/transactions/unstake";
 import { WithdrawTransactionPayload } from "../reducers/transactions/withdraw/types";
 import {
   setWithdrawTxnFailed,
-  setWithdrawTxnStepNumber
+  setWithdrawTxnStepNumber,
 } from "../reducers/transactions/withdraw";
+import { ToastType } from "ui/components/molecules/toast/types";
 
 const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
 
@@ -68,7 +68,7 @@ export function* executeStakeTransaction({ payload }: StakeTransactionPayload) {
     msg,
     pollInitialBalance,
     cosmosAddress,
-    cosmosChainInfo
+    cosmosChainInfo,
   } = payload;
   try {
     const transaction: DeliverTxResponse = yield Transaction(
@@ -109,7 +109,7 @@ export function* executeStakeTransaction({ payload }: StakeTransactionPayload) {
     customScope.setLevel(FATAL);
     customScope.setTags({
       [ERROR_WHILE_STAKING]: payload.account,
-      cosmosAddress
+      cosmosAddress,
     });
     yield postTransactionActions(
       "stake",
@@ -123,7 +123,7 @@ export function* executeStakeTransaction({ payload }: StakeTransactionPayload) {
 }
 
 export function* executeUnStakeTransaction({
-  payload
+  payload,
 }: UnStakeTransactionPayload) {
   const {
     persistenceSigner,
@@ -132,7 +132,7 @@ export function* executeUnStakeTransaction({
     msg,
     pollInitialBalance,
     cosmosAddress,
-    cosmosChainInfo
+    cosmosChainInfo,
   } = payload;
   try {
     const transaction: DeliverTxResponse = yield Transaction(
@@ -151,7 +151,7 @@ export function* executeUnStakeTransaction({
       if (txnType === INSTANT) {
         displayToast(
           {
-            message: "Transaction in progress"
+            message: "Transaction in progress",
           },
           ToastType.LOADING
         );
@@ -172,14 +172,14 @@ export function* executeUnStakeTransaction({
           );
           displayToast(
             {
-              message: "Transaction Successful"
+              message: "Transaction Successful",
             },
             ToastType.SUCCESS
           );
         } else {
           displayToast(
             {
-              message: "This transaction could not be completed"
+              message: "This transaction could not be completed",
             },
             ToastType.ERROR
           );
@@ -194,7 +194,7 @@ export function* executeUnStakeTransaction({
         );
         displayToast(
           {
-            message: "Transaction Successful"
+            message: "Transaction Successful",
           },
           ToastType.SUCCESS
         );
@@ -208,7 +208,7 @@ export function* executeUnStakeTransaction({
     const customScope = new Sentry.Scope();
     customScope.setLevel(FATAL);
     customScope.setTags({
-      [ERROR_WHILE_UNSTAKING]: payload.address
+      [ERROR_WHILE_UNSTAKING]: payload.address,
     });
     genericErrorHandler(e, customScope);
     yield postTransactionActions(
@@ -221,7 +221,7 @@ export function* executeUnStakeTransaction({
     if (e.message && e.message.includes(EMPTY_POOL_ERROR)) {
       displayToast(
         {
-          message: "This transaction could not be completed"
+          message: "This transaction could not be completed",
         },
         ToastType.ERROR
       );
@@ -241,7 +241,7 @@ export function* executeClaimTransaction({ payload }: ClaimTransactionPayload) {
     cosmosChainInfo,
     cosmosAddress,
     pollInitialIBCAtomBalance,
-    claimType
+    claimType,
   } = payload;
   try {
     const transaction: DeliverTxResponse = yield Transaction(
@@ -256,7 +256,7 @@ export function* executeClaimTransaction({ payload }: ClaimTransactionPayload) {
     if (transaction.code === 0) {
       displayToast(
         {
-          message: "Transaction in progress"
+          message: "Transaction in progress",
         },
         ToastType.LOADING
       );
@@ -282,7 +282,7 @@ export function* executeClaimTransaction({ payload }: ClaimTransactionPayload) {
         );
         displayToast(
           {
-            message: "Transaction Successful"
+            message: "Transaction Successful",
           },
           ToastType.SUCCESS
         );
@@ -296,7 +296,7 @@ export function* executeClaimTransaction({ payload }: ClaimTransactionPayload) {
     const customScope = new Sentry.Scope();
     customScope.setLevel(FATAL);
     customScope.setTags({
-      [ERROR_WHILE_CLAIMING]: payload.address
+      [ERROR_WHILE_CLAIMING]: payload.address,
     });
     genericErrorHandler(e, customScope);
     yield postTransactionActions(
@@ -311,7 +311,7 @@ export function* executeClaimTransaction({ payload }: ClaimTransactionPayload) {
 }
 
 export function* executeDepositTransaction({
-  payload
+  payload,
 }: DepositTransactionPayload) {
   const {
     persistenceChainInfo,
@@ -323,7 +323,7 @@ export function* executeDepositTransaction({
     persistenceAddress,
     cosmosAddress,
     pollInitialDepositBalance,
-    pollInitialStakeBalance
+    pollInitialStakeBalance,
   } = payload;
   try {
     yield put(setStakeTxnStepNumber(1));
@@ -362,7 +362,7 @@ export function* executeDepositTransaction({
             persistenceChainInfo: persistenceChainInfo!,
             pollInitialBalance: pollInitialStakeBalance,
             cosmosAddress,
-            cosmosChainInfo
+            cosmosChainInfo,
           })
         );
         yield put(setTransactionProgress(STAKE));
@@ -375,7 +375,7 @@ export function* executeDepositTransaction({
     const customScope = new Sentry.Scope();
     customScope.setLevel(FATAL);
     customScope.setTags({
-      [ERROR_WHILE_DEPOSITING]: payload.persistenceAddress
+      [ERROR_WHILE_DEPOSITING]: payload.persistenceAddress,
     });
     yield postTransactionActions(
       "deposit",
@@ -389,7 +389,7 @@ export function* executeDepositTransaction({
 }
 
 export function* executeWithdrawTransaction({
-  payload
+  payload,
 }: WithdrawTransactionPayload) {
   const {
     persistenceChainInfo,
@@ -398,7 +398,7 @@ export function* executeWithdrawTransaction({
     persistenceAddress,
     cosmosAddress,
     persistenceSigner,
-    pollInitialIBCAtomBalance
+    pollInitialIBCAtomBalance,
   } = payload;
   try {
     yield put(setWithdrawTxnStepNumber(1));
@@ -439,7 +439,7 @@ export function* executeWithdrawTransaction({
     const customScope = new Sentry.Scope();
     customScope.setLevel(FATAL);
     customScope.setTags({
-      [ERROR_WHILE_DEPOSITING]: payload.persistenceAddress
+      [ERROR_WHILE_DEPOSITING]: payload.persistenceAddress,
     });
     yield postTransactionActions(
       "withdraw",

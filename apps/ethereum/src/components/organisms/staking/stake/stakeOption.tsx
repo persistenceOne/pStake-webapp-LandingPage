@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useAppStore } from "../../../../store/store";
 import { useWindowSize } from "../../../../customHooks/useWindowSize";
 import { Networks } from "../../../../helpers/config";
-import Dropdown from "../../../molecules/dropdown";
+import { Dropdown } from "ui";
 
 interface MintList {
   name: Networks;
@@ -43,6 +43,7 @@ const Networks = () => {
   const dropCloseDownHandler = (value: boolean) => {
     setShow(value);
   };
+  console.log(show, "sho");
   return (
     <div className="lex justify-between items-center">
       <Dropdown

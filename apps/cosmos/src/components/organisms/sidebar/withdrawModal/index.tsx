@@ -1,18 +1,16 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store/reducers";
-import Modal from "../../../molecules/modal";
 import {
   hideWithdrawModal,
   setWithdrawAmount,
   setWithdrawTxnFailed,
-  setWithdrawTxnStepNumber
+  setWithdrawTxnStepNumber,
 } from "../../../../store/reducers/transactions/withdraw";
-import { Icon } from "../../../atoms/icon";
+import { Icon, Button, Modal } from "ui";
 import styles from "../../staking/stake/styles.module.css";
 import TransactionIcon from "../../../molecules/transactionHelper/transactiosIcon";
 import { resetTransaction } from "../../../../store/reducers/transaction";
-import Button from "../../../atoms/button";
 
 const WithdrawModal = () => {
   const dispatch = useDispatch();

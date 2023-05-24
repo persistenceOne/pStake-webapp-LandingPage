@@ -1,9 +1,8 @@
 import React from "react";
-import { displayToast } from "../components/molecules/toast";
-import { ToastType } from "../components/molecules/toast/types";
+import { displayToast, Icon } from "ui";
+import { ToastType } from "ui/components/molecules/toast/types";
 import { BigNumberish, ContractTransaction, utils } from "ethers";
 import { exceptionHandle, stringTruncate } from "./utils";
-import { Icon } from "../components/atoms/icon";
 import { useAppStore } from "../store/store";
 import { Staking } from "../contracts/types";
 import { PromiseOrValue } from "../contracts/types/common";

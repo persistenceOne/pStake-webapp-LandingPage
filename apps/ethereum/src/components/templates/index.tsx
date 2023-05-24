@@ -9,8 +9,8 @@ import { AlchemyProvider } from "@ethersproject/providers";
 import { ethers } from "ethers";
 import { handleMetamask } from "../../helpers/wallets";
 import { resetStore } from "../../helpers/utils";
-import { displayToast } from "../molecules/toast";
-import { ToastType } from "../molecules/toast/types";
+import { displayToast } from "UI";
+import { ToastType } from "ui/components/molecules/toast/types";
 
 const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
 

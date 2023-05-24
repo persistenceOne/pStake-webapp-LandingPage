@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../assets/images/logo.svg";
 import Link from "next/link";
-import { Icon } from "../../atoms/icon";
+import { Icon } from "ui";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store/reducers";
 import Styles from "./styles.module.css";

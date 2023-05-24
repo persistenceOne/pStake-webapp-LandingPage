@@ -1,12 +1,11 @@
 import React from "react";
-import Modal from "../../../molecules/modal";
+import { Modal } from "ui";
 import { useAppStore } from "../../../../store/store";
-import Button from "../../../atoms/button";
+import { Button, displayToast } from "ui";
 import { chains, contracts } from "../../../../helpers/config";
 import { getWalletProvider } from "../../../../helpers/utils";
-import { displayToast } from "../../../molecules/toast";
-import { ToastType } from "../../../molecules/toast/types";
 import { addNetwork, registerToken } from "../../../../helpers/wallets";
+import { ToastType } from "ui/components/molecules/toast/types";
 
 const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
 

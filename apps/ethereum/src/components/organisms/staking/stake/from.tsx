@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import InputText from "../../../atoms/input";
+import { InputText } from "ui";
 
 import { useWindowSize } from "../../../../customHooks/useWindowSize";
 import {

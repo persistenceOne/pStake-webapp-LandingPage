@@ -1,4 +1,4 @@
-import Dropdown from "../../../molecules/dropdown";
+import { Dropdown } from "ui";
 import { useState } from "react";
 import { WalletInfo } from "../../../../store/slices/walletSlice";
 import { getWalletProvider } from "../../../../helpers/utils";

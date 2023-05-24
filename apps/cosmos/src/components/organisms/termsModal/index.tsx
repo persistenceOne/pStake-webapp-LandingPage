@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Modal from "../../molecules/modal";
-import Button from "../../atoms/button";
+import { Button, Modal } from "ui";
 
 const TermsModal = () => {
   const [show, setShow] = useState(false);

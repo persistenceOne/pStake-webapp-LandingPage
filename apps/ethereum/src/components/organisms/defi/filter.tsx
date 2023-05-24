@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import styles from "./styles.module.css";
-import { Icon } from "../../atoms/icon";
+import { Icon } from "ui";
 import { Networks } from "../../../helpers/config";
 import { SortOptions } from "./index";
 

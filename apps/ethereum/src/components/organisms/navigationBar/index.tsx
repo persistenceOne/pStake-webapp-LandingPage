@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { Icon } from "../../atoms/icon";
+import { Icon } from "ui";
 import Link from "next/link";
 import { useWindowSize } from "../../../customHooks/useWindowSize";
 import { useAppStore } from "../../../store/store";

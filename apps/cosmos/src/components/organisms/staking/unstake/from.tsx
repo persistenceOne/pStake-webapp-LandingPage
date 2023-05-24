@@ -1,8 +1,8 @@
 import React, { ChangeEvent } from "react";
-import InputText from "../../../atoms/input";
+import { InputText } from "ui";
 import {
   formatNumber,
-  truncateToFixedDecimalPlaces
+  truncateToFixedDecimalPlaces,
 } from "../../../../helpers/utils";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store/reducers";

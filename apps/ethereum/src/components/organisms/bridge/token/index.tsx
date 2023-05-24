@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useRef, useState } from "react";
-import InputText from "../../../atoms/input";
+import { InputText } from "ui";
 import { useWindowSize } from "../../../../customHooks/useWindowSize";
 import { formatNumber } from "../../../../helpers/utils";
 import { useAppStore } from "../../../../store/store";

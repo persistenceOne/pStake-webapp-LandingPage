@@ -1,4 +1,5 @@
-import "../styles/globals.css";
+import "../styles/styles.css";
+import "ui/styles/globals.css";
 import type { AppProps } from "next/app";
 import { CHAIN_ID, ExternalChains } from "../helpers/config";
 import WalletProvider from "../context/WalletConnect/WalletConnect";
@@ -55,7 +56,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             gtag('config', '${GA_TRACKING_ID}', {
               page_path: window.location.pathname,
             });
-          `
+          `,
         }}
       />
       <Head>

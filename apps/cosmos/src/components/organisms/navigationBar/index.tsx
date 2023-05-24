@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import LoginOptions from "./loginOptions";
-import Button from "../../atoms/button";
+import {Button, Icon} from "ui";
 import {
   DEV_NET,
   MID_INTERVAL,
   SHORT_INTERVAL,
   TEST_NET
 } from "../../../../AppConstants";
-import { Icon } from "../../atoms/icon";
 import { useDispatch, useSelector } from "react-redux";
 import { showMobileSidebar } from "../../../store/reducers/sidebar";
 import Link from "next/link";

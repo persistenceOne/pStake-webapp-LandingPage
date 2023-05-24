@@ -1,8 +1,6 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["../ui/src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: ["../ui/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     colors: {
       light: {
@@ -37,11 +35,11 @@ module.exports = {
     },
     backgroundImage: {
       "body-bg":
-          "radial-gradient(150.28% 150.28% at 50% -50.28%, #372627 0%, #030303 55.21%)",
+        "radial-gradient(150.28% 150.28% at 50% -50.28%, #372627 0%, #030303 55.21%)",
       atomBanner:
-          "url('/images/bg_images/atomBanner2.svg'), url('/images/bg_images/atomBanner1.svg') ",
+        "url('/images/bg_images/atomBanner2.svg'), url('/images/bg_images/atomBanner1.svg') ",
       Banner:
-          "url('/images/bg_images/binance_bg.svg'), radial-gradient(100% 311.1% at 97.81% 0,#fff 0,#fffef8 45.83%,#fffffd 100%)",
+        "url('/images/bg_images/binance_bg.svg'), radial-gradient(100% 311.1% at 97.81% 0,#fff 0,#fffef8 45.83%,#fffffd 100%)",
     },
     backgroundColor: {
       none: "none",
@@ -143,5 +141,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
 };

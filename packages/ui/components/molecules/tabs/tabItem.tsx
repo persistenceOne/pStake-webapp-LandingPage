@@ -1,12 +1,12 @@
 import React from "react";
 import { TabItemTypes } from "./types";
 
-const TabItem = ({
+export const TabItem = ({
   title,
   activeTab,
   id,
   setActiveTab,
-  className
+  className,
 }: TabItemTypes) => {
   const handleClick = () => {
     setActiveTab(id);
@@ -25,5 +25,3 @@ const TabItem = ({
     </li>
   );
 };
-
-export default TabItem;

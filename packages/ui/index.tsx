@@ -1,3 +1,8 @@
+import * as React from "react";
+
+// styles
+import "./styles/globals.css";
+
 export * from "./components";
 // export * from "./components/atoms/buttonLink";
 // export * from "./components/atoms/icon";

@@ -1,9 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Button from "../../../atoms/button";
 import { RootState } from "../../../../store/reducers";
 import { useWallet } from "../../../../context/WalletConnect/WalletConnect";
-import { Spinner } from "../../../atoms/spinner";
+import { Spinner, Button } from "ui";
 import { LiquidStakeMsg } from "../../../../helpers/protoMsg";
 import { unDecimalize } from "../../../../helpers/utils";
 import {

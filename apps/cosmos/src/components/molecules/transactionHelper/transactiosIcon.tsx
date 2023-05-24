@@ -1,6 +1,5 @@
 import React from "react";
-import { Icon } from "../../atoms/icon";
-import { Spinner } from "../../atoms/spinner";
+import { Icon, Spinner } from "ui";
 
 const TransactionIcon = (
   stepNumber: number,

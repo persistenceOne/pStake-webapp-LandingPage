@@ -3,7 +3,7 @@ import React, {
   FC,
   useContext,
   useEffect,
-  useState
+  useState,
 } from "react";
 import { WalletProviderProps, WalletState, walletType } from "./types";
 import { ChainInfo, Window as KeplrWindow } from "@keplr-wallet/types";
@@ -16,14 +16,14 @@ import { fetchInitSaga, setAPY } from "../../store/reducers/initialData";
 import { fetchPendingClaimsSaga } from "../../store/reducers/claim";
 import useLocalStorage from "../../customHooks/useLocalStorage";
 import { OfflineDirectSigner } from "@cosmjs/proto-signing";
-import { displayToast } from "../../components/molecules/toast";
-import { ToastType } from "../../components/molecules/toast/types";
+import { displayToast } from "ui";
 import {
   fetchLiveDataSaga,
-  setPersistenceChainStatus
+  setPersistenceChainStatus,
 } from "../../store/reducers/liveData";
 import { getChainStatus } from "../../pages/api/onChain";
 import { getStkAtomAPY } from "../../pages/api/externalAPIs";
+import { ToastType } from "ui/components/molecules/toast/types";
 
 declare global {
   interface Window extends KeplrWindow {}
@@ -40,7 +40,7 @@ const WalletContext = createContext<WalletState>({
     return Promise.resolve(false);
   },
   isWalletConnected: false,
-  walletType: "keplr"
+  walletType: "keplr",
 });
 
 export const useWallet = (): WalletState => {
@@ -50,7 +50,7 @@ export const useWallet = (): WalletState => {
 export const WalletProvider: FC<WalletProviderProps> = ({
   children,
   cosmosChainInfo,
-  persistenceChainInfo
+  persistenceChainInfo,
 }) => {
   const [cosmosChainData, setCosmosChainData] = useState<ChainInfo | null>(
     null
@@ -92,13 +92,13 @@ export const WalletProvider: FC<WalletProviderProps> = ({
     dispatch(
       fetchInitSaga({
         persistenceChainInfo: persistenceChainInfo!,
-        cosmosChainInfo: cosmosChainInfo!
+        cosmosChainInfo: cosmosChainInfo!,
       })
     );
     dispatch(
       fetchLiveDataSaga({
         persistenceChainInfo: persistenceChainInfo!,
-        cosmosChainInfo: cosmosChainInfo!
+        cosmosChainInfo: cosmosChainInfo!,
       })
     );
   }, [persistenceChainInfo, dispatch, cosmosChainInfo]);
@@ -107,7 +107,7 @@ export const WalletProvider: FC<WalletProviderProps> = ({
   useEffect(() => {
     const fetchApy = async () => {
       const [persistenceChainStatus] = await Promise.all([
-        getChainStatus(persistenceChainInfo.rpc)
+        getChainStatus(persistenceChainInfo.rpc),
       ]);
       const apy = await getStkAtomAPY();
       dispatch(setAPY(apy));
@@ -147,13 +147,13 @@ export const WalletProvider: FC<WalletProviderProps> = ({
           persistenceAddress: persistenceAddressData[0]!.address,
           cosmosAddress: cosmosAddressData[0]!.address,
           persistenceChainInfo: persistenceChainInfo!,
-          cosmosChainInfo: cosmosChainInfo!
+          cosmosChainInfo: cosmosChainInfo!,
         })
       );
       dispatch(
         fetchPendingClaimsSaga({
           address: persistenceAddressData[0]!.address,
-          persistenceChainInfo: persistenceChainInfo!
+          persistenceChainInfo: persistenceChainInfo!,
         })
       );
       setWalletName(walletType);
@@ -162,7 +162,7 @@ export const WalletProvider: FC<WalletProviderProps> = ({
     } catch (e: any) {
       displayToast(
         {
-          message: e.message!
+          message: e.message!,
         },
         ToastType.ERROR
       );
@@ -188,7 +188,7 @@ export const WalletProvider: FC<WalletProviderProps> = ({
     persistenceChainData,
     connect,
     isWalletConnected,
-    walletType
+    walletType,
   };
 
   return (

@@ -1,5 +1,5 @@
-import { displayToast } from "../components/molecules/toast";
-import { ToastType } from "../components/molecules/toast/types";
+import { displayToast } from "ui";
+import { ToastType } from "ui/components/molecules/toast/types";
 import {
   ETH,
   ETH_REQUEST_ACCOUNTS,

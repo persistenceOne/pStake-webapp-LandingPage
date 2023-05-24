@@ -1,7 +1,7 @@
 import React from "react";
 import From from "./from";
 import To from "./To";
-import { Icon } from "../../../atoms/icon";
+import { Icon } from "ui";
 import styles from "./styles.module.css";
 import Submit from "./submit";
 import Tooltip from "rc-tooltip";

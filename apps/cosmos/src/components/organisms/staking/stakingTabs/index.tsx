@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-import TabItem from "../../../molecules/tabs/tabItem";
-import TabContent from "../../../molecules/tabs/tabContent";
 import Stake from "../stake";
 import UnStake from "../unstake";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../store/reducers";
-import { Icon } from "../../../atoms/icon";
+import { Icon, Spinner } from "ui";
 import Tooltip from "rc-tooltip";
 import { decimalize, formatNumber } from "../../../../helpers/utils";
-import { Spinner } from "../../../atoms/spinner";
 import { APR_DEFAULT } from "../../../../../AppConstants";
+import { TabItem } from "ui/components/molecules/tabs/tabItem";
+import { TabContent } from "ui/components/molecules/tabs/tabContent";
 
 const StakingTabs = () => {
   const [activeTab, setActiveTab] = useState("Stake");

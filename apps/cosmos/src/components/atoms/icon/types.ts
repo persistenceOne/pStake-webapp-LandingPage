@@ -1,4 +1,4 @@
-export interface IconTypes {
+export interface IconProps {
   viewBox?: string;
   viewClass?: string;
   iconName: string;

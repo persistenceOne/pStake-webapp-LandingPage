@@ -6,8 +6,8 @@ import { Scope } from "@sentry/nextjs";
 import * as Sentry from "@sentry/nextjs";
 import { CaptureContext } from "@sentry/types/types/scope";
 import { Primitive } from "@sentry/types";
-import { displayToast } from "../components/molecules/toast";
-import { ToastType } from "../components/molecules/toast/types";
+import { displayToast } from "ui";
+import { ToastType } from "ui/components/molecules/toast/types";
 import { useAppStore } from "../store/store";
 import {
   Staking,

@@ -1,11 +1,11 @@
 import React from "react";
-import Button from "../../../atoms/button";
+import { Button } from "ui";
 import { useAppStore } from "../../../../store/store";
 import {
   executeMintOnOptimismTransaction,
   executeStakeTransaction,
 } from "../../../../helpers/transaction";
-import { Spinner } from "../../../atoms/spinner";
+import { Spinner } from "ui";
 
 const Submit = () => {
   const stakeTxnInfo = useAppStore((state) => state.stakeTxnInfo);

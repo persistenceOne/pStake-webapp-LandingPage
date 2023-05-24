@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-import { Icon } from "../../atoms/icon";
+import { Icon } from "ui";
 
 const Filters = ({ setSortActive, sortActive, searchHandler }: any) => {
   const handleSort = (sortKey: string) => {

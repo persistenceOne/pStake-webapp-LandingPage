@@ -1,31 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { Icon } from "../../../atoms/icon";
+import { Icon } from "ui";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./styles.module.css";
 import {
   ClaimMsg,
   ClaimMsgTypes,
-  LiquidUnStakeMsgTypes
+  LiquidUnStakeMsgTypes,
 } from "../../../../helpers/protoMsg";
 import {
   decimalize,
-  truncateToFixedDecimalPlaces
+  truncateToFixedDecimalPlaces,
 } from "../../../../helpers/utils";
 import { useWallet } from "../../../../context/WalletConnect/WalletConnect";
 import {
   executeClaimTransactionSaga,
-  hideClaimModal
+  hideClaimModal,
 } from "../../../../store/reducers/transactions/claim";
 import { RootState } from "../../../../store/reducers";
 import { CLAIM, COSMOS_CHAIN_ID } from "../../../../../AppConstants";
-import { Spinner } from "../../../atoms/spinner";
+import { Spinner, Modal } from "ui";
 import { setTransactionProgress } from "../../../../store/reducers/transaction";
-import Modal from "../../../molecules/modal";
 import { MakeIBCTransferMsg } from "../../../../helpers/transaction";
 import {
   CHAIN_ID,
   IBCChainInfos,
-  IBCConfiguration
+  IBCConfiguration,
 } from "../../../../helpers/config";
 import { claimType } from "../../../../store/reducers/transactions/claim/types";
 
@@ -36,7 +35,7 @@ const IndividualUnstakingClaim = ({
   amount,
   unstakedOn,
   daysRemaining,
-  type
+  type,
 }: any) => {
   return (
     <>
@@ -83,7 +82,7 @@ const ClaimModal = () => {
     persistenceSigner,
     persistenceChainData,
     cosmosChainData,
-    cosmosAccountData
+    cosmosAccountData,
   } = useWallet();
 
   const { atomBalance, stkAtomBalance } = useSelector(
@@ -98,7 +97,7 @@ const ClaimModal = () => {
     claimableBalance,
     pendingClaimList,
     claimableStkAtomBalance,
-    unlistedPendingClaimList
+    unlistedPendingClaimList,
   } = useSelector((state: RootState) => state.claimQueries);
 
   useEffect(() => {
@@ -123,7 +122,7 @@ const ClaimModal = () => {
         denom: ibcInfo?.coinDenom,
         sourceRPCUrl: persistenceChainData?.rpc,
         destinationRPCUrl: cosmosChainData?.rpc,
-        port: IBCConfiguration.ibcDefaultPort
+        port: IBCConfiguration.ibcDefaultPort,
       });
       pollBalance = atomBalance;
       const claimMsg = ClaimMsg(persistenceAccountData!.address);
@@ -145,7 +144,7 @@ const ClaimModal = () => {
         address: persistenceAccountData!.address,
         cosmosChainInfo: cosmosChainData!,
         pollInitialIBCAtomBalance: pollBalance,
-        claimType: claimType
+        claimType: claimType,
       })
     );
   };

@@ -1,9 +1,9 @@
-import "../styles/globals.css";
+import "ui/styles/globals.css";
+import React from "react";
 import type { AppProps } from "next/app";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "rc-tooltip/assets/bootstrap.css";
-import React from "react";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {

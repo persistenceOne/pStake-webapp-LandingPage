@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon } from "../../atoms/icon";
+import { Icon } from "ui";
 import styles from "./styles.module.css";
 import Token from "./token";
 import Submit from "./submit";

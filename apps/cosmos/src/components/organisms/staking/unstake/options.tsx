@@ -6,7 +6,7 @@ import { RootState } from "../../../../store/reducers";
 import { unStakeType } from "../../../../store/reducers/transactions/unstake/types";
 import { setUnStakeOption } from "../../../../store/reducers/transactions/unstake";
 import { INSTANT, MIN_REDEEM } from "../../../../../AppConstants";
-import { Icon } from "../../../atoms/icon";
+import { Icon } from "ui";
 
 const Options = () => {
   const dispatch = useDispatch();

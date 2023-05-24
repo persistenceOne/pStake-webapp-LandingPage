@@ -1,25 +1,24 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Button from "../../../atoms/button";
 import { RootState } from "../../../../store/reducers";
 import { useWallet } from "../../../../context/WalletConnect/WalletConnect";
-import { Spinner } from "../../../atoms/spinner";
+import { Spinner, Button } from "ui";
 import {
   LiquidUnStakeMsg,
   LiquidUnStakeMsgTypes,
-  RedeemMsg
+  RedeemMsg,
 } from "../../../../helpers/protoMsg";
 import {
   decimalize,
   truncateToFixedDecimalPlaces,
-  unDecimalize
+  unDecimalize,
 } from "../../../../helpers/utils";
 import {
   COSMOS_CHAIN_ID,
   INSTANT,
   MIN_REDEEM,
   STK_ATOM_MINIMAL_DENOM,
-  UN_STAKE
+  UN_STAKE,
 } from "../../../../../AppConstants";
 import { executeUnStakeTransactionSaga } from "../../../../store/reducers/transactions/unstake";
 import { setTransactionProgress } from "../../../../store/reducers/transaction";
@@ -27,7 +26,7 @@ import { MakeIBCTransferMsg } from "../../../../helpers/transaction";
 import {
   CHAIN_ID,
   IBCChainInfos,
-  IBCConfiguration
+  IBCConfiguration,
 } from "../../../../helpers/config";
 import { useWindowSize } from "../../../../customHooks/useWindowSize";
 
@@ -56,7 +55,7 @@ const Submit = () => {
     persistenceSigner,
     persistenceChainData,
     cosmosAccountData,
-    cosmosChainData
+    cosmosChainData,
   } = useWallet();
 
   const stkAtomAmount = Number(amount) - Number(amount) * redeemFee;
@@ -85,7 +84,7 @@ const Submit = () => {
         denom: ibcInfo?.coinDenom,
         sourceRPCUrl: persistenceChainData?.rpc,
         destinationRPCUrl: cosmosChainData?.rpc,
-        port: IBCConfiguration.ibcDefaultPort
+        port: IBCConfiguration.ibcDefaultPort,
       });
       const redeemMsg = RedeemMsg(
         persistenceAccountData!.address,
@@ -112,7 +111,7 @@ const Submit = () => {
         persistenceChainInfo: persistenceChainData!,
         pollInitialBalance: pollingBalance,
         cosmosAddress: cosmosAccountData?.address!,
-        cosmosChainInfo: cosmosChainData!
+        cosmosChainInfo: cosmosChainData!,
       })
     );
   };

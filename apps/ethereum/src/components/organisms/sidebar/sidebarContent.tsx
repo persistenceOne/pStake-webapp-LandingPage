@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useWindowSize } from "../../../customHooks/useWindowSize";
 import { useRouter } from "next/router";
 import { emptyFunc } from "../../../helpers/utils";
-import { Icon } from "../../atoms/icon";
+import { Icon } from "ui";
 import { useAppStore } from "../../../store/store";
 import BalanceList from "./balanceList";
 import Tooltip from "rc-tooltip";

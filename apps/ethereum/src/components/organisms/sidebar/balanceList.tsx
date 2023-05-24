@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Styles from "./styles.module.css";
 import Tooltip from "rc-tooltip";
-import { Icon } from "../../atoms/icon";
+import { Icon } from "ui";
 import {
   formatNumber,
   truncateToFixedDecimalPlaces,
 } from "../../../helpers/utils";
-import Button from "../../atoms/button";
 import { useAppStore } from "../../../store/store";
 const BalanceList = () => {
   const balance = useAppStore((state) => state.balance);

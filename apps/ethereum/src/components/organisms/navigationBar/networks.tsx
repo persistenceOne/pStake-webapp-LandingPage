@@ -1,13 +1,13 @@
-import {Dropdown} from "ui";
+import { Dropdown } from "ui";
 import { useState } from "react";
 import { chains, Networks } from "../../../helpers/config";
 import { NetworkInfo } from "./types";
 import { useAppStore } from "../../../store/store";
 import { getWalletProvider } from "../../../helpers/utils";
 import { META_MASK } from "../../../../appConstants";
-import { displayToast } from "../../molecules/toast";
-import { ToastType } from "../../molecules/toast/types";
+import { displayToast } from "ui";
 import { addNetwork } from "../../../helpers/wallets";
+import { ToastType } from "ui/components/molecules/toast/types";
 
 const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
 

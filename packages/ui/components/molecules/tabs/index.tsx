@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import React, { useState } from "react";
-import TabItem from "./tabItem";
-import TabContent from "./tabContent";
+import { TabItem } from "./tabItem";
+import { TabContent } from "./tabContent";
 
 export const Tabs = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -37,4 +37,3 @@ export const Tabs = () => {
     </div>
   );
 };
-

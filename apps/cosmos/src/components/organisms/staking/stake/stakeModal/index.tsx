@@ -1,17 +1,15 @@
 import React, { useEffect } from "react";
-import {Modal} from "ui";
+import {Modal ,Icon, Button} from "ui";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../../../store/reducers";
-import { Icon } from "../../../../atoms/icon";
+import { RootState } from "@/store/reducers";
 import {
   hideStakeModal,
   setStakeTxnStepNumber,
   setStakeTxnFailed,
   setStakeAmount
-} from "../../../../../store/reducers/transactions/stake";
+} from "@/store/reducers/transactions/stake";
 import styles from "../styles.module.css";
-import Button from "../../../../atoms/button";
-import { resetTransaction } from "../../../../../store/reducers/transaction";
+import { resetTransaction } from "@/store/reducers/transaction";
 import TransactionIcon from "../../../../molecules/transactionHelper/transactiosIcon";
 
 const StakeModal = () => {

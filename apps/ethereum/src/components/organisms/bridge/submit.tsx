@@ -1,8 +1,7 @@
 import React from "react";
 import { useAppStore } from "../../../store/store";
-import Button from "../../atoms/button";
 import { executeTransferToOptimismTransaction } from "../../../helpers/transaction";
-import { Spinner } from "../../atoms/spinner";
+import { Spinner, Button } from "ui";
 
 const Submit = () => {
   const walletInfo = useAppStore((state) => state.wallet);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ExchangeRateTypes } from "./types";
 import { formatNumber } from "../../../helpers/utils";
-import { Icon } from "../../atoms/icon";
+import { Icon } from "ui";
 import { useAppStore } from "../../../store/store";
 
 const ExchangeRate = ({ type }: ExchangeRateTypes) => {

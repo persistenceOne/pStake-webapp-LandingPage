@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 import React from "react";
 import { ButtonProps } from "./types";
+
 export const Button = ({
   onClick,
   content,
@@ -19,4 +20,3 @@ export const Button = ({
     </button>
   );
 };
-

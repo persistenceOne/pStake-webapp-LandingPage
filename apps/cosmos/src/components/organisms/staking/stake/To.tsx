@@ -1,5 +1,5 @@
 import React from "react";
-import InputText from "../../../atoms/input";
+import {InputText} from "ui";
 import {
   formatNumber,
   truncateToFixedDecimalPlaces

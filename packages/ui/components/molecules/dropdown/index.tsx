@@ -1,4 +1,3 @@
-"use client"
 import React, { forwardRef, useEffect, useRef } from "react";
 import { DetailedHTMLProps, HTMLAttributes, useState } from "react";
 import { useOnClickOutside } from "hooks";

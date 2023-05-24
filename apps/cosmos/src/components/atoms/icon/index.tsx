@@ -1,10 +1,10 @@
 import React from "react";
-import { IconTypes } from "./types";
+import { IconProps } from "./types";
 import styles from "./styles.module.css";
 
 const symbol_defs = "/images/symbols.svg";
 
-export const Icon = (props: IconTypes) => {
+export const Icon = (props: IconProps) => {
   return (
     <svg
       viewBox={props.viewBox ? props.viewBox : "0 0 16 16"}

@@ -1,8 +1,5 @@
 import React from "react";
-import Modal from "../../../molecules/modal";
-import { Icon } from "../../../atoms/icon";
-import { Spinner } from "../../../atoms/spinner";
-import Button from "../../../atoms/button";
+import { Icon, Spinner, Button, Modal } from "ui";
 import { useAppStore } from "../../../../store/store";
 import {
   TransactionNames,

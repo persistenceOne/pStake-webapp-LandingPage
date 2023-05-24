@@ -1,11 +1,10 @@
-"use client"
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import React, { useState } from 'react';
-import { Icon } from 'ui'
-import Styles from './styles.module.css';
-import { IconTypes } from './types';
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import React, { useState } from "react";
+import { Icon } from "ui";
+import Styles from "./styles.module.css";
+import { IconTypes } from "./types";
 
-export const Copy = ({ id, customView = '' }: IconTypes) => {
+export const Copy = ({ id, customView = "" }: IconTypes) => {
   const [copyValue, setCopyValue] = useState(false);
   const onCopy = () => {
     setCopyValue(true);

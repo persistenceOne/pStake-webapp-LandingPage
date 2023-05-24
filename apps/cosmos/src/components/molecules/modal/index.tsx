@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import styles from "./styles.module.css";
 import { ModalTypes } from "./types";
-import { emptyFunc } from "../../../helpers/utils";
-import { Icon } from "../../atoms/icon";
+import { emptyFunc } from "utils";
+import { Icon } from "ui";
 import { useOnClickOutside } from "../../../customHooks/useOnClickOutside";
 
 const Modal = ({

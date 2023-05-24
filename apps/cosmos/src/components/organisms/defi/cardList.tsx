@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Icon } from "../../atoms/icon";
-import ButtonLink from "../../atoms/buttonLink";
+import { Icon, ButtonLink } from "ui";
 import Tooltip from "rc-tooltip";
 import { useWindowSize } from "../../../customHooks/useWindowSize";
 import { numberFormat } from "../../../helpers/utils";
