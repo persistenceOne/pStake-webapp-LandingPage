@@ -4,8 +4,7 @@ import { useWallet } from "../../../context/WalletConnect/WalletConnect";
 import { Icon, Button, Copy } from "ui";
 import { stringTruncate } from "utils";
 import { Window as KeplrWindow } from "@keplr-wallet/types/build/window";
-import { useOnClickOutside } from "../../../customHooks/useOnClickOutside";
-import { useWindowSize } from "../../../customHooks/useWindowSize";
+import { useOnClickOutside, useWindowSize } from "hooks";
 import { walletType } from "../../../context/WalletConnect/types";
 
 declare global {

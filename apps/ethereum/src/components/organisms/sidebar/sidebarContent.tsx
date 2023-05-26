@@ -1,7 +1,7 @@
 import React from "react";
 import Styles from "./styles.module.css";
 import Link from "next/link";
-import { useWindowSize } from "../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 import { useRouter } from "next/router";
 import { emptyFunc } from "../../../helpers/utils";
 import { Icon } from "../../atoms/icon";

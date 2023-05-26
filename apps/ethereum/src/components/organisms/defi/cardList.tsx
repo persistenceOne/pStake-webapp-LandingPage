@@ -3,7 +3,7 @@ import React from "react";
 import { Icon } from "../../atoms/icon";
 import { ButtonLink } from "ui";
 import Tooltip from "rc-tooltip";
-import { useWindowSize } from "../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 import { DefiInfo, EthereumData } from "./defiData";
 
 const listData = (label: any, value: any) => (

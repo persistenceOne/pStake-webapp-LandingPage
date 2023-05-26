@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { useOnClickOutside } from "../../../customHooks/useOnClickOutside";
-import { useWindowSize } from "../../../customHooks/useWindowSize";
+import { useOnClickOutside, useWindowSize } from "hooks";
 import styles from "./styles.module.css";
 import SidebarContent from "./sidebarContent";
 import { useAppStore } from "../../../store/store";

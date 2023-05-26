@@ -8,7 +8,7 @@ import { META_MASK, WALLET_ERROR } from "../../../../appConstants";
 import { displayToast } from "ui";
 import { addNetwork } from "../../../helpers/wallets";
 import { Icon } from "../../atoms/icon";
-import useLocalStorage from "../../../customHooks/useLocalStorage";
+import { useLocalStorage } from "hooks";
 import { ToastType } from "ui/components/molecules/toast/types";
 
 const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;

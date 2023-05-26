@@ -5,7 +5,7 @@ import { truncateToFixedDecimalPlaces } from "utils";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store/reducers";
 import { setUnStakeAmount } from "../../../../store/reducers/transactions/unstake";
-import { useWindowSize } from "../../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 import { useWallet } from "../../../../context/WalletConnect/WalletConnect";
 
 const From = () => {

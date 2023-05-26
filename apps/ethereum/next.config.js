@@ -8,7 +8,7 @@
 const nextConfig = {
     swcMinify: true,
     reactStrictMode: true,
-    transpilePackages: ["ui", "tailwindconfig"],
+    transpilePackages: ["ui", "tailwindconfig", "hooks"],
 }
 
 module.exports = nextConfig

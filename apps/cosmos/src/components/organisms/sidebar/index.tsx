@@ -7,7 +7,7 @@ import { RootState } from "../../../store/reducers";
 import Styles from "./styles.module.css";
 import { useRouter } from "next/router";
 import { emptyFunc } from "utils";
-import { useWindowSize } from "../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 import Tooltip from "rc-tooltip";
 import "rc-tooltip/assets/bootstrap.css";
 import WithdrawToasts from "./withdrawModal/withdrawToasts";

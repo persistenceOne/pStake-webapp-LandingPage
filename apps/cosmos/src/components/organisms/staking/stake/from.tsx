@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store/reducers";
 import { setStakeAmount } from "../../../../store/reducers/transactions/stake";
 import { useWallet } from "../../../../context/WalletConnect/WalletConnect";
-import { useWindowSize } from "../../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 
 const From = () => {
   const dispatch = useDispatch();

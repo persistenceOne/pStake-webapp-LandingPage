@@ -2,7 +2,7 @@
 import React from "react";
 import { Icon, ButtonLink } from "ui";
 import Tooltip from "rc-tooltip";
-import { useWindowSize } from "../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 import { numberFormat } from "utils";
 import { DefiDataList, DefiInfo } from "./defiData";
 import { SortOptions } from "./index";

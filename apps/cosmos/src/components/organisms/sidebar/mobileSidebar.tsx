@@ -3,8 +3,8 @@ import Sidebar from "./index";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store/reducers";
 import { hideMobileSidebar } from "../../../store/reducers/sidebar";
-import { useOnClickOutside } from "../../../customHooks/useOnClickOutside";
-import { useWindowSize } from "../../../customHooks/useWindowSize";
+import { useOnClickOutside } from "hooks";
+import { useWindowSize } from "hooks";
 import styles from "./styles.module.css";
 
 const MobileSideBar = () => {

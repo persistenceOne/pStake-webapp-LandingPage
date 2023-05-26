@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from "react";
 import { InputText } from "ui";
-import { useWindowSize } from "../../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 import { formatNumber } from "../../../../helpers/utils";
 import { useAppStore } from "../../../../store/store";
 import { shallow } from "zustand/shallow";

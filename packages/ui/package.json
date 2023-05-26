@@ -15,13 +15,13 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
+    "eslint-config-custom": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tsconfig": "workspace:*",
+    "tsconfig": "*",
     "tailwindcss": "^3.1.6",
-    "tailwindconfig": "workspace:*",
-    "hooks":  "workspace:*",
+    "tailwindconfig": "*",
+    "hooks":  "*",
     "typescript": "^4.5.2"
   }
 }

@@ -25,7 +25,7 @@ import {
   IBCChainInfos,
   IBCConfiguration,
 } from "../../../../helpers/config";
-import { useWindowSize } from "../../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 
 const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
 

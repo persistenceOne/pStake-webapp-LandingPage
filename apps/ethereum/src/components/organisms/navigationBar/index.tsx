@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { Icon } from "../../atoms/icon";
 import Link from "next/link";
-import { useWindowSize } from "../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 import { useAppStore } from "../../../store/store";
 import LoginOptions from "./loginOptions";
 import Networks from "./networks";

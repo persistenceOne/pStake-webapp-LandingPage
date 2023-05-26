@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import { ModalTypes } from "./types";
 import { emptyFunc } from "utils";
 import { Icon } from "ui";
-import { useOnClickOutside } from "../../../customHooks/useOnClickOutside";
+import { useOnClickOutside } from "hooks";
 
 const Modal = ({
   children,
@@ -12,7 +12,7 @@ const Modal = ({
   onClose = emptyFunc,
   className,
   staticBackDrop = true,
-  closeButton = true
+  closeButton = true,
 }: ModalTypes) => {
   const modalRef = useRef<HTMLDivElement>(null);
   useOnClickOutside(modalRef, onClose);

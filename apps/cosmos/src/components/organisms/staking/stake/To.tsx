@@ -4,7 +4,7 @@ import { formatNumber, truncateToFixedDecimalPlaces } from "utils";
 
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../store/reducers";
-import { useWindowSize } from "../../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 
 const To = () => {
   const { stkAtomBalance } = useSelector((state: RootState) => state.balances);

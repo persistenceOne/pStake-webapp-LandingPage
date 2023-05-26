@@ -1,7 +1,7 @@
 import React from "react";
 import { InputText } from "ui";
 import { truncateToFixedDecimalPlaces } from "utils";
-import { useWindowSize } from "../../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 import { useAppStore } from "../../../../store/store";
 
 const To = () => {

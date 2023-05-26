@@ -8,7 +8,7 @@ import { formatNumber, truncateToFixedDecimalPlaces } from "utils";
 import { hideMobileSidebar } from "../../../store/reducers/sidebar";
 import { showClaimModal } from "../../../store/reducers/transactions/claim";
 import { useWallet } from "../../../context/WalletConnect/WalletConnect";
-import { useWindowSize } from "../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 import WithdrawButton from "./withdrawModal/submit";
 import { MIN_BALANCE_CHECK } from "../../../../AppConstants";
 

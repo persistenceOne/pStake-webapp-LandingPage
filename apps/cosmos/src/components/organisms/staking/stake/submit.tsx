@@ -8,7 +8,7 @@ import { unDecimalize } from "../../../../helpers/utils";
 import {
   CHAIN_ID,
   IBCChainInfos,
-  IBCConfiguration
+  IBCConfiguration,
 } from "../../../../helpers/config";
 import { DEPOSIT, MIN_STAKE_FEE, STAKE } from "../../../../../AppConstants";
 import {
@@ -16,15 +16,15 @@ import {
   setLiquidStakeTxnType,
   setStakeTxnFailed,
   setStakeTxnStepNumber,
-  showStakeModal
+  showStakeModal,
 } from "../../../../store/reducers/transactions/stake";
 import {
   resetTransaction,
-  setTransactionProgress
+  setTransactionProgress,
 } from "../../../../store/reducers/transaction";
 import { MakeIBCTransferMsg } from "../../../../helpers/transaction";
 import { executeDepositTransactionSaga } from "../../../../store/reducers/transactions/deposit";
-import { useWindowSize } from "../../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 
 const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
 
@@ -49,7 +49,7 @@ const Submit = () => {
     persistenceAccountData,
     persistenceSigner,
     persistenceChainData,
-    isWalletConnected
+    isWalletConnected,
   } = useWallet();
 
   //atom on both cosmos and persistence chains
@@ -83,7 +83,7 @@ const Submit = () => {
             persistenceChainInfo: persistenceChainData!,
             pollInitialBalance: stkAtomBalance,
             cosmosAddress: cosmosAccountData!.address,
-            cosmosChainInfo: cosmosChainData!
+            cosmosChainInfo: cosmosChainData!,
           })
         );
       } else {
@@ -106,7 +106,7 @@ const Submit = () => {
           denom: cosmosChainData?.stakeCurrency.coinMinimalDenom,
           sourceRPCUrl: cosmosChainData?.rpc,
           destinationRPCUrl: persistenceChainData?.rpc,
-          port: IBCConfiguration.ibcDefaultPort
+          port: IBCConfiguration.ibcDefaultPort,
         });
         dispatch(
           executeDepositTransactionSaga({
@@ -119,7 +119,7 @@ const Submit = () => {
             stakeMsg: stakeMsg,
             pollInitialDepositBalance: ibcAtomBalance,
             pollInitialStakeBalance: stkAtomBalance,
-            persistenceSigner: persistenceSigner!
+            persistenceSigner: persistenceSigner!,
           })
         );
       }

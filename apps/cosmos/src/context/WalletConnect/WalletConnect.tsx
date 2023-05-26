@@ -14,7 +14,7 @@ import { fetchBalanceSaga } from "../../store/reducers/balances";
 import { useDispatch } from "react-redux";
 import { fetchInitSaga, setAPY } from "../../store/reducers/initialData";
 import { fetchPendingClaimsSaga } from "../../store/reducers/claim";
-import useLocalStorage from "../../customHooks/useLocalStorage";
+import { useLocalStorage } from "hooks";
 import { OfflineDirectSigner } from "@cosmjs/proto-signing";
 import { displayToast } from "ui";
 import {

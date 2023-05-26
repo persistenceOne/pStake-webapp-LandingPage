@@ -10,7 +10,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { showMobileSidebar } from "../../../store/reducers/sidebar";
 import Link from "next/link";
-import { useWindowSize } from "../../../customHooks/useWindowSize";
+import { useWindowSize } from "hooks";
 import { useWallet } from "../../../context/WalletConnect/WalletConnect";
 import { fetchBalanceSaga } from "../../../store/reducers/balances";
 import { fetchInitSaga } from "../../../store/reducers/initialData";

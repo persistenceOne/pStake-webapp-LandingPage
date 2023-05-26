@@ -3,12 +3,10 @@ import Styles from "./styles.module.css";
 import { Button, Copy } from "ui";
 import { Icon } from "../../atoms/icon";
 import { stringTruncate } from "../../../helpers/utils";
-import { useOnClickOutside } from "../../../customHooks/useOnClickOutside";
-import { useWindowSize } from "../../../customHooks/useWindowSize";
+import { useOnClickOutside, getStorageValue, useWindowSize } from "hooks";
 import { handleMetamask } from "../../../helpers/wallets";
 import { META_MASK } from "../../../../appConstants";
 import { useAppStore } from "../../../store/store";
-import { getStorageValue } from "../../../customHooks/useLocalStorage";
 
 const getWalletIcon = (walletName: string) => {
   if (walletName === META_MASK) {
