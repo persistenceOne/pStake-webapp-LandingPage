@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-
 import { Icon } from "../../atoms/icon";
 import Link from "next/link";
 import { useWindowSize } from "hooks";
-import { useAppStore } from "../../../store/store";
+import { useAppStore } from "@/store/store";
 import LoginOptions from "./loginOptions";
+import Chains from "./chains";
 import Networks from "./networks";
 import AddToken from "./addToken";
 
@@ -31,10 +31,11 @@ const NavigationBar = () => {
           </Link>
         </div>
         <div className="flex ml-auto">
+          <Networks />
           {walletInfo.walletConnection ? (
             <>
               <AddToken />
-              <Networks />
+              <Chains />
             </>
           ) : null}
           <LoginOptions />

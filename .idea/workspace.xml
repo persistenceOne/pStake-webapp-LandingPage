@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f25ee27f-aaac-44b3-a150-2cf8be497aac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/networks.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/chains.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/defi/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/tsconfig/base.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tsconfig/base.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/atoms/spinner/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/atoms/spinner/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/networks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/networks.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

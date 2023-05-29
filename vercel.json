@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {"source": "/eth/", "destination": "https://test-turbo-ethereum.vercel.app/"},
+    {"source": "/eth/:match*", "destination": "https://test-turbo-ethereum.vercel.app/:match*"},
+    {"source": "/", "destination": "https://test-turbo-cosmos.vercel.app/"},
+    {"source": "/:match*", "destination": "https://test-turbo-cosmos.vercel.app/:match*"}
+  ]
+}

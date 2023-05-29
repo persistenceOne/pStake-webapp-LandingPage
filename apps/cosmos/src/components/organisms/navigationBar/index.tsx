@@ -8,7 +8,7 @@ import {
   TEST_NET,
 } from "../../../../AppConstants";
 import { useDispatch, useSelector } from "react-redux";
-import { showMobileSidebar } from "../../../store/reducers/sidebar";
+import { showMobileSidebar } from "@/store/reducers/sidebar";
 import Link from "next/link";
 import { useWindowSize } from "hooks";
 import { useWallet } from "../../../context/WalletConnect/WalletConnect";
@@ -18,6 +18,7 @@ import { RootState } from "../../../store/reducers";
 import { useRouter } from "next/router";
 import { fetchLiveDataSaga } from "../../../store/reducers/liveData";
 import { fetchPendingClaimsSaga } from "../../../store/reducers/claim";
+import Networks from "./networks";
 
 const NavigationBar = () => {
   const dispatch = useDispatch();
@@ -106,30 +107,7 @@ const NavigationBar = () => {
           </Link>
         </div>
         <div className="flex ml-auto">
-          <Button
-            size="medium"
-            type="custom"
-            content={
-              <div className="flex items-center">
-                <div className="flex items-center">
-                  <img
-                    src={"/images/persistence_icon.svg"}
-                    alt={"logo"}
-                    width={18}
-                    height={18}
-                  />
-                  <span className="ml-3">
-                    {process.env.NEXT_PUBLIC_ENVIRONMENT === TEST_NET
-                      ? "Persistence Testnet"
-                      : process.env.NEXT_PUBLIC_ENVIRONMENT === DEV_NET
-                      ? "Persistence Devnet"
-                      : "Persistence Mainnet"}
-                  </span>
-                </div>
-              </div>
-            }
-            className="button custom lg:!hidden pointer-events-none !text-sm"
-          />
+          <Networks />
           <div className="pl-4">
             <LoginOptions />
           </div>
