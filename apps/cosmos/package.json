@@ -42,7 +42,8 @@
     "react-toastify": "^9.0.8",
     "redux-saga": "^1.2.1",
     "tailwindconfig": "*",
-    "ui": "*"
+    "ui": "*",
+    "utils": "*"
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.3",

@@ -30,6 +30,7 @@
     "simple-zustand-devtools": "^1.1.0",
     "tailwindconfig": "*",
     "ui": "*",
+    "utils": "*",
     "zustand": "^4.3.6"
   },
   "devDependencies": {

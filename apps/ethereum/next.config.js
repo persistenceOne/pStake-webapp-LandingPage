@@ -6,10 +6,9 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-    swcMinify: true,
-    reactStrictMode: true,
-    transpilePackages: ["ui", "tailwindconfig", "hooks"],
-}
+  swcMinify: true,
+  reactStrictMode: true,
+  transpilePackages: ["ui", "tailwindconfig", "hooks", "utils"],
+};
 
-module.exports = nextConfig
-
+module.exports = nextConfig;
