@@ -9,12 +9,12 @@ const networks: any[] = [
   {
     network: "Cosmos",
     logo: "atom", // logo name. logo must be svg format
-    link: "/",
+    link: "/atom",
   },
   {
     network: "Ethereum",
     logo: "eth",
-    link: "/eth",
+    link: "/",
   },
 ];
 
@@ -23,12 +23,12 @@ const Networks = () => {
   const [networkList, setNetworkList] = useState<any[]>([]);
 
   useEffect(() => {
-    const response = networks.filter((item) => item.network !== "Cosmos");
+    const response = networks.filter((item) => item.network !== "Ethereum");
     setNetworkList(response);
   }, []);
 
   // selected network info based network connected
-  const selectedNetwork = networks.find((item) => item.network === "Cosmos");
+  const selectedNetwork = networks.find((item) => item.network === "Ethereum");
 
   const dropCloseDownHandler = (value: boolean) => {
     setShow(value);

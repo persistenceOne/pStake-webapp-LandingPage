@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f25ee27f-aaac-44b3-a150-2cf8be497aac" name="Changes" comment="add network dropdown">
+      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/logos/atom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/logos/eth.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/cosmos/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/networks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/networks.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/networks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/networks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vercel.json" beforeDir="false" afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/turbo.json" beforeDir="false" afterPath="$PROJECT_DIR$/turbo.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,16 +31,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/cosmos/public/images/logos" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/cosmos/public/images/logos" />
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps\ethereum" />
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages\ui\components\molecules" />
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps\ethereum\src\components\atoms" />
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages\ui" />
-      <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\apps\cosmos" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\black\Documents\pStake-webapp-LandingPage\packages\ui\src" />

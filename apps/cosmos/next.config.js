@@ -9,14 +9,20 @@ const nextConfig = {
   swcMinify: true,
   reactStrictMode: true,
   transpilePackages: ["ui", "tailwindconfig", "hooks", "utils"],
+  basePath: "",
+  assetPrefix: "/",
+  trailingSlash: false,
   async rewrites() {
-    return [
-      {
-        source: "/eth/:path*{/}?",
-        destination:
-          "https://p-stake-webapp-landing-page-ethereum.vercel.app/eth/:path*",
-      },
-    ];
+    console.log("NODE_ENV");
+    return process.env.NODE_ENV === "development"
+      ? [
+          {
+            source: "/eth",
+            destination:
+              "https://p-stake-webapp-landing-page-ethereum.vercel.app/eth",
+          },
+        ]
+      : [];
   },
 };
 

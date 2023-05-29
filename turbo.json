@@ -1,7 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local", "tsconfig.json"],
-  "globalEnv": ["NEXT_PUBLIC_ENVIRONMENT", "NEXT_PUBLIC_MAINTENANCE", "NEXT_PUBLIC_SENTRY_DSN", "SENTRY_AUTH_TOKEN"],
+  "globalEnv": ["NEXT_PUBLIC_ENVIRONMENT", "NEXT_PUBLIC_MAINTENANCE", "NEXT_PUBLIC_SENTRY_DSN", "SENTRY_AUTH_TOKEN", "NODE_ENV"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
