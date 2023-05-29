@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f25ee27f-aaac-44b3-a150-2cf8be497aac" name="Changes" comment="add network dropdown">
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/logos/atom.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cosmos/public/images/logos/eth.svg" afterDir="false" />
+    <list default="true" id="f25ee27f-aaac-44b3-a150-2cf8be497aac" name="Changes" comment="update network dropdown">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/networks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cosmos/src/components/organisms/navigationBar/networks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/networks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ethereum/src/components/organisms/navigationBar/networks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/turbo.json" beforeDir="false" afterPath="$PROJECT_DIR$/turbo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vercel.json" beforeDir="false" afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +26,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/cosmos/public/images/logos" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -54,7 +53,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="70607c77-00e4-4bad-b26e-9cb416d1f94e" name="Changes" comment="" />
+      <changelist id="f25ee27f-aaac-44b3-a150-2cf8be497aac" name="Changes" comment="update network dropdown" />
       <created>1684739930652</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -70,6 +69,7 @@
       <workItem from="1684910664310" duration="696000" />
       <workItem from="1684917965375" duration="7030000" />
       <workItem from="1685005840506" duration="4970000" />
+      <workItem from="1685374140834" duration="988000" />
     </task>
     <task id="LOCAL-00001" summary="remove old files">
       <created>1684740707715</created>
@@ -99,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684909730018</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update network dropdown">
+      <created>1685362828726</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685362828727</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,7 +129,8 @@
     <MESSAGE value="add cosmos app" />
     <MESSAGE value="update tailwind config" />
     <MESSAGE value="spacing fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="spacing fixes" />
+    <MESSAGE value="update network dropdown" />
+    <option name="LAST_COMMIT_MESSAGE" value="update network dropdown" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

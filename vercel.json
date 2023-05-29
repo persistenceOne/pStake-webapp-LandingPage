@@ -1,8 +1,8 @@
 {
   "rewrites": [
-    {"source": "/eth/", "destination": "https://p-stake-webapp-landing-page-ethereum.vercel.app/"},
-    {"source": "/eth/:match*", "destination": "https://p-stake-webapp-landing-page-ethereum.vercel.app/:match*"},
-    {"source": "/", "destination": "https://p-stake-webapp-landing-page-cosmos.vercel.app/"},
-    {"source": "/:match*", "destination": "https://p-stake-webapp-landing-page-cosmos.vercel.app/:match*"}
+    {"source": "/eth/", "destination": "https://pstake-frontend-ethereum.vercel.app/"},
+    {"source": "/eth/:match*", "destination": "https://pstake-frontend-ethereum.vercel.app/:match*"},
+    {"source": "/", "destination": "https://pstake-frontend-cosmos.vercel.app/"},
+    {"source": "/:match*", "destination": "https://pstake-frontend-cosmos.vercel.app/:match*"}
   ]
 }
