@@ -9,6 +9,15 @@ const nextConfig = {
   swcMinify: true,
   reactStrictMode: true,
   transpilePackages: ["ui", "tailwindconfig", "hooks", "utils"],
+  async rewrites() {
+    return [
+      {
+        source: "/eth/:path*{/}?",
+        destination:
+          "https://p-stake-webapp-landing-page-ethereum.vercel.app/eth/:path*",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

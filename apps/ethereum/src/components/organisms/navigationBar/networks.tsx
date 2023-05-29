@@ -8,12 +8,12 @@ const env: string = process.env.NEXT_PUBLIC_ENVIRONMENT!;
 const networks: any[] = [
   {
     network: "Cosmos",
-    logo: "eth", // logo name. logo must be svg format
+    logo: "atom", // logo name. logo must be svg format
     link: "/",
   },
   {
     network: "Ethereum",
-    logo: "optimism",
+    logo: "eth",
     link: "/eth",
   },
 ];
