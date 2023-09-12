@@ -1,8 +1,10 @@
-const plugin = require(`tailwindcss/plugin`);
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: "jit",
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "app/**/*.{js,ts,jsx,tsx}",
+    "src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/**/*.{js,ts,jsx,tsx}"
+  ],
   theme: {
     colors: {
       light: {
@@ -11,7 +13,10 @@ module.exports = {
         emphasis: "#ECECEC",
         mid: "#A6A6A6",
         low: "#787878",
-        disabled: "#A9A9A9"
+        disabled: "#A9A9A9",
+        "white-800": "#FCFCFC",
+        "white-700": "#ECECEC",
+        "white-600": "#A6A6A6"
       },
       transparent: "transparent",
       dark: {
@@ -20,15 +25,27 @@ module.exports = {
         emphasis: "#030303",
         mid: "#070B09",
         low: "#787878",
-        disabled: "#A9A9A9"
+        disabled: "#A9A9A9",
+        "black-900": "#171717",
+        "black-800": "#181818",
+        "black-700": "#1b1b1b",
+        "black-600": "#1b1b1b99",
+        "black-500": "#17171799",
+        "black-400": "#282828"
       },
       red: "#c73238",
-      "red-light": "#cb575bfa",
-      green: "#47C28B"
+      green: "#24b574",
+      "red-light": "#cb575bfa"
     },
     backgroundImage: {
+      // slideUpDropdown: "url('linear-gradient(0deg, #000000, #000000)),
+      //     'linear-gradient(0deg, rgba(36, 36, 36, 0.6), rgba(36, 36, 36, 0.6))"
+      slideUpDropdown:
+        " linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, rgba(36, 36, 36, 0.6), rgba(36, 36, 36, 0.6))",
       "body-bg":
-        "radial-gradient(112.6% 112.6% at 50% -12.6%,#372627 0,#030303 44.79%)"
+        "radial-gradient(150.28% 150.28% at 50% -50.28%, #372627 0%, #030303 55.21%)",
+      gradientLine:
+        "linear-gradient(270deg, #A6A6A6 0%, rgba(53, 53, 53, 0.51) 100%)"
     },
     backgroundColor: {
       none: "none",
@@ -37,11 +54,15 @@ module.exports = {
       "sideBar-navLinkActive": "#1b1b1b",
       dropDown: "#282828",
       tabHeader: "#181818",
-      tabContent: "rgba(24, 24, 24, 0.6)",
-      input: "rgba(27, 27, 27, 0.6)",
+      tabContent: "rgba(36, 36, 36, 0.6)",
+      input: "#0A0A0A",
       red: "#c73238",
+      green: "#24b574",
       "red-light": "#cb575bfa",
       "black-full": "#000",
+      "black-high": "#1d1d22",
+      "black-emphasis": "#26262b",
+      "black-mid": "#070B09",
       "black-900": "#171717",
       "black-800": "#181818",
       "black-700": "#1b1b1b",
@@ -53,7 +74,8 @@ module.exports = {
       "white-emphasis": "#ECECEC",
       "white-mid": "#A6A6A6",
       "white-low": "#787878",
-      disabled: "#A9A9A9"
+      disabled: "#A9A9A9",
+      activeNavbar: "#C73238"
     },
     fontFamily: {
       primary: ["Poppins", "sans-serif"]
@@ -82,36 +104,21 @@ module.exports = {
       overline: ["0.625rem", { lineHeight: "1rem" }]
     },
     screens: {
-      "2xl": { max: "1536px" },
+      "2xl": { max: "1535px" },
       // => @media (max-width: 1536px) { ... }
-
-      "1.5xl": { max: "1408px" },
-      // => @media (max-width: 1408px) { ... }
-
-      xl: { max: "1280px" },
-      // => @media (max-width: 1280px) { ... }
-
-      "1.5lg": { max: "1152px" },
-      // => @media (max-width: 1152px) { ... }
-
-      lg: { max: "1024px" },
-      // => @media (max-width: 1024px) { ... }
-
-      "1.5md": { max: "896px" },
-      // => @media (max-width: 896px) { ... }
-
-      md: { max: "768px" },
-      // => @media (max-width: 768px) { ... }
-
-      "1.5xs": { max: "640px" },
-      // => @media (max-width: 640px) { ... }
-
-      // "1.5xs": { max: "512px" },
-      // // => @media (max-width: 512px) { ... }
-
-      sm: { max: "512px" }
+      "1.5xl": { max: "1407px" },
+      xl: { max: "1279px" },
+      "1.5lg": { max: "1151px" },
+      lg: { max: "1023px" },
+      "1.5md": { max: "895px" },
+      md: { max: "767px" },
+      "1.5xs": { max: "639px" },
+      sm: { max: "511px" }
     },
     extend: {
+      transitionProperty: {
+        height: "height"
+      },
       keyframes: {
         "menu-open": {
           "0%": {
@@ -126,8 +133,25 @@ module.exports = {
       },
       animation: {
         "menu-open": "menu-open 200ms ease-in-out"
+      },
+      screens: {
+        "-2xl": { min: "1536px" },
+        // => @media (min-width: 1535px) { ... }
+        "-1.5xl": { min: "1408px" },
+        "-xl": { min: "1280px" },
+        "-1.5lg": { min: "1152px" },
+        "-lg": { min: "1024px" },
+        "-1.5md": { min: "896px" },
+        "-md": { min: "768px" },
+        "-1.5sm": { min: "640px" },
+        "-sm": { min: "512px" }
+      },
+      height: {
+        navbar: "89px",
+        "navbar-mobile": "72px",
+        content: "calc(100vh - 89px)",
+        "content-mobile": "calc(100vh - 72px)"
       }
     }
-  },
-  plugins: []
+  }
 };
