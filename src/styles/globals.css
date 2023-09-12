@@ -17,6 +17,10 @@ body, html {
   height: 12px;
 }
 
+.side-bar-icon {
+  fill: #a6a6a6;
+}
+
 /* custom button */
 .custom {
   background: #181818;

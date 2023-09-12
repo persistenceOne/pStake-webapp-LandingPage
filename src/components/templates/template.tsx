@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../organisms/Footer";
+import Sidebar from "../organisms/sidebar";
 
 export const PageTemplate = ({
   children,
@@ -11,9 +11,15 @@ export const PageTemplate = ({
   title: string;
 }) => {
   return (
-    <div className="appLayout grid gap-6 md:block">
-      <div className={`mainContainer` + className}>{children}</div>
-      <Footer />
+    <div className="flex md:block bg-body-bg">
+      <Sidebar />
+      <div
+        className={
+          "mainContainer flex-1 h-screen overflow-auto bg-no-repeat mb-4"
+        }
+      >
+        {children}
+      </div>
     </div>
   );
 };
