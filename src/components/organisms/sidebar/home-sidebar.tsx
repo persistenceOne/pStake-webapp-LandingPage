@@ -33,16 +33,6 @@ const socialList = [
     url: "https://pstake.finance/",
     iconName: "globe",
     tooltip: "Website"
-  },
-  {
-    url: BUG_REPORT_URL,
-    iconName: "bug",
-    tooltip: "Bug Report"
-  },
-  {
-    url: "https://docs.pstake.finance",
-    iconName: "docs",
-    tooltip: "Docs"
   }
 ];
 
@@ -67,6 +57,11 @@ const HomeSidebar = () => {
       url: "https://forum.pstake.finance/",
       name: "Governance",
       icon: "governance"
+    },
+    {
+      url: BUG_REPORT_URL,
+      icon: "bug",
+      name: "Bug Report"
     }
   ];
 
@@ -130,7 +125,7 @@ const HomeSidebar = () => {
               </div>
             </div>
             <div
-              className={`socialLinks flex py-3 px-8 justify-between border-t border-solid border-[#2b2b2b]`}
+              className={`socialLinks flex py-4 px-8 justify-between border-t border-solid border-[#2b2b2b]`}
             >
               {socialList.map((item, index) => (
                 <a
@@ -140,7 +135,10 @@ const HomeSidebar = () => {
                   className="mr-2.5"
                   target="_blank"
                 >
-                  <Icon viewClass="socialIcon" iconName={item.iconName} />
+                  <Icon
+                    viewClass="socialIcon !w-[14px] !h-[14px]"
+                    iconName={item.iconName}
+                  />
                 </a>
               ))}
             </div>

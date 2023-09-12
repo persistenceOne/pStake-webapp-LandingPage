@@ -15,7 +15,7 @@ export const PageTemplate = ({
       <Sidebar />
       <div
         className={
-          "mainContainer flex-1 h-screen overflow-auto bg-no-repeat mb-4"
+          "mainContainer flex-1 h-screen overflow-auto bg-no-repeat pb-4"
         }
       >
         {children}
