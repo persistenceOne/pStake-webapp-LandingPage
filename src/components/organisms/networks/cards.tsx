@@ -13,6 +13,7 @@ const NetworkCards = () => {
       apy: 1,
       supportedNetworks: ["/images/logos/stk_atom.svg"],
       buttonText: "Stake",
+      launched: true,
       buttonUrl: "https://cosmos.pstake.finance/"
     },
     {
@@ -24,6 +25,7 @@ const NetworkCards = () => {
       apy: 4,
       supportedNetworks: ["/images/logos/stk_bnb.svg"],
       buttonText: "Stake",
+      launched: true,
       buttonUrl: "https://bnb.pstake.finance/"
     },
     {
@@ -34,7 +36,8 @@ const NetworkCards = () => {
         "Natively liquid stake ETH on Ethereum and supported L2s  — Arbitrum & Optimism.",
       apy: 12,
       supportedNetworks: ["/images/logos/stk_eth.svg"],
-      buttonText: "Stake",
+      buttonText: "Coming soon",
+      launched: false,
       buttonUrl: "https://eth.pstake.finance/"
     }
   ];
@@ -84,8 +87,10 @@ const NetworkCards = () => {
                 href={item.buttonUrl}
                 target={"_blank"}
                 passHref
-                className="text-center text-light-emphasis rounded-md bg-[#c73238]
-                 py-[0.5rem] px-4 w-full block hover:bg-[#cb575bfa]"
+                className={`text-center text-light-emphasis rounded-md bg-[#c73238]
+                 py-[0.5rem] px-4 w-full block hover:bg-[#cb575bfa] ${
+                   !item.launched ? "pointer-events-none opacity-50" : ""
+                 }`}
               >
                 {item.buttonText}
               </Link>
