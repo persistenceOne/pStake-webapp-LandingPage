@@ -11,8 +11,7 @@ const NetworkSection = () => {
             "text-light-high text-[36px] text-center font-bold leading-normal mb-6 md:text-[20px]"
           }
         >
-          Liquid Stake with your <br />
-          favourite blockchain
+          Stake and earn with your<br/> favorite Blockchains
         </p>
         <div className="flex items-center justify-center mb-6">
           <div className={"flex items-center"}>
@@ -26,7 +25,7 @@ const NetworkSection = () => {
             <div>
               <p className="text-light-high font-medium">Stake</p>
               <p className="text-light-emphasis text-sm">
-                Stake your PoS tokens to <br /> earn staking rewards.
+                Liquid Stake to earn <br /> rewards real time
               </p>
             </div>
           </div>
@@ -40,10 +39,9 @@ const NetworkSection = () => {
               2
             </div>
             <div>
-              <p className="text-light-high font-medium">Mint</p>
+              <p className="text-light-high font-medium">Defi</p>
               <p className="text-light-emphasis text-sm">
-                Mint stkASSETs to unlock
-                <br /> liquidity of staked assets
+                Use stkASSETS in DeFi <br/>protocols for rewards
               </p>
             </div>
           </div>
@@ -57,10 +55,9 @@ const NetworkSection = () => {
               3
             </div>
             <div>
-              <p className="text-light-high font-medium">DeFi</p>
+              <p className="text-light-high font-medium">Earn</p>
               <p className="text-light-emphasis text-sm">
-                Use stkASSETs in
-                <br /> DeFi to earn additional yield.
+                Yield Farm to leverage<br/> stkASSETS
               </p>
             </div>
           </div>

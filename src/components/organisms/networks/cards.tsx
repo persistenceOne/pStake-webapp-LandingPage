@@ -6,10 +6,11 @@ const NetworkCards = () => {
   const networkList = [
     {
       asset: "Cosmos",
-      network: "cosmos",
+      network: "Cosmos Hub",
+      token:'ATOM',
       imageUrl: "/images/logos/atom.svg",
       cardText:
-        "Liquid Stake Cosmos assets on the underlying network to get the best of both worlds — Staking & DeFi and watch your stkASSETs value grow.",
+        "Liquid Stake your ATOM directly or stake ATOM through LSM to get the best of both worlds –Staking and DeFi",
       apy: 1,
       supportedNetworks: ["/images/logos/stk_atom.svg"],
       buttonText: "Stake",
@@ -18,7 +19,8 @@ const NetworkCards = () => {
     },
     {
       asset: "BNB",
-      network: "binance",
+      token: "BNB",
+      network: "Binance Smart Chain",
       imageUrl: "/images/logos/bnb.svg",
       cardText:
         "Liquid Stake BNB to get the best of both worlds — Staking & DeFi.",
@@ -30,7 +32,8 @@ const NetworkCards = () => {
     },
     {
       asset: "Ethereum",
-      network: "ethereum",
+      token: "ETH",
+      network: "Ethereum",
       imageUrl: "/images/logos/eth.svg",
       cardText:
         "Natively liquid stake ETH on Ethereum and supported L2s  — Arbitrum & Optimism.",
@@ -48,7 +51,12 @@ const NetworkCards = () => {
           className="-lg:basis-[33.3%] -lg:max-w-[33.3%] px-2 mb-4"
           key={index}
         >
-          <div className="bg-black-700 p-6 h-full flex justify-between flex-col rounded-md">
+          <div className="bg-black-700 p-6 h-full flex justify-between flex-col rounded-md relative overflow-hidden">
+            {item.asset === 'Cosmos' ?
+                <div className="bg-lsmTag rotate-[322deg] absolute -left-[47px] top-[28px] px-[10px] py-[8px] w-[200px]">
+                  <p className="text-[11px] text-light-emphasis font-medium italic text-center">LSM Support Enabled</p>
+            </div>: ""
+            }
             <div className="mb-4">
               <div className={"text-center mb-4"}>
                 <Image
@@ -58,11 +66,14 @@ const NetworkCards = () => {
                   height={40}
                   className="mx-auto mb-2"
                 />
-                <h5 className="text-light-high text-lg font-semibold leading-normal text-center">
-                  {item.asset}
+                <h5 className="text-light-high font-semibold leading-normal text-center">
+                  {item.network}
                 </h5>
+                <span className="text-light-high font-semibold text-center">
+                  {`(${item.token})`}
+                </span>
               </div>
-              <p className="text-light-emphasis text-center text-sm">
+              <p className="text-light-emphasis text-center text-[13px] font-normal">
                 {item.cardText}
               </p>
             </div>
