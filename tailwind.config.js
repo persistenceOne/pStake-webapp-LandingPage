@@ -45,7 +45,10 @@ module.exports = {
       "body-bg":
         "radial-gradient(150.28% 150.28% at 50% -50.28%, #372627 0%, #030303 55.21%)",
       gradientLine:
-        "linear-gradient(270deg, #A6A6A6 0%, rgba(53, 53, 53, 0.51) 100%)"
+        "linear-gradient(270deg, #A6A6A6 0%, rgba(53, 53, 53, 0.51) 100%)",
+      lsmTag: "linear-gradient(91deg, rgba(196, 3, 11, 0.60) -15.72%, rgba(30, 0, 3, 0.60) 125.37%)",
+
+
     },
     backgroundColor: {
       none: "none",

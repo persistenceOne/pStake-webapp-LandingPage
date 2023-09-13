@@ -26,7 +26,7 @@ const Footer = () => {
     }
   ];
   return (
-    <div className={`socialLinks flex pb-10 px-4 pt-6 justify-center`}>
+    <div className={`socialLinks flex pb-10 px-4 pt-6 justify-center -md:hidden`}>
       {socialList.map((item, index) => (
         <Tooltip placement="bottom" overlay={item.tooltip} key={index}>
           <a

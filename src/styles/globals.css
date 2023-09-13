@@ -21,6 +21,25 @@ body, html {
   fill: #a6a6a6;
 }
 
+/* sidebar */
+.close.offCanvas {
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.show.offCanvas {
+  transform: none;
+  transition: transform 0.4s ease-in-out;
+}
+
+.backDrop {
+  transition: opacity 0.15s linear;
+  background: #000;
+}
+
+.show .backDrop {
+  opacity: 0.5;
+}
 /* custom button */
 .custom {
   background: #181818;

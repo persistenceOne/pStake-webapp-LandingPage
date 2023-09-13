@@ -25,6 +25,9 @@
     height: auto;
 }
 
+.mobileDropdownContainer{
+    width: 284px;
+}
 .mobileSidebarBackdrop{
     position: fixed;
     top: 0;
@@ -35,7 +38,6 @@
     transition: opacity .15s linear;
     background: #000;
 }
-
 .mobileSidebar{
     position: fixed;
     z-index: 40;
