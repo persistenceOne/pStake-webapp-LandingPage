@@ -10,7 +10,7 @@ const NetworkCards = () => {
       token:'ATOM',
       imageUrl: "/images/logos/atom.svg",
       cardText:
-        "Liquid Stake your ATOM directly or stake ATOM through LSM to get the best of both worlds –Staking and DeFi",
+        "Liquid Stake your ATOM directly or staked ATOM through LSM to get the best of both worlds –Staking and DeFi",
       apy: 1,
       supportedNetworks: ["/images/logos/stk_atom.svg"],
       buttonText: "Stake",
