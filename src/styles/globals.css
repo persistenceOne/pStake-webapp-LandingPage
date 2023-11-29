@@ -59,3 +59,58 @@ body, html {
 }
 
 
+@keyframes SlideDown {
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInBackdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+.animate.slideDown.open {
+  animation: SlideDown 0.5s;
+}
+
+.animate.fadeIn.open {
+  animation: FadeIn 0.5s;
+}
+
+.backDrop.open {
+  animation: fadeInBackdrop 0.5s;
+  background: #000;
+  opacity: 0.5;
+}
+
+.modal.slideRight.open {
+  animation: modalSlideRight 0.5s;
+}
+
+.buttonClose{
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 14px;
+  height: 14px;
+}
+
